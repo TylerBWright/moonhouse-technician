@@ -50,33 +50,33 @@ say ''
 say '************************'
 say 'An interactive fiction game adaptation of the 1895 Howard Pyle fairytale, The Garden Behind the Moon. This game was designed and developed by Tyler Wright with the Object REXX mainframe language.'
 say ''
-say 'You consider your birthday wish before blowing out the candles on your cake. With one burst of breath, you put out all eleven candles and slowly open your eyes to a magnificent sight! Your dream has come true--you are on the surface of the moon!'
+say 'With one burst of breath, you put out all eleven candles on your birthday cake and slowly open your eyes to a magnificent sight! Your dream has come true--you are on the surface of the moon!'
 say ''
 say 'What is your name?'
 pull name
 say ''
-say 'Welcome 'name'. You are about to discover the great mysteries of the garden behind the moon!'
+say 'Welcome 'name'. You are about to discover the great mysteries of the moon-house!'
 say ''
-say 'The moon angel stands before you, and his silver eyes searches your soul. He speaks.'
+say 'The Moon-Angel stands before you, and his silver eyes searches your soul. He speaks.'
 say ''
-say 'Moon Angel: "It has been some time since the Moon-house has seen visitors. I suppose you are here for the playing cards, yes?"'
+say "Moon-Angel: 'It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?'"
 say ''
-say 'How will you respond?'
+say 'How will you respond? (YES/NO)'
 pull response
 say ''
 if response = yes then
 do
-    say 'Moon Angel: I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man in the Moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work! Go and seek out the Man in the Moon and he will provide you with further instructions.'
+    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work! Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
 end
 else
 if response = no then
 do
-    say "Moon Angel: So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man in the Moon and he will put you to work."
+    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
 end
 else
 if response <> no and response <> yes then
 do
-    say "Moon Angel: Do not bother me with such nonsense. Go and seek out the Man in the Moon and he will put you to work."
+    say "Moon Angel: 'Do not bother me with such nonsense. Go and seek out the Man-in-the-moon and he will put you to work.'"
 end
 
 moonhouse = 0
@@ -121,100 +121,182 @@ moonangelmood = 0
 moonangelmood2 = ""
 moonangeldisplay = ""
 ladymood = 0
+windowthreat = 0
 credits = 0
 maninmoonswitch = 1
 moonangelswitch = 1
 gardenswitch = 1
-maninmoontext = "The Man in the Moon gently puffs on a long pipe and eyes you curiously."
-moonangeltext = "The moon angel is seen gazing out of the window at the cosmos. He hardly notices your presence as he is deep in thought."
+maninmoontext = "The Man-in-the-moon gently puffs on a long pipe and eyes you curiously."
+moonangeltext = "The Moon-Angel is seen gazing out of the window at the cosmos. He is in deep thought and hardly notices your presence."
 gardentext = "A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and they listen intently to her words."
 
-man_in_the_moon = 0
-moon_calf = 0
-master_cobbler = 0
-baby = 0
-moon_angel = 0
-beautiful_lady = 0
-phyllis = 0
-iron_man = 0
-old_woman_with_the_red_petticoat = 0
-black_horse = 0
-princess_aurelia = 0
-king = 0
 
 
 
 do while moonhouse = 0
-say ""
-say "*********************************************************************************"
-say "| Moon-house Technician"
-say "| "
-say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
-say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
-say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
-say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
-say "|"
-say "| Location: MOON-HOUSE"
-say "|" setting
-say "|"
-say "| Where do you want to go?"
-say "|"
-say "| 1. Man-in-the-moon"
-say "| 2. Moon angel"
-say "| 3. Attic"
-say "| 4. Room"
-say "| 5. Garden"
-say "| [card name]"
-say "|"
-say "**********************************************************************************"
-say ""
+    say ""
+    say "*********************************************************************************"
+    say "| Moon-house Technician"
+    say "| "
+    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
+    say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
+    say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
+    say "|"
+    say "| Location: MOON-HOUSE"
+    say "|" setting
+    say "|"
+    say "| Where do you want to go?"
+    say "|"
+    say "| 1. First Floor: Moon-kitchen"
+    say "| 2. First Floor: Moon-house Technician Quarters"
+    say "| 3. Second Floor: Moon-Angel"
+    say "| 4. Second Floor: Upstairs Windows"
+    say "| 5. Third Floor: Moon-house Technician Job Site"
+    say "| 6. Moon-garden"
+    say "| [card name]"
+    say "|"
+    say "**********************************************************************************"
+    say ""
 pull response
 say "You entered: " response
 say ""
 if response = 1 & card1b = 0 then
 do
-    say "Here is your first complementary card; none other than yours truly, the man-in-the-moon! Given it is your birthday today, this one is on the house, but the next card is gonna come at a price."
+    say "Man-in-the-moon: 'Given it is your birthday today, this playing card is on the house. Yours truly! Isn't it handsome? The next one is going to come at a price.'"
+    say ""
+    say "The Man-in-the-moon lights a match and places it to the bowl of his tobacco pipe. The vein in his forehead pulsates as he puffs and the machinery of his mind pieces together a robust speech on all matters moon-house. You ready yourself for the game tutorial brewing in the eccentric man's cranium."
+    say ""
+    say "Man-in-the-moon: 'Welcome to the glorious moon-house! We haven't had visitors in some time and those stars aren't going to polish themselves. Are you ready to get started?'"
     card1 = man in the moon
     card1b = 1
     response = ""
+    pull tutorial
+if tutorial <> skip then
+do
+    say ""
+    say "You start to utter a response but the small bearded man beats you to it. He launches into an animated explanation of the moon-house rules, but gives up midway when he realizes that you are not able to keep up with his diatribe. He stops, jots down notes in a flurry, and then hands them to you to read at your leisure."
+    say ""
+    say "------------------------------------------------------------"
+    say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
+    say ""
+    say "Moon-kitchen: My humble abode! Please excuse the mess—a guy's got to have hobbies, you know.'"
+    say ""
+    say "Moon-house Technician Quarters: Your room has enjoyed a good many previous children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the moon-house technician apprenticeship program. I do hope that you stay the full year."
+    say ""
+    say "He does moon-angely things--is that a word? If not, it should be. He and I get along as much as a domestic cat and dog tolerate each other, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone."
+    say ""
+    say "Upstairs Windows: The twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
+    say ""
+    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor each day in exchange for room and board. You will also be allotted a meager 1-credit-per-day stipend which you may later exchange for the coveted playing cards."
+    say ""
+    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows—she might even part with a rare playing card of her own!"
+    say ""
+    say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You might need a different strategy to get at his card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. Beyond that, I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
+    say ""
+    say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH. You may also input numbers when presented with a list of values."
+    say ""
+    say "You may re-read this document at any time by using the READ command."
+    say ""
+    say "Anyways, I think that's it for now! Toodles!"
+    say "------------------------------------------------------------"
+end
+else
+if tutorial = skip then
+do
+    say ""
+    say "You start to utter a response but the small bearded man beats you to it. He launches into an animated explanation of the moon-house rules, but gives up midway when he realizes that you are not able to keep up with his diatribe. He stops, jots down notes in a flurry, and then hands them to you to read at your leisure."
+    say ""
+    say "------------------------------------------------------------"
+    say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
+    say ""
+    say "Moon-kitchen: My humble abode! Please excuse the mess—a guy's got to have hobbies, you know.'"
+    say ""
+    say "Moon-house Technician Quarters: Your room has enjoyed a good many previous children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the moon-house technician apprenticeship program. I do hope that you stay the full year."
+    say ""
+    say "He does moon-angely things--is that a word? If not, it should be. He and I get along as much as a domestic cat and dog tolerate each other, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone."
+    say ""
+    say "Upstairs Windows: The twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
+    say ""
+    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor each day in exchange for room and board. You will also be allotted a meager 1-credit-per-day stipend which you may later exchange for the coveted playing cards."
+    say ""
+    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows—she might even part with a rare playing card of her own!"
+    say ""
+    say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You might need a different strategy to get at his card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. Beyond that, I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
+    say ""
+    say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH. You may also input numbers when presented with a list of values."
+    say ""
+    say "You may re-read this document at any time by using the READ command."
+    say ""
+    say "Anyways, I think that's it for now! Toodles!"
+    say "------------------------------------------------------------"
+end
 end
 if response = man in the moon & card1b = 1 then
 do
-say "Man-in-the-moon"
-say "------------------------------------------------------------"
-say "   :#%%%@%   :*#%%@% .%#      @@@%#*.   %@%@%*.             "
-say "   :*#:.%% .*#.:#%:.@%%#    %@ :@# :*+. %%.:%*.   %% :%*.   "
-say "   :##: ..  .:*#%%@%...:**.  .@@@%#*.   .. :%*.   ..  .     "
-say "    .:**:     ......   :**.   ......     .%*:. .%*          "
-say "     .#%:            .%#..  %@@%         :@%.  .%*     :%*. "
-say "     :%%: @%         .%%    %@@@      %% :@%.   . @@%#.     "
-say "       .**%*   .*#%#%* .****#%%%%#*+. **#%#*.          :*+. "
-say "   .+***:.%#+*****:...  ...........:+=#*.:#*.        :*=:   "
-say "+*++::::  ::*#**::     .=++=****    ::::  :-*=.   ***+:.    "
-say "*#-:.       :=*+.      .:-**#%%#=====-     :*+.   ##-:      "
-say "#%        +===--.         --==%%%#---:==== :%*.   %%        "
-say "======. ==@%--                =======-=====+%*.   ==        "
-say " .=+====%#+=                     .===-=-==+++==-=:==-==:    "
-say "     .==%#==                ====      =======-==%*=+=+#*=-=-"
-say "        ==%*        -:      =+++-:      --=+==--#*   :**+=#+"
-say "        ::#*      ::#*         .*+      %#   .++%*::::*=..#*"
-say "       .**  ..   .**                    **..   .*+%%*+. .:*+"
-say "       .#* .**.                          .#*.  .#*%#   :*+. "
-say "       .@%@@                  @@           -@#.        :%#. "
-say "          @%    ..             :@#    %%...-@%%*:....-%%%#@*"
-say "          @%...:*%:                     %@@@@*..%*%@%%%*.   "
-say "          @@#%#*:                        .%@@*:             "
-say "          @%##.                            :%#%*.           "
-say "           .##.      .%#           .#*.    :%%%*.           "
-say "------------------------------------------------------------"
+    say "Man-in-the-moon"
+    say "------------------------------------------------------------"
+    say "   :#%%%@%   :*#%%@% .%#      @@@%#*.   %@%@%*.             "
+    say "   :*#:.%% .*#.:#%:.@%%#    %@ :@# :*+. %%.:%*.   %% :%*.   "
+    say "   :##: ..  .:*#%%@%...:**.  .@@@%#*.   .. :%*.   ..  .     "
+    say "    .:**:     ......   :**.   ......     .%*:. .%*          "
+    say "     .#%:            .%#..  %@@%         :@%.  .%*     :%*. "
+    say "     :%%: @%         .%%    %@@@      %% :@%.   . @@%#.     "
+    say "       .**%*   .*#%#%* .****#%%%%#*+. **#%#*.          :*+. "
+    say "   .+***:.%#+*****:...  ...........:+=#*.:#*.        :*=:   "
+    say "+*++::::  ::*#**::     .=++=****    ::::  :-*=.   ***+:.    "
+    say "*#-:.       :=*+.      .:-**#%%#=====-     :*+.   ##-:      "
+    say "#%        +===--.         --==%%%#---:==== :%*.   %%        "
+    say "======. ==@%--                =======-=====+%*.   ==        "
+    say " .=+====%#+=                     .===-=-==+++==-=:==-==:    "
+    say "     .==%#==                ====      =======-==%*=+=+#*=-=-"
+    say "        ==%*        -:      =+++-:      --=+==--#*   :**+=#+"
+    say "        ::#*      ::#*         .*+      %#   .++%*::::*=..#*"
+    say "       .**  ..   .**                    **..   .*+%%*+. .:*+"
+    say "       .#* .**.                          .#*.  .#*%#   :*+. "
+    say "       .@%@@                  @@           -@#.        :%#. "
+    say "          @%    ..             :@#    %%...-@%%*:....-%%%#@*"
+    say "          @%...:*%:                     %@@@@*..%*%@%%%*.   "
+    say "          @@#%#*:                        .%@@*:             "
+    say "          @%##.                            :%#%*.           "
+    say "           .##.      .%#           .#*.    :%%%*.           "
+    say "------------------------------------------------------------"
 response = ""
 end
-if response = 4 & card1b = 1 then
+if response = 2 & card1b = 1 then
 do
     say "You retire to your room for the day."
     day2 = day2 + 1
     response = ""
     moonhouse = 1
+end
+if response = read then
+do
+    say ""
+    say "------------------------------------------------------------"
+    say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
+    say ""
+    say "Moon-kitchen: My humble abode! Please excuse the mess—a guy's got to have hobbies, you know.'"
+    say ""
+    say "Moon-house Technician Quarters: Your room has enjoyed a good many previous children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the moon-house technician apprenticeship program. I do hope that you stay the full year."
+    say ""
+    say "He does moon-angely things--is that a word? If not, it should be. He and I get along as much as a domestic cat and dog tolerate each other, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone."
+    say ""
+    say "Upstairs Windows: The twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
+    say ""
+    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor each day in exchange for room and board. You will also be allotted a meager 1-credit-per-day stipend which you may later exchange for the coveted playing cards."
+    say ""
+    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows—she might even part with a rare playing card of her own!"
+    say ""
+    say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You might need a different strategy to get at his card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. Beyond that, I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
+    say ""
+    say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH. You may also input numbers when presented with a list of values."
+    say ""
+    say "You may re-read this document at any time by using the READ command."
+    say ""
+    say "Anyways, I think that's it for now! Toodles!"
+    say "------------------------------------------------------------"
+    response = ""
 end
 end
 
@@ -228,6 +310,14 @@ card8 = "$60"
 card9 = "$60"
 
 do while moonhouse = 1
+if windowthreat = 10 then 
+do
+    say ""
+    say "Before you could even think of turning back to the daily routine of the moon-house, you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow, he manages to extricate you from the moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome with your fixation on the windows when you should have been getting to work."
+    say ""
+    say "GAME OVER"
+    exit
+end
 if day2 = 1 | day2 = 8 | day2 = 15 | day2 = 22 | day2 = 29 | day2 = 36 | day2 = 43 | day2 = 50 | day2 = 57 | day2 = 64 | day2 = 71 | day2 = 78 | day2 = 85 | day2 = 92 | day2 = 99 | day2 = 106 | day2 = 113 | day2 = 120  day2 = 127 | day2 = 134 | day2 = 141 | day2 = 148 | day2 = 155 | day2 = 162 | day2 = 169 | day2 = 176 | day2 = 183 | day2 = 190 | day2 = 197 | day2 = 204 | day2 = 211 | day2 = 218 | day2 = 225 | day2 = 232 | day2 = 239 | day2 = 246 | day2 = 253 | day2 = 260 | day2 = 267 | day2 = 274 | day2 = 281 | day2 = 288 | day2 = 295 | day2 = 302 | day2 = 309 | day2 = 316 | day2 = 323 | day2 = 330 then
 do
 day1 = "Sunday"
@@ -306,19 +396,95 @@ month = "Happy Birthday!"
 end 
 if maninmoonswitch = 1 then
 do
-maninmoontext = "You spy the Man in the Moon lounging in a hammock reading a book, 'The Merry Adventures of Robin Hood,' by Howard Pyle. Every few seconds he is heard rolling in laughter. He knows you're there."
+maninmoontext = "You spy the Man-in-the-moon lounging in a hammock reading a book, 'The Merry Adventures of Robin Hood,' by Howard Pyle. Every few seconds he is heard rolling in laughter. He knows you're there."
 end
 if maninmoonswitch = 2 then
 do
-maninmoontext = "The Man in the Moon has a large grin on his face (more than usual) and is seemingly pleased to see you."
+maninmoontext = "The Man-in-the-moon has a large grin on his face (more than usual) and is seemingly pleased to see you."
 end
 if maninmoonswitch = 3 then
 do
-maninmoontext = "You stand before the Man in the Moon. He reminds you somewhat of the storekeeper down a block from your house, only much hairier."
+maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper down a block from your house, only much hairier and crinklier."
 end
 if maninmoonswitch = 4 then
 do
-maninmoontext = "The Man in the Moon inhales the sweet smoke from his pipe and exhales a curling serpent of smoke that dissipates into the moon-house vents overhead."
+maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent of smoke that dissipates into the moon-house vents overhead."
+end
+if maninmoonswitch = 5 then
+do
+maninmoontext = "Man-in-the-moon: 'How do you do, "name"?'"
+end
+if maninmoonswitch = 6 then
+do
+maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for too terribly long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are myself, the Moon-Angel, and the beautiful lady of the garden behind the moon. I 'spose I am a bit of a housecat muhself! Har!'"
+end
+if maninmoonswitch = 7 then
+do
+maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony that unfolds in all of its whimsy. I'm just the narrator."
+end
+if maninmoonswitch = 8 then
+do
+maninmoontext = "Man-in-the-moon: 'I hear that my colleague the Moon-Angel carries a very rare playing card. He's a prickly fella at times, but underneath all that moon mist is a heart of silver. I'm certain you can get through to him one of these days.'"
+end
+if maninmoonswitch = 9 then
+do
+maninmoontext = "Man-in-the-moon: 'You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an assistant to lend a heart. Who knows; she might even part with a rare playing card of her own!'"
+end
+if maninmoonswitch = 10 then
+do
+maninmoontext = "Man-in-the-moon: 'Normally I might have something erudite or informative to say; perhaps something to aid you in your happenings around here. This is not one of those moments, my dear child.' The Man-in-the-moon goes back to smoking his long tobacco pipe."
+end
+if maninmoonswitch = 11 then
+do
+maninmoontext = "Man-in-the-moon: 'The Moon-Angel and I each have our individual areas of expertise. He can make sense of the things that you might notice outside of the moon-windows. I am a much simpler denizen of the moon-house. But the Moon-Angel doesn't share as much as he had in times past, so good luck getting anything out of him.'"
+end
+if maninmoonswitch = 12 then
+do
+maninmoontext = "The Man-in-the-moon is feeling a bit under the weather, sneezing through his whiskers, and sniffling through puffy eyes. He is busy now with his knitting, but he seems to always find the time to welcome you."
+end
+if maninmoonswitch = 13 then
+do
+maninmoontext = "The Man-in-the-moon is deep in study of the almanac by candle-light. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night scholarship."
+end
+if maninmoonswitch = 14 then
+do
+maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way, but he still engages with you in conversation."
+end
+if maninmoonswitch = 15 then
+do
+maninmoontext = "Man-in-the-moon: 'Tell me "name", had the earthlings won the War of 1812? One of the last children who visited me spoke of it through hushed whispers but had not returned to satiate my curiosity. Why, he must have as many gray whiskers as me now! Hrm.'"
+end
+if maninmoonswitch = 16 then
+do
+maninmoontext = "Man-in-the-moon: 'Would you like to hear me play the fiddle, "name"?'"
+end
+if maninmoonswitch = 17 then
+do
+maninmoontext = "Be careful, the Man-in-the-moon is in a strong storytelling mood this evening!"
+end
+if maninmoonswitch = 18 then
+do
+maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less and less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to become creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a stamp guy muhself, but who am I to judge?!'"
+end
+if maninmoonswitch = 19 then
+do
+maninmoontext = "You manage to startle the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still emits a bout of laughter before asking the status of your health."
+end
+if maninmoonswitch = 20 then
+do
+maninmoontext = "The Man-in-the-moon is searching frantically for something. 'Where's muh pipe," name"? This cannot be happening to me right now.' You spy the very article poking through his mane of gray hair and point. He feels relief in his embarrassment and resumes his puffing."
+end
+if maninmoonswitch = 21 then
+do
+maninmoontext = "Man-in-the-moon: 'There was one lad, David, who came around these parts. He grew into a very capable hero; having bested the Iron Man and saved the dear Princess Aurelia on his black steed. Truly a legend! Despite his glowing paladin accolades, I am still of the mind that his proficiency in star-polishing is the real unspoken story here. An expert moon-house technician is a thankless job, but one with seismic implications that knows no bounds...'"
+end
+if maninmoonswitch = 22 then
+do
+maninmoontext = "Man-in-the-moon: 'The Moon-Angel doesn't often pay me a visit here in the moon-kitchen. I believe the last time was some thirty-seven years back when I locked myself in that-there cupboard up there. I wish I had a better story for you, but that’s all I’ve got. Ha!'"
+end
+if maninmoonswitch = 23 then
+do
+maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he is something of a grandfather figure to you at this point."
 end
 if moonangelmood > 0 & moonangelmood < 6 then
 do
@@ -344,442 +510,444 @@ if moonangelmood = 26 then
 do
 moonangelmood2 = "Friendly"
 end
-say ""
-say "*********************************************************************************"
-say "| Moon-house Technician"
-say "| "
-say "| Name:" name "; Month:" month "; Day:" day1
-say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
-say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
-say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
-say "|       " moonangeldisplay moonangelmood2
-say "|"
-say "| Location: MOON-HOUSE"
-say "|" setting
-say "|"
-say "| Where do you want to go?"
-say "|"
-say "| 1. Man-in-the-moon"
-say "| 2. Moon angel"
-say "| 3. Attic"
-say "| 4. Room"
-say "| 5. Garden"
-say "| [card name]"
-say "|"
-say "**********************************************************************************"
-say ""
+    say ""
+    say "*********************************************************************************"
+    say "| Moon-house Technician"
+    say "| "
+    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
+    say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
+    say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
+    say "|       " moonangeldisplay moonangelmood2
+    say "|"
+    say "| Location: MOON-HOUSE"
+    say "|" setting
+    say "|"
+    say "| Where do you want to go?"
+    say "|"
+    say "| 1. First Floor: Moon-kitchen"
+    say "| 2. First Floor: Moon-house Technician Quarters"
+    say "| 3. Second Floor: Moon-Angel"
+    say "| 4. Second Floor: Upstairs Windows"
+    say "| 5. Third Floor: Moon-house Technician Job Site"
+    say "| 6. Moon-garden"
+    say "| [card name]"
+    say "|"
+    say "**********************************************************************************"
+    say ""
 pull response
 say "You entered: " response
 say ""
 if response = man in the moon & card1b = 1 then
 do
-say "Man-in-the-moon"
-say "------------------------------------------------------------"
-say "   :#%%%@%   :*#%%@% .%#      @@@%#*.   %@%@%*.             "
-say "   :*#:.%% .*#.:#%:.@%%#    %@ :@# :*+. %%.:%*.   %% :%*.   "
-say "   :##: ..  .:*#%%@%...:**.  .@@@%#*.   .. :%*.   ..  .     "
-say "    .:**:     ......   :**.   ......     .%*:. .%*          "
-say "     .#%:            .%#..  %@@%         :@%.  .%*     :%*. "
-say "     :%%: @%         .%%    %@@@      %% :@%.   . @@%#.     "
-say "       .**%*   .*#%#%* .****#%%%%#*+. **#%#*.          :*+. "
-say "   .+***:.%#+*****:...  ...........:+=#*.:#*.        :*=:   "
-say "+*++::::  ::*#**::     .=++=****    ::::  :-*=.   ***+:.    "
-say "*#-:.       :=*+.      .:-**#%%#=====-     :*+.   ##-:      "
-say "#%        +===--.         --==%%%#---:==== :%*.   %%        "
-say "======. ==@%--                =======-=====+%*.   ==        "
-say " .=+====%#+=                     .===-=-==+++==-=:==-==:    "
-say "     .==%#==                ====      =======-==%*=+=+#*=-=-"
-say "        ==%*        -:      =+++-:      --=+==--#*   :**+=#+"
-say "        ::#*      ::#*         .*+      %#   .++%*::::*=..#*"
-say "       .**  ..   .**                    **..   .*+%%*+. .:*+"
-say "       .#* .**.                          .#*.  .#*%#   :*+. "
-say "       .@%@@                  @@           -@#.        :%#. "
-say "          @%    ..             :@#    %%...-@%%*:....-%%%#@*"
-say "          @%...:*%:                     %@@@@*..%*%@%%%*.   "
-say "          @@#%#*:                        .%@@*:             "
-say "          @%##.                            :%#%*.           "
-say "           .##.      .%#           .#*.    :%%%*.           "
-say "------------------------------------------------------------"
+    say "Man-in-the-moon"
+    say "------------------------------------------------------------"
+    say "   :#%%%@%   :*#%%@% .%#      @@@%#*.   %@%@%*.             "
+    say "   :*#:.%% .*#.:#%:.@%%#    %@ :@# :*+. %%.:%*.   %% :%*.   "
+    say "   :##: ..  .:*#%%@%...:**.  .@@@%#*.   .. :%*.   ..  .     "
+    say "    .:**:     ......   :**.   ......     .%*:. .%*          "
+    say "     .#%:            .%#..  %@@%         :@%.  .%*     :%*. "
+    say "     :%%: @%         .%%    %@@@      %% :@%.   . @@%#.     "
+    say "       .**%*   .*#%#%* .****#%%%%#*+. **#%#*.          :*+. "
+    say "   .+***:.%#+*****:...  ...........:+=#*.:#*.        :*=:   "
+    say "+*++::::  ::*#**::     .=++=****    ::::  :-*=.   ***+:.    "
+    say "*#-:.       :=*+.      .:-**#%%#=====-     :*+.   ##-:      "
+    say "#%        +===--.         --==%%%#---:==== :%*.   %%        "
+    say "======. ==@%--                =======-=====+%*.   ==        "
+    say " .=+====%#+=                     .===-=-==+++==-=:==-==:    "
+    say "     .==%#==                ====      =======-==%*=+=+#*=-=-"
+    say "        ==%*        -:      =+++-:      --=+==--#*   :**+=#+"
+    say "        ::#*      ::#*         .*+      %#   .++%*::::*=..#*"
+    say "       .**  ..   .**                    **..   .*+%%*+. .:*+"
+    say "       .#* .**.                          .#*.  .#*%#   :*+. "
+    say "       .@%@@                  @@           -@#.        :%#. "
+    say "          @%    ..             :@#    %%...-@%%*:....-%%%#@*"
+    say "          @%...:*%:                     %@@@@*..%*%@%%%*.   "
+    say "          @@#%#*:                        .%@@*:             "
+    say "          @%##.                            :%#%*.           "
+    say "           .##.      .%#           .#*.    :%%%*.           "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = moon calf & card2b = 1 then
 do
-say "David the Moon-calf"
-say "------------------------------------------------------------"
-say "                 :@@%@=@%@@*@%*@*@@%@=@%                    "
-say "            .--:-:====:====-==-=-====:==--:                 "
-say "            :@@*@*@@#@=@%@@+@%*@*@@#@=@%@@-                 "
-say "       .@%#@*@@*@*@@%@=@%@@*@%*@*@@%@=@%@@*@#               "
-say "       .@%#@*@@*@*@@%@=@%       :@@%@=@%@@*@#               "
-say "     .:.+==+==+:-:==--:=-       :-=--:+==+-==::.            "
-say "     *@=@%*@*%@                      :@#%@*@*#@-            "
-say "     *@=@%#@=                             -@##@*@@          "
-say "     =*-       =*=**+*:       =*=**+*-*=     +*=**          "
-say "   ..*%=     ..+%+%%*%-       +%+%%*%=%*     *%+%%          "
-say "  :@@%@=    :@@*@*O@%@-         :@@%O=@%.    #@*@@          "
-say "  :@@%@=                 @@=                 #@*@@          "
-say "  .**::.                 **:  -=:            +*=**          "
-say "  :%%.                   #%-  +#-            *%=%%          "
-say "  :@@%@=              .@%.                =@##@*@@          "
-say "  :%%*%=            *%-                   -%**%-            "
-say "  .===*-            -=::::::::            :*++*:            "
-say "     *@=              .@%@@*@%            -@##@-            "
-say "     *@=@%.                            .@@*@#               "
-say "     ...#*+*-    :**+*-****=**=*=**.    ##=#+               "
-say "        *++*=    :**=*-****=**=*=**     **=*=               "
-say "          *@=         .@%@@*@%         .@@-                 "
-say "          *@*@@*@=                   :@%@@-                 "
-say "          :::**=*-                 =+-****:                 "
-say "            :##+#=                 *#=#*##:                 "
-say "               *@*@@%@=@%@@*@%*@*@@.   .@@*@##@*@@%@:       "
-say "               +%=  *%-                 %%:       *%=%*     "
-say "          :::::=+-::=+:                 ++:::     =+-+=::.  "
-say "          *@*@@*@*@@%@-                .@@*@#     #@=@%@@:  "
-say "+@*@@%@=@%.      :@@%@=@%     *@*@@%@=@%  =@#         .@@*@*"
-say "+@*@@:. ..        ....:@#%%+%#*@=.... ..   ..          .... "
-say "-=-==.                .====-====:                           "
-say "------------------------------------------------------------"
+    say "David the Moon-calf"
+    say "------------------------------------------------------------"
+    say "                 :@@%@=@%@@*@%*@*@@%@=@%                    "
+    say "            .--:-:====:====-==-=-====:==--:                 "
+    say "            :@@*@*@@#@=@%@@+@%*@*@@#@=@%@@-                 "
+    say "       .@%#@*@@*@*@@%@=@%@@*@%*@*@@%@=@%@@*@#               "
+    say "       .@%#@*@@*@*@@%@=@%       :@@%@=@%@@*@#               "
+    say "     .:.+==+==+:-:==--:=-       :-=--:+==+-==::.            "
+    say "     *@=@%*@*%@                      :@#%@*@*#@-            "
+    say "     *@=@%#@=                             -@##@*@@          "
+    say "     =*-       =*=**+*:       =*=**+*-*=     +*=**          "
+    say "   ..*%=     ..+%+%%*%-       +%+%%*%=%*     *%+%%          "
+    say "  :@@%@=    :@@*@*O@%@-         :@@%O=@%.    #@*@@          "
+    say "  :@@%@=                 @@=                 #@*@@          "
+    say "  .**::.                 **:  -=:            +*=**          "
+    say "  :%%.                   #%-  +#-            *%=%%          "
+    say "  :@@%@=              .@%.                =@##@*@@          "
+    say "  :%%*%=            *%-                   -%**%-            "
+    say "  .===*-            -=::::::::            :*++*:            "
+    say "     *@=              .@%@@*@%            -@##@-            "
+    say "     *@=@%.                            .@@*@#               "
+    say "     ...#*+*-    :**+*-****=**=*=**.    ##=#+               "
+    say "        *++*=    :**=*-****=**=*=**     **=*=               "
+    say "          *@=         .@%@@*@%         .@@-                 "
+    say "          *@*@@*@=                   :@%@@-                 "
+    say "          :::**=*-                 =+-****:                 "
+    say "            :##+#=                 *#=#*##:                 "
+    say "               *@*@@%@=@%@@*@%*@*@@.   .@@*@##@*@@%@:       "
+    say "               +%=  *%-                 %%:       *%=%*     "
+    say "          :::::=+-::=+:                 ++:::     =+-+=::.  "
+    say "          *@*@@*@*@@%@-                .@@*@#     #@=@%@@:  "
+    say "+@*@@%@=@%.      :@@%@=@%     *@*@@%@=@%  =@#         .@@*@*"
+    say "+@*@@:. ..        ....:@#%%+%#*@=.... ..   ..          .... "
+    say "-=-==.                .====-====:                           "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = master cobbler & card3b = 1 then
 do
-say "Master Cobbler Hans Krout"
-say "------------------------------------------------------------"
-say "   .@##@%%@#  #%@##@%%@##@%%@##@%%@##@%%@##@.               "
-say "  #%@#   .@##@.      .@##@..@#  #%. #@%%@##@.               "
-say "  #%  #@%%              #@.         #@%%@##@%%              "
-say "  ==  =+.                             ==+==+==              "
-say "  ::--=+.       --:-----          ----==::=+==              "
-say ":: .+=-=    ::::+=-=-=+=        ::=--===::-===              "
-say "*%.:%*      *%##%#.O.:%*        *#..O.*%%*  *#              "
-say "  *%%*        *#%**%##%*  ..    *%%**%##%*  *#              "
-say "  *#%*                    **    **     .%*  **              "
-say "  #%@##@.               #@.      .@#   .@#  #%.             "
-say "  #%@##@%%              #@.      .@#   .@##@%%              "
-say "#@%%@#  #%@#            #@%%@#   .@#  #%@#                  "
-say "  #%    #%@#                  #@%%    #%                    "
-say "  +**++*+**+                          ++                    "
-say "  +*::::::**=*      ==+==*==    ==+==+**                    "
-say "  ::      -:+#.     ::-::-**==-=**-:+#::                    "
-say "            *#::          ==+==+==  *#::                    "
-say "          ..=***:.                  *#**:.......            "
-say "         .#*  **#*                  *#**#**#**#*            "
-say "        #%@#   .@##@.            .@##@.     #%@##@%%        "
-say "  #%@##@%%        #@%%          #%@#        #%@#  #%@##@.   "
-say "#@%%@##@.           #%@##@%%@##@%%                    #@.   "
-say "#@%%  #@%%                                              #%  "
-say "*%**.                                                   *#%*"
-say "..**                                                    ..%*"
-say "  ::                                                      ::"
-say "------------------------------------------------------------"
+    say "Master Cobbler Hans Krout"
+    say "------------------------------------------------------------"
+    say "   .@##@%%@#  #%@##@%%@##@%%@##@%%@##@%%@##@.               "
+    say "  #%@#   .@##@.      .@##@..@#  #%. #@%%@##@.               "
+    say "  #%  #@%%              #@.         #@%%@##@%%              "
+    say "  ==  =+.                             ==+==+==              "
+    say "  ::--=+.       --:-----          ----==::=+==              "
+    say ":: .+=-=    ::::+=-=-=+=        ::=--===::-===              "
+    say "*%.:%*      *%##%#.O.:%*        *#..O.*%%*  *#              "
+    say "  *%%*        *#%**%##%*  ..    *%%**%##%*  *#              "
+    say "  *#%*                    **    **     .%*  **              "
+    say "  #%@##@.               #@.      .@#   .@#  #%.             "
+    say "  #%@##@%%              #@.      .@#   .@##@%%              "
+    say "#@%%@#  #%@#            #@%%@#   .@#  #%@#                  "
+    say "  #%    #%@#                  #@%%    #%                    "
+    say "  +**++*+**+                          ++                    "
+    say "  +*::::::**=*      ==+==*==    ==+==+**                    "
+    say "  ::      -:+#.     ::-::-**==-=**-:+#::                    "
+    say "            *#::          ==+==+==  *#::                    "
+    say "          ..=***:.                  *#**:.......            "
+    say "         .#*  **#*                  *#**#**#**#*            "
+    say "        #%@#   .@##@.            .@##@.     #%@##@%%        "
+    say "  #%@##@%%        #@%%          #%@#        #%@#  #%@##@.   "
+    say "#@%%@##@.           #%@##@%%@##@%%                    #@.   "
+    say "#@%%  #@%%                                              #%  "
+    say "*%**.                                                   *#%*"
+    say "..**                                                    ..%*"
+    say "  ::                                                      ::"
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = baby & card4b = 1 then
 do
-say "Baby"
-say "------------------------------------------------------------"
-say "         =@*@+@%@*@@%%                                      "
-say "     #@*@*@-          @@*@%@+@*@*@+@%@*                     "
-say "   #@%@        :@#@@    *@%@+@:     .@#@@%@@@#@:            "
-say "   #@.         :@*        #@+@#@=        %@@@#@%@:          "
-say "   +*.     :*:              -*=*:          **    :*=*-      "
-say "   =*-=  :==*:    ==--==    -*=*:          **:=. .:-*==:    "
-say "   +#*%..-#+#:   .%%**##    =%*%=          ##*%:.  -%*%=..  "
-say "     *%+@:        %%        =@*%-            =%#@: -@*%=@*  "
-say "       +@*@=              #@+@:                #@+@*@=  @@@#"
-say "     #@*@*@=          @@*@%@.                      =@+   .@#"
-say "     #@*@*@*@+@%@#@@%%                             =@=      "
-say "     +#                                            :#+#=    "
-say "     +#-+.                                          :-%=    "
-say "     =+=%::.                                         :%=    "
-say "       =%+%-                                         :%=    "
-say "       +@*@*@+@#                                     :@+    "
-say "         =@*@+@%@#@@                           #@+@*@=      "
-say "           -@+@# .@@%@@@*@%@.              @@#@%@:          "
-say "               :%*%%      *%=%+%+%=%#%*%%*#%%.              "
-say "                :.::      .:.:.:.:.:::.::.:::               "
-say "------------------------------------------------------------"
+    say "Baby"
+    say "------------------------------------------------------------"
+    say "         =@*@+@%@*@@%%                                      "
+    say "     #@*@*@-          @@*@%@+@*@*@+@%@*                     "
+    say "   #@%@        :@#@@    *@%@+@:     .@#@@%@@@#@:            "
+    say "   #@.         :@*        #@+@#@=        %@@@#@%@:          "
+    say "   +*.     :*:              -*=*:          **    :*=*-      "
+    say "   =*-=  :==*:    ==--==    -*=*:          **:=. .:-*==:    "
+    say "   +#*%..-#+#:   .%%**##    =%*%=          ##*%:.  -%*%=..  "
+    say "     *%+@:        %%        =@*%-            =%#@: -@*%=@*  "
+    say "       +@*@=              #@+@:                #@+@*@=  @@@#"
+    say "     #@*@*@=          @@*@%@.                      =@+   .@#"
+    say "     #@*@*@*@+@%@#@@%%                             =@=      "
+    say "     +#                                            :#+#=    "
+    say "     +#-+.                                          :-%=    "
+    say "     =+=%::.                                         :%=    "
+    say "       =%+%-                                         :%=    "
+    say "       +@*@*@+@#                                     :@+    "
+    say "         =@*@+@%@#@@                           #@+@*@=      "
+    say "           -@+@# .@@%@@@*@%@.              @@#@%@:          "
+    say "               :%*%%      *%=%+%+%=%#%*%%*#%%.              "
+    say "                :.::      .:.:.:.:.:::.::.:::               "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = phyllis & card5b = 1 then
 do
-say "Phyllis"
-say "------------------------------------------------------------"
-say "  :&$.        ;&&$&:  &&:      $&$&&$&X&$  X&&&&            "
-say "  :$$$$X$X  X$; .X$:  $$.                $$: ;$$X$:         "
-say "  :&$$&$&X::$&;  X&;::&$:                &&;:+&&$&;:.       "
-say "  ;&&&&&&&&&&&+  $&X&$&&:                &&&&&&&&&$&x       "
-say "  ;&&&&&&&&&                             &&&&&&&&&$&&&&:    "
-say "  :&$::+&$&&X$XXXx$+$+         x$xXXx$+$x::X&&&&$&$&x:.     "
-say " .;$X. ;$X$$XXX$$X$+X+         +Xx$$X$+X+  x$$$$$$X$+..     "
-say "x&$&$. +&$&&  ;&&$&:             ;&&$&;    X&&&&&&$&$&&:    "
-say "X&$&$. +&&&&&&&&&$&X&X         $&$&&$&X&$  X&&&&&&: :&&:    "
-say "x&$&&&&$&$&&          &&: ;&&&&              :&&&&: :&&$&+  "
-say ":;:;;$&$&$&$          &$x+X&&&&              :$&$&:  ;;X&+  "
-say "     $&&&$&&          &&&&&&&&&              ;&&&&:    X&x  "
-say "     $&+  &&                                 ;&&&&: :&&&&x  "
-say "     $&;  &&     X&x&x         X&X&$         :&&&&$&$&$:    "
-say "     x$;  $X     :;;$+;;;;;;;;;X$+;;       :;+X$X$x$xXX.    "
-say "     X&;  &$       ;&X&$&&&&&&&$&;         X&$&&$&X&$&$:    "
-say "     $&&&&&&          &&&&X                X&&&&&&$&x       "
-say "       +&&&&&&+                          &&: ;&&&&$&x       "
-say "       +&$&&::;XXx$:                +$+$x::  ;&&::::.       "
-say "       +&$&&  ;&&$&;               .X&X&$    ;&&            "
-say "       +&&&&     $&X&X         $&$&&$&X&$&&: ;&&            "
-say "                 $&X&$&&&&&&&&&&&+  X&X&$  X&X              "
-say "              :x+.:.:.:..::::::.:   .:.:.xxX$XxXxX.         "
-say "              :XX                        xx+xxX$X$:........."
-say "              ;&$                            ;&&&&$&$&&&&$&$"
-say "          &&&&+                                   x&$&&:    "
-say "  :&$. ;&$&&                                           x&X&$"
-say "  :Xx  ;XxXX                                           +X+Xx"
-say "------------------------------------------------------------"
+    say "Phyllis"
+    say "------------------------------------------------------------"
+    say "  :&$.        ;&&$&:  &&:      $&$&&$&X&$  X&&&&            "
+    say "  :$$$$X$X  X$; .X$:  $$.                $$: ;$$X$:         "
+    say "  :&$$&$&X::$&;  X&;::&$:                &&;:+&&$&;:.       "
+    say "  ;&&&&&&&&&&&+  $&X&$&&:                &&&&&&&&&$&x       "
+    say "  ;&&&&&&&&&                             &&&&&&&&&$&&&&:    "
+    say "  :&$::+&$&&X$XXXx$+$+         x$xXXx$+$x::X&&&&$&$&x:.     "
+    say " .;$X. ;$X$$XXX$$X$+X+         +Xx$$X$+X+  x$$$$$$X$+..     "
+    say "x&$&$. +&$&&  ;&&$&:             ;&&$&;    X&&&&&&$&$&&:    "
+    say "X&$&$. +&&&&&&&&&$&X&X         $&$&&$&X&$  X&&&&&&: :&&:    "
+    say "x&$&&&&$&$&&          &&: ;&&&&              :&&&&: :&&$&+  "
+    say ":;:;;$&$&$&$          &$x+X&&&&              :$&$&:  ;;X&+  "
+    say "     $&&&$&&          &&&&&&&&&              ;&&&&:    X&x  "
+    say "     $&+  &&                                 ;&&&&: :&&&&x  "
+    say "     $&;  &&     X&x&x         X&X&$         :&&&&$&$&$:    "
+    say "     x$;  $X     :;;$+;;;;;;;;;X$+;;       :;+X$X$x$xXX.    "
+    say "     X&;  &$       ;&X&$&&&&&&&$&;         X&$&&$&X&$&$:    "
+    say "     $&&&&&&          &&&&X                X&&&&&&$&x       "
+    say "       +&&&&&&+                          &&: ;&&&&$&x       "
+    say "       +&$&&::;XXx$:                +$+$x::  ;&&::::.       "
+    say "       +&$&&  ;&&$&;               .X&X&$    ;&&            "
+    say "       +&&&&     $&X&X         $&$&&$&X&$&&: ;&&            "
+    say "                 $&X&$&&&&&&&&&&&+  X&X&$  X&X              "
+    say "              :x+.:.:.:..::::::.:   .:.:.xxX$XxXxX.         "
+    say "              :XX                        xx+xxX$X$:........."
+    say "              ;&$                            ;&&&&$&$&&&&$&$"
+    say "          &&&&+                                   x&$&&:    "
+    say "  :&$. ;&$&&                                           x&X&$"
+    say "  :Xx  ;XxXX                                           +X+Xx"
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = old woman & card6b = 1 then
 do
-say "Old Woman with the Red Petticoat"
-say "------------------------------------------------------------"
-say "                &&X&X&&$&X&;      +&X&X    ;&+              "
-say "         :;;;;;;++:......;+;;;;;;;..:+;;;. :+;;;;;.         "
-say "       ..;X+XxXxXX:......+X+X+XXxX..:X+XX..;XxX+XX:.        "
-say "      .&&X&X&X&$&&X&X&&$&X&X&X&&. +&X&X&&$&: :&X&&$&:       "
-say "     &$  +&X&X&&.        X&X&X&&$&x&X&X&&$&+&+  &&$&:       "
-say "     &&&&X&X&X&&. +&X&&$&X&X&X&&. +&;      ;&X&X&&$&:       "
-say "  :+;x+::;x+x+++  ;x;::++::;x+xx;+;x;+;++;+;x+x+xx:::+;     "
-say "  ;&+$X  +&x&x$$:.+&+  $$. ;&x&&$&+&+&x&&X&+&x$x&&. :&X     "
-say "  ;&+         $$&&X&+  $$.   :&&$&.                 :&X     "
-say "  ;&x                  $&X&;    $&.                 :&$     "
-say "x&X&x    +&X&X&&.        X&X&X&&$&.        ;&X&X&&: :&$     "
-say "+X;::    :::::xx++;+:    :::::::::  :+;++;+;X+::::. .::+;   "
-say "+$;           XXXX+$+::           .:;$x$$x$;X;        :$X   "
-say "x&;               +&X&&           +&X&X               :&$   "
-say "x&;                                                   :&$   "
-say "+$;   .$$x$x$XXX$$x$x$$X$.   :$$X$+$x$x$$X$+$x$x      :$X   "
-say "+$:  x+:::::::XX:::::::XX;x;x+$$:::::::$$:::::::xx.   :$x   "
-say "+$;  $X       XX       XX+X+X+$$.     .$$.      $$:   :$x..."
-say "x&;  &$       &&.      $&.   :&&.     .&&.      &&:   :&$$&:"
-say "x&;             &&X&X&&         $&+&X&X                  $&:"
-say "+$;                    XXx$+$x$$.                        X$:"
-say "+X:   .++;+;+;++++:    :::::::::  ;+;+;++++.             xX:"
-say "+X:  ..XX+X+X+xxXX:...............;X+X+XX+X:..           xX:"
-say "x&;  &$         &&X&X&&$&X&X&X&&$&.        ;&+           $&:"
-say "x&;                                   .&&.            :&$   "
-say "..;&+$$$&:                             ..X&+&+        :&X   "
-say "  :X;:::;.                               :;:;:        :x+   "
-say "  ;X+                                                 :Xx   "
-say "------------------------------------------------------------"
+    say "Old Woman with the Red Petticoat"
+    say "------------------------------------------------------------"
+    say "                &&X&X&&$&X&;      +&X&X    ;&+              "
+    say "         :;;;;;;++:......;+;;;;;;;..:+;;;. :+;;;;;.         "
+    say "       ..;X+XxXxXX:......+X+X+XXxX..:X+XX..;XxX+XX:.        "
+    say "      .&&X&X&X&$&&X&X&&$&X&X&X&&. +&X&X&&$&: :&X&&$&:       "
+    say "     &$  +&X&X&&.        X&X&X&&$&x&X&X&&$&+&+  &&$&:       "
+    say "     &&&&X&X&X&&. +&X&&$&X&X&X&&. +&;      ;&X&X&&$&:       "
+    say "  :+;x+::;x+x+++  ;x;::++::;x+xx;+;x;+;++;+;x+x+xx:::+;     "
+    say "  ;&+$X  +&x&x$$:.+&+  $$. ;&x&&$&+&+&x&&X&+&x$x&&. :&X     "
+    say "  ;&+         $$&&X&+  $$.   :&&$&.                 :&X     "
+    say "  ;&x                  $&X&;    $&.                 :&$     "
+    say "x&X&x    +&X&X&&.        X&X&X&&$&.        ;&X&X&&: :&$     "
+    say "+X;::    :::::xx++;+:    :::::::::  :+;++;+;X+::::. .::+;   "
+    say "+$;           XXXX+$+::           .:;$x$$x$;X;        :$X   "
+    say "x&;               +&X&&           +&X&X               :&$   "
+    say "x&;                                                   :&$   "
+    say "+$;   .$$x$x$XXX$$x$x$$X$.   :$$X$+$x$x$$X$+$x$x      :$X   "
+    say "+$:  x+:::::::XX:::::::XX;x;x+$$:::::::$$:::::::xx.   :$x   "
+    say "+$;  $X       XX       XX+X+X+$$.     .$$.      $$:   :$x..."
+    say "x&;  &$       &&.      $&.   :&&.     .&&.      &&:   :&$$&:"
+    say "x&;             &&X&X&&         $&+&X&X                  $&:"
+    say "+$;                    XXx$+$x$$.                        X$:"
+    say "+X:   .++;+;+;++++:    :::::::::  ;+;+;++++.             xX:"
+    say "+X:  ..XX+X+X+xxXX:...............;X+X+XX+X:..           xX:"
+    say "x&;  &$         &&X&X&&$&X&X&X&&$&.        ;&+           $&:"
+    say "x&;                                   .&&.            :&$   "
+    say "..;&+$$$&:                             ..X&+&+        :&X   "
+    say "  :X;:::;.                               :;:;:        :x+   "
+    say "  ;X+                                                 :Xx   "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = black horse & card7b = 1 then
 do
-say "Black horse"
-say "------------------------------------------------------------"
-say "                                                ;&:         "
-say "                                           &$&x&X&: ;&$&&&  "
-say "                                 &&&&&$&x&&&+  &X&X&+&$&&&  "
-say "                               &$      &x   .&x&: ;&+&$&&&  "
-say "                             $&  &&&&&$&x&&&+  &X&X&+&$&&&  "
-say "                           +&XX$XX&XX$x&+&X$x&+&+&+&;$x$X$  "
-say "                       +X;$x&X$&XX&XX  &+&X$;  &x&+&+&x&X$  "
-say "                   .$+$$&+&          $+&+&$&x$;&: ;&+&x&$$  "
-say "               .$+$;&:                    :&X&+&+$+&+&X&$$  "
-say "            x;x+$;     ;x;x;x                     ;$;$+$XX  "
-say "        ;;;;x;x:       ;x    :;                       :x++  "
-say "    :.::+;. . .        :+  O ;+                    :.:;+++  "
-say "    +;:::.              :;+  .:                   :+.:.:::  "
-say ";x;;;:                   :;:;                     .;        "
-say "+$                   :X.       X+                           "
-say "X&$$                   +$+&x&XX             :&:             "
-say "X&$X                                      .&x$.             "
-say "+$XX&x&XXX$x&+$:                       &+$X$;               "
-say "    $x&X    &;                   X&X$&x&+                   "
-say "        &&&x             x&$&&&&$&&&&&$&x                   "
-say "  &&&$&$             ;&&&x&            &x&X                 "
-say "    &$&$         :&+&X&.                 &&&+               "
-say "      &$&&&$&x&X&$&.                     &&&+               "
-say "                                       &x&&&$&:             "
-say "------------------------------------------------------------"
+    say "Black Horse"
+    say "------------------------------------------------------------"
+    say "                                                ;&:         "
+    say "                                           &$&x&X&: ;&$&&&  "
+    say "                                 &&&&&$&x&&&+  &X&X&+&$&&&  "
+    say "                               &$      &x   .&x&: ;&+&$&&&  "
+    say "                             $&  &&&&&$&x&&&+  &X&X&+&$&&&  "
+    say "                           +&XX$XX&XX$x&+&X$x&+&+&+&;$x$X$  "
+    say "                       +X;$x&X$&XX&XX  &+&X$;  &x&+&+&x&X$  "
+    say "                   .$+$$&+&          $+&+&$&x$;&: ;&+&x&$$  "
+    say "               .$+$;&:                    :&X&+&+$+&+&X&$$  "
+    say "            x;x+$;     ;x;x;x                     ;$;$+$XX  "
+    say "        ;;;;x;x:       ;x    :;                       :x++  "
+    say "    :.::+;. . .        :+  O ;+                    :.:;+++  "
+    say "    +;:::.              :;+  .:                   :+.:.:::  "
+    say ";x;;;:                   :;:;                     .;        "
+    say "+$                   :X.       X+                           "
+    say "X&$$                   +$+&x&XX             :&:             "
+    say "X&$X                                      .&x$.             "
+    say "+$XX&x&XXX$x&+$:                       &+$X$;               "
+    say "    $x&X    &;                   X&X$&x&+                   "
+    say "        &&&x             x&$&&&&$&&&&&$&x                   "
+    say "  &&&$&$             ;&&&x&            &x&X                 "
+    say "    &$&$         :&+&X&.                 &&&+               "
+    say "      &$&&&$&x&X&$&.                     &&&+               "
+    say "                                       &x&&&$&:             "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = iron man & card8b = 1 then
 do
-say "Iron man"
-say "------------------------------------------------------------"
-say "                    #%@#%@%%@#%@%%@#%@%%@#%@%%@#            "
-say "                  %@%%@#%@%%@#%@%%@#%@%%@#%@%%@#@@          "
-say "               .@#%@%%@#%@%%@#%@%%@#%@%%@#%@%%@*@@%%        "
-say "               .*+*****+*****+*****+*****+**+**+**++        "
-say "              -=..++=++=++=++=++=++=++=++=++=++=..==        "
-say "  ::          ==  :-:::::-::+=++==+=++==:::-::::  ::::      "
-say "::==::        ==           .============           .*=      "
-say "*@..%*..      **..      ......        ......      .:%*      "
-say "*%.   *%.      .%*      *%**%*        **%*#%      *#%*      "
-say "*%##  *%.      .%*                                *#%*      "
-say "  #%  #@.      .@#  #%@#%@%%@#        #%@#%@%%@#@@%%        "
-say "  #%. #@.      .@#%@%%@#%@%%@#        #%@#%@%%@#@@%%        "
-say "  #%  #@.         %@%%@#%@%%@#        #%@#%@%%@*@@%#        "
-say "  **  *%.         *%##%*#%*#%*        *#%*%%*#%*%%**        "
-say "  +*  *#.         ..***+*#**#+        ***+*#**#+*#..        "
-say "  +*  +*.           ::::*#***+        +**+*****+*#==+=      "
-say "  ++  +*.               *****+==-==-==+**+**+**+**+**+==    "
-say "  **  *#::          ::::*#**#+*#**#+*#**#+*#**#+++**#+##    "
-say "  **  +***    ......**#+*#**#+*#**#+**++#+*#**#+  **#+##...."
-say "  **    **    **#**#**#**#**#**#**#+   .#+*#**#+  **#+##**#+"
-say "  #%    #%  %@%%@#%@%%@#%@%%  %@%%@#   .@#%@%%  @@ .@*@@%%@*"
-say "#@%%    #%@#%@%%@#%@..@#%@%%@#%@%%@#%@%%@#%@%%@#@@ .@*@@%%@*"
-say "#@%%@##@%%@##@..@#%@%%@#%@%%  %@%%@#      %@%%  @@%%@*@@ .@*"
-say "        #%@#  #%@#  #%@*%@%#  %@%%@*      %@%#  %@%#  @@%#  "
-say "*%.      .%**%**.    .%*#%*#%*   .%*              **     .%*"
-say "..        ......      ........    ..              ..      .."
-say "------------------------------------------------------------"
+    say "Iron Man"
+    say "------------------------------------------------------------"
+    say "                    #%@#%@%%@#%@%%@#%@%%@#%@%%@#            "
+    say "                  %@%%@#%@%%@#%@%%@#%@%%@#%@%%@#@@          "
+    say "               .@#%@%%@#%@%%@#%@%%@#%@%%@#%@%%@*@@%%        "
+    say "               .*+*****+*****+*****+*****+**+**+**++        "
+    say "              -=..++=++=++=++=++=++=++=++=++=++=..==        "
+    say "  ::          ==  :-:::::-::+=++==+=++==:::-::::  ::::      "
+    say "::==::        ==           .============           .*=      "
+    say "*@..%*..      **..      ......        ......      .:%*      "
+    say "*%.   *%.      .%*      *%**%*        **%*#%      *#%*      "
+    say "*%##  *%.      .%*                                *#%*      "
+    say "  #%  #@.      .@#  #%@#%@%%@#        #%@#%@%%@#@@%%        "
+    say "  #%. #@.      .@#%@%%@#%@%%@#        #%@#%@%%@#@@%%        "
+    say "  #%  #@.         %@%%@#%@%%@#        #%@#%@%%@*@@%#        "
+    say "  **  *%.         *%##%*#%*#%*        *#%*%%*#%*%%**        "
+    say "  +*  *#.         ..***+*#**#+        ***+*#**#+*#..        "
+    say "  +*  +*.           ::::*#***+        +**+*****+*#==+=      "
+    say "  ++  +*.               *****+==-==-==+**+**+**+**+**+==    "
+    say "  **  *#::          ::::*#**#+*#**#+*#**#+*#**#+++**#+##    "
+    say "  **  +***    ......**#+*#**#+*#**#+**++#+*#**#+  **#+##...."
+    say "  **    **    **#**#**#**#**#**#**#+   .#+*#**#+  **#+##**#+"
+    say "  #%    #%  %@%%@#%@%%@#%@%%  %@%%@#   .@#%@%%  @@ .@*@@%%@*"
+    say "#@%%    #%@#%@%%@#%@..@#%@%%@#%@%%@#%@%%@#%@%%@#@@ .@*@@%%@*"
+    say "#@%%@##@%%@##@..@#%@%%@#%@%%  %@%%@#      %@%%  @@%%@*@@ .@*"
+    say "        #%@#  #%@#  #%@*%@%#  %@%%@*      %@%#  %@%#  @@%#  "
+    say "*%.      .%**%**.    .%*#%*#%*   .%*              **     .%*"
+    say "..        ......      ........    ..              ..      .."
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = king & card9b = 1 then
 do
-say "King"
-say "------------------------------------------------------------"
-say "               00       5060080509    30980                 "
-say "               223313333321    123333332222                 "
-say "               009050800405    308004040980                 "
-say "               00  70800          00403  80                 "
-say "               00     00          00     80                 "
-say "               55                        55                 "
-say "               66                        46                 "
-say "               00                        98                 "
-say "               00                        80                 "
-say "               99                        69                 "
-say "          11711441171111717111171111717115571717            "
-say "          88584889820988584889828988505869950584            "
-say "          00604       00          00       50409            "
-say "        08  20600803  00          00  309805040980905       "
-say "        9455717115935269          6935294717136549593       "
-say "        94997    5939499          9959594    79469592       "
-say "          001                                1098090508     "
-say "109  402  001      70800          00403      1098090508     "
-say "795  593  997      79477           7593      795 729394447  "
-say "795  293  547      745              341      195  29345691  "
-say "109  402    20600803  00          00  3098050409  505  001  "
-say "109  402    204       00605    30800     80502       08001  "
-say "784  583  991             799497           58595     86  392"
-say "745  12177447              2232            1234577   45  142"
-say "109     08001                                109807  08  304"
-say "109007  08              506008050800            807  08  304"
-say "   907  09         70980502    30900503         907  09  305"
-say "   55   55       131551171      111135333       557  55   17"
-say "   007  08       90509              40609       807  08     "
-say "------------------------------------------------------------"
+    say "King"
+    say "------------------------------------------------------------"
+    say "               00       5060080509    30980                 "
+    say "               223313333321    123333332222                 "
+    say "               009050800405    308004040980                 "
+    say "               00  70800          00403  80                 "
+    say "               00     00          00     80                 "
+    say "               55                        55                 "
+    say "               66                        46                 "
+    say "               00                        98                 "
+    say "               00                        80                 "
+    say "               99                        69                 "
+    say "          11711441171111717111171111717115571717            "
+    say "          88584889820988584889828988505869950584            "
+    say "          00604       00          00       50409            "
+    say "        08  20600803  00          00  309805040980905       "
+    say "        9455717115935269          6935294717136549593       "
+    say "        94997    5939499          9959594    79469592       "
+    say "          001                                1098090508     "
+    say "109  402  001      70800          00403      1098090508     "
+    say "795  593  997      79477           7593      795 729394447  "
+    say "795  293  547      745              341      195  29345691  "
+    say "109  402    20600803  00          00  3098050409  505  001  "
+    say "109  402    204       00605    30800     80502       08001  "
+    say "784  583  991             799497           58595     86  392"
+    say "745  12177447              2232            1234577   45  142"
+    say "109     08001                                109807  08  304"
+    say "109007  08              506008050800            807  08  304"
+    say "   907  09         70980502    30900503         907  09  305"
+    say "   55   55       131551171      111135333       557  55   17"
+    say "   007  08       90509              40609       807  08     "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = moon angel & card10b = 1 then
 do
-say "Moon Angel"
-say "------------------------------------------------------------"
-say "         -%@)@*    >@]@}]@=  ##       >@<%}#@+    ]@*  "
-say "       +)<)]  =))<):    <)>)>))  -)<))-      =)>])<)*]<     "
-say "      :=<><< :=<<><:: ::><*<>><::-<>><-  ::::-<*<<><+<>     "
-say "     [@>@}%@)@)@#}%>@]%}]@)@)}#)@<%][@-  #}}@)@)@@-  @}     "
-say "  =@@}@>@}@@  =@#       ]@=                     @@}@>@}@@=  "
-say ">#)##[#>#)    =#}         +#)[[)#<#][#-  }[}#<#)##-  #[##)#<"
-say "+<*<<><+<*  :==<<         =<*+++*+<*+*:  <>+*=*=<<:  <><<*<+"
-say ">#)##[#>#]  <#)#}         +#)  O -#]     }[   O ##-  #[##)#<"
-say "<@]@@  +@[  )@*              ##)@)@[       }@)@]@@}@*  %@)@)"
-say "<@]@@  +@[  )@*  }%: -@}                   #@+    ]@*  %@)@)"
-say "*)>))  =)>  *)=  ==  :)<=*:         +*:    <)=  **>)+  ==+)*"
-say ">}<}#  +})  <}+      -}])}=         ]}-    ]}=  }}]}+    +}<"
-say "<@]@@  +@[  )@*         ]@=      =@[}@]@<  }@+  @@-      *@)"
-say "<@]@@    -%@  =@#}%>@<              }@]@<%}     @@-         "
-say ":-=]]><: :]]  =])--*]*  *<-         ----:--  -<+--          "
-say "  -]])[: :[[::=])  +]*  >]=::     :::: : ::::=[<            "
-say "     [@: -%@)@*           *@)    =@[}@]@<%}#@)@]            "
-say "     [@:    )@*  }%>@]@}     ##              +@)            "
-say "     )[+)>  >[>)<::::=[)     ::*)=           =[>))>)=       "
-say "     >)+]<  *)*]]::  :<>::     >]+:::::::::::=)*))<]+::     "
-say "       +@[    =@#}%:    ]@=    )@)@[}@]@<%}#@+    ]@>@}     "
-say "       +@[         >@]@}]@)@)    =@[}@]@<%}          @}     "
-say "     <[*})         ::-}]:::::    -})]}=::::          }]][-  "
-say "     +>=>+           :)<         -)>+>:  ----:       >*))=-:"
-say "                     -@}         =@[     %}#@+         %@)@)"
-say "                                 =@[     %}#@+       @}  *@)"
-say "                                 -#)]}-      +}<}}]}*       "
-say "                                 :===+==-====+<*++=+-       "
-say "                                      >@<%}#@)@)            "
-say "------------------------------------------------------------"
+    say "Moon Angel"
+    say "------------------------------------------------------------"
+    say "         -%@)@*    >@]@}]@=  ##       >@<%}#@+    ]@*  "
+    say "       +)<)]  =))<):    <)>)>))  -)<))-      =)>])<)*]<     "
+    say "      :=<><< :=<<><:: ::><*<>><::-<>><-  ::::-<*<<><+<>     "
+    say "     [@>@}%@)@)@#}%>@]%}]@)@)}#)@<%][@-  #}}@)@)@@-  @}     "
+    say "  =@@}@>@}@@  =@#       ]@=                     @@}@>@}@@=  "
+    say ">#)##[#>#)    =#}         +#)[[)#<#][#-  }[}#<#)##-  #[##)#<"
+    say "+<*<<><+<*  :==<<         =<*+++*+<*+*:  <>+*=*=<<:  <><<*<+"
+    say ">#)##[#>#]  <#)#}         +#)  O -#]     }[   O ##-  #[##)#<"
+    say "<@]@@  +@[  )@*              ##)@)@[       }@)@]@@}@*  %@)@)"
+    say "<@]@@  +@[  )@*  }%: -@}                   #@+    ]@*  %@)@)"
+    say "*)>))  =)>  *)=  ==  :)<=*:         +*:    <)=  **>)+  ==+)*"
+    say ">}<}#  +})  <}+      -}])}=         ]}-    ]}=  }}]}+    +}<"
+    say "<@]@@  +@[  )@*         ]@=      =@[}@]@<  }@+  @@-      *@)"
+    say "<@]@@    -%@  =@#}%>@<              }@]@<%}     @@-         "
+    say ":-=]]><: :]]  =])--*]*  *<-         ----:--  -<+--          "
+    say "  -]])[: :[[::=])  +]*  >]=::     :::: : ::::=[<            "
+    say "     [@: -%@)@*           *@)    =@[}@]@<%}#@)@]            "
+    say "     [@:    )@*  }%>@]@}     ##              +@)            "
+    say "     )[+)>  >[>)<::::=[)     ::*)=           =[>))>)=       "
+    say "     >)+]<  *)*]]::  :<>::     >]+:::::::::::=)*))<]+::     "
+    say "       +@[    =@#}%:    ]@=    )@)@[}@]@<%}#@+    ]@>@}     "
+    say "       +@[         >@]@}]@)@)    =@[}@]@<%}          @}     "
+    say "     <[*})         ::-}]:::::    -})]}=::::          }]][-  "
+    say "     +>=>+           :)<         -)>+>:  ----:       >*))=-:"
+    say "                     -@}         =@[     %}#@+         %@)@)"
+    say "                                 =@[     %}#@+       @}  *@)"
+    say "                                 -#)]}-      +}<}}]}*       "
+    say "                                 :===+==-====+<*++=+-       "
+    say "                                      >@<%}#@)@)            "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = beautiful lady & card11b = 1 then
 do
-say "Beautiful Lady"
-say "------------------------------------------------------------"
-say "  #%@%*@%%@#  #%@#%@%%  @@%%@*@@ .@*@#%#    %%@*@+@%@*@+    "
-say "*@.   *@.                  .@*  %%@*  %%@*  %%@*@+@%@*@+@#  "
-say "    %%   .%##@.   %@#%%*@@##    %%%*@#%%%*@* :%*@+%%%*@+@*  "
-say "==. ==  ====   .===+. .  . .=-== .==+=  .     . . ==..+-    "
-say "=+. ++  ==:::---+=::        :::: .::*=            :: .::-:  "
-say "=+. ++  ==::=+==+=::::             .=-      :::.:.:.    +=  "
-say "*@. %%  *%%**@**%**%**..                  ..#*%+%=%*..  @*.."
-say "*%. %%  *#  *%. .... .%*        ..       .%*  .... :%=  %#%="
-say "*%..%#  *#. *%..%*#% .%*        #*       .%+ :%*%+ :%=   :%="
-say "  *%@%*@#%@#   .%*%O.   @@      %%@*   .%*   :%*O+   :@+    "
-say "*@%%@%*@.   #@%%@#%@%%@*@@       .@*   .@*@*%%@*@+@%@+  @#  "
-say "*@%%@%*@..@#                     .@*                    @#  "
-say "  #%@%*@.                        .@*@#                  @#  "
-say "  +*#**#.                     ##**#+#*             :#+#=    "
-say "=***#*+#++                    ........             .#=..    "
-say "::+***::+*           .+=      ++   .+=   .+-==    +=*=      "
-say "  +***-=+*=-         .*+==-==-**-==-**===-*=*+ .=:*+-:      "
-say "  +*#*+#==#*         .+=##**+=++==#++===+=#+== .#=+=        "
-say "  =+#*+#:.*+..  ..      ****.....:#=.....:*=  .:#=          "
-say "    **+#**  *#..*+        **#+#***#+#***#=   .*+#=          "
-say "    @%*@%%@##@.   %@%%                      %#              "
-say "      *@%%@##@%%     .@*@@             .@*@*%#              "
-say "        #%@##@%%@#        %%@*@@%%@*@#%%@*                  "
-say "------------------------------------------------------------"
+    say "Beautiful Lady"
+    say "------------------------------------------------------------"
+    say "  #%@%*@%%@#  #%@#%@%%  @@%%@*@@ .@*@#%#    %%@*@+@%@*@+    "
+    say "*@.   *@.                  .@*  %%@*  %%@*  %%@*@+@%@*@+@#  "
+    say "    %%   .%##@.   %@#%%*@@##    %%%*@#%%%*@* :%*@+%%%*@+@*  "
+    say "==. ==  ====   .===+. .  . .=-== .==+=  .     . . ==..+-    "
+    say "=+. ++  ==:::---+=::        :::: .::*=            :: .::-:  "
+    say "=+. ++  ==::=+==+=::::             .=-      :::.:.:.    +=  "
+    say "*@. %%  *%%**@**%**%**..                  ..#*%+%=%*..  @*.."
+    say "*%. %%  *#  *%. .... .%*        ..       .%*  .... :%=  %#%="
+    say "*%..%#  *#. *%..%*#% .%*        #*       .%+ :%*%+ :%=   :%="
+    say "  *%@%*@#%@#   .%*%O.   @@      %%@*   .%*   :%*O+   :@+    "
+    say "*@%%@%*@.   #@%%@#%@%%@*@@       .@*   .@*@*%%@*@+@%@+  @#  "
+    say "*@%%@%*@..@#                     .@*                    @#  "
+    say "  #%@%*@.                        .@*@#                  @#  "
+    say "  +*#**#.                     ##**#+#*             :#+#=    "
+    say "=***#*+#++                    ........             .#=..    "
+    say "::+***::+*           .+=      ++   .+=   .+-==    +=*=      "
+    say "  +***-=+*=-         .*+==-==-**-==-**===-*=*+ .=:*+-:      "
+    say "  +*#*+#==#*         .+=##**+=++==#++===+=#+== .#=+=        "
+    say "  =+#*+#:.*+..  ..      ****.....:#=.....:*=  .:#=          "
+    say "    **+#**  *#..*+        **#+#***#+#***#=   .*+#=          "
+    say "    @%*@%%@##@.   %@%%                      %#              "
+    say "      *@%%@##@%%     .@*@@             .@*@*%#              "
+    say "        #%@##@%%@#        %%@*@@%%@*@#%%@*                  "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = princess aurelia & card12b = 1 then
 do
-say "Princess Aurelia"
-say "------------------------------------------------------------"
-say "        %@=@%        %@*@@        @@+@@                     "  
-say "        ...=-..    .........    ..==::.                     "  
-say "          .@%%@#  =@*     #@+  :@%@@-                       " 
-say "          .@%   @@.          @@   @@-                       " 
-say "           ==                     ==:                       "
-say "          .@%                     @@-                       "
-say "          .@%                     @@-                       "
-say "          .%*                     #%-                       "
-say "          .%*                     %%:                       "
-say "        %@:  %@%@@.          @@=@%  :@@                     "
-say "     +@@        @@*@*%@*@@%@+@@        +@+                  "
-say "     -**        --:-:--:--:-:--        -*-                  "
-say "     +@@                               +@+                  "
-say "   @@#@@     %@#             @@        +@+                  "
-say "   ##:..=+.  +#=     =+:     *#   =+:++ ..++                "
-say "   %%.  *%:  *%*     #%-     %%   %%=%%   %%.               "
-say "*@*@@.    .@%%@%@@*@*%@*@@%@+@@=@%@@-     @@:               "
-say "=#=     +*:                         .**   ##=**             "
-say "=#-     *#:                         .##   **=##             "
-say "*@+     %@:  %@%@@*@*     #@+@@=@%  :@@     =@@             "
-say "+%=     *%:     %%.          #%     .%%     -%%             "
-say "=*-..   +*.     ==   ..      ==     .**     :**..           "
-say "*@*@@.  %@:          %@=            :@@     =@@%@:          "
-say "   @@.  %@:          %@*@@          :@@        %@-          "
-say "   ++.  =+.          ::.::          .++        =+:          "
-say "   @@.  %@:                         :@@        %@-          "
-say "*@*@@.  %@:     @@*@*%@*@@%@+@@     :@@        %@-          "
-say "+@=       .%#*%*  =@*%@*@@#@=       :@@        #@:          "
-say "+@=       .@##@*  -@*%@*%@#%=       :%@        *@:          "
-say "*@+          %@%@@.               @@-          %@-          "
-say "*@*@@.         .@@.          %@=@%@@-          #@=@%        "
-say ":=-==           ==           ==:====:          -=:==        "
-say "   @@.          @@*@*%@*@@%@+@@   @@-          %@=@@        "
-say "------------------------------------------------------------"
+    say "Princess Aurelia"
+    say "------------------------------------------------------------"
+    say "        %@=@%        %@*@@        @@+@@                     "  
+    say "        ...=-..    .........    ..==::.                     "  
+    say "          .@%%@#  =@*     #@+  :@%@@-                       " 
+    say "          .@%   @@.          @@   @@-                       " 
+    say "           ==                     ==:                       "
+    say "          .@%                     @@-                       "
+    say "          .@%                     @@-                       "
+    say "          .%*                     #%-                       "
+    say "          .%*                     %%:                       "
+    say "        %@:  %@%@@.          @@=@%  :@@                     "
+    say "     +@@        @@*@*%@*@@%@+@@        +@+                  "
+    say "     -**        --:-:--:--:-:--        -*-                  "
+    say "     +@@                               +@+                  "
+    say "   @@#@@     %@#             @@        +@+                  "
+    say "   ##:..=+.  +#=     =+:     *#   =+:++ ..++                "
+    say "   %%.  *%:  *%*     #%-     %%   %%=%%   %%.               "
+    say "*@*@@.    .@%%@%@@*@*%@*@@%@+@@=@%@@-     @@:               "
+    say "=#=     +*:                         .**   ##=**             "
+    say "=#-     *#:                         .##   **=##             "
+    say "*@+     %@:  %@%@@*@*     #@+@@=@%  :@@     =@@             "
+    say "+%=     *%:     %%.          #%     .%%     -%%             "
+    say "=*-..   +*.     ==   ..      ==     .**     :**..           "
+    say "*@*@@.  %@:          %@=            :@@     =@@%@:          "
+    say "   @@.  %@:          %@*@@          :@@        %@-          "
+    say "   ++.  =+.          ::.::          .++        =+:          "
+    say "   @@.  %@:                         :@@        %@-          "
+    say "*@*@@.  %@:     @@*@*%@*@@%@+@@     :@@        %@-          "
+    say "+@=       .%#*%*  =@*%@*@@#@=       :@@        #@:          "
+    say "+@=       .@##@*  -@*%@*%@#%=       :%@        *@:          "
+    say "*@+          %@%@@.               @@-          %@-          "
+    say "*@*@@.         .@@.          %@=@%@@-          #@=@%        "
+    say ":=-==           ==           ==:====:          -=:==        "
+    say "   @@.          @@*@*%@*@@%@+@@   @@-          %@=@@        "
+    say "------------------------------------------------------------"
 response = ""
 end
 if response = 1 then
 do
     say maninmoontext
+    maninmoonswitch = random(1,23)
 	say ""
 	say "Man-in-the-moon: 'Any playing card catch your eye today?'"
 	say ""
@@ -797,82 +965,100 @@ do
     pull buy
     say "You entered: " buy
     say ""
-if buy = 1 & credits = 10 then
+if buy = 1 & credits > 9 then
 do
     say "Behold the card of the moon-calf! A sweet boy if I'll recall, now up to princely things. Too busy to visit us old moon farts! You could have learned a thing or two from him."
     card2 = moon calf
     card2b = 1
     card2c = "SOLD"
     credits = credits - 10
-    response = ""
+    buy = ""
 end
-if buy = 2 & credits = 10 & card3b = 0 then
+else
+if buy = 2 & credits > 9 & card3b = 0 then
 do
     say "Master cobbler."
     card3 = master cobbler
     card3b = 1
     card3c = "SOLD"
     credits = credits - 10
-    response = ""
+    buy = ""
 end
-if buy = 3 & credits = 20 & card4b = 0 then
+else
+if buy = 3 & credits > 19 & card4b = 0 then
 do
     say "Baby."
     card4 = baby
     card4b = 1
     card4c = "SOLD"
     credits = credits - 20
-    response = ""
+    buy = ""
 end
-if buy = 4 & credits = 20 & card5b = 0 then
+else
+if buy = 4 & credits > 19 & card5b = 0 then
 do
     say "Phyllis."
     card5 = phyllis
     card5b = 1
     card5c = "SOLD"
     credits = credits - 20
-    response = ""
+    buy = ""
 end
-if buy = 5 & credits = 30 & card6b = 0 then
+else
+if buy = 5 & credits > 29 & card6b = 0 then
 do
     say "Old woman."
     card6 = old woman
     card6b = 1
     card6c = "SOLD"
     credits = credits - 30
-    response = ""
+    buy = ""
 end
-if buy = 6 & credits = 30 & card7b = 0 then
+else
+if buy = 6 & credits > 29 & card7b = 0 then
 do
     say "Black horse."
     card7 = black horse
     card7b = 1
     card7c = "SOLD"
     credits = credits - 30
-    response = ""
+    buy = ""
 end
-if buy = 7 & credits = 60 & card8b = 0 then
+else
+if buy = 7 & credits > 59 & card8b = 0 then
 do
     say "Iron man."
     card8 = iron man
     card8b = 1
     card8c = "SOLD"
     credits = credits - 60
-    response = ""
+    buy = ""
 end
-if buy = 8 & credits = 60 & card9b = 0 then
+else
+if buy = 8 & credits > 59 & card9b = 0 then
 do
     say "King."
     card9 = king
     card9b = 1
     card9c = "SOLD"
     credits = credits - 60
-    response = ""
+    buy = ""
 end
 end
-if response = 2 & moonangelcadence <> day2 then
+if response = 2 then
+do
+    say ""
+    say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. It was a long day and you are sleepy. Goodnight!"
+    day2 = day2 + 1 
+    response = 0
+    maninmoonswitch = random(1,23)
+    moonangelswitch = random(1,4)
+    gardenswitch = random(1,4)
+end
+if response = 3 & moonangelcadence <> day2 then
 do
     say moonangeltext
+    moonangelswitch = random(1,4)
     say ""
     say "Will you TALK with him?"
     say ""
@@ -884,7 +1070,7 @@ do
     moonangelmood = moonangelmood + 1
     moonangelcadence = day2
     moonangeldisplay = "MOON ANGEL MOOD: "
-    say "The Moon Angel ignores you. He does not appear to be interested in engaging in conversation with you, or anybody else for that matter."
+    say "The Moon Angel ignores you. He does not appear to be interested in engaging in conversation with you... or anybody else for that matter."
 end
 if talk = talk & moonangelmood > 5 & moonangelmood < 11 then
 do
@@ -896,50 +1082,103 @@ if talk = talk & moonangelmood > 10 & moonangelmood < 16 then
 do
     moonangelmood = moonangelmood + 1
     moonangelcadence = day2
-    say "The Moon Angel shares a few brief emotionless pleasantries before departing... Doing whatever moon angels do out there."
+    say "The Moon-Angel shares a few brief emotionless pleasantries before departing... doing whatever moon angels do out there in the cosmos."
 end
 if talk = talk & moonangelmood > 15 & moonangelmood < 21 then
 do
     moonangelmood = moonangelmood + 1
     moonangelcadence = day2
-    say "Moon Angel: You are a chatty little fellow, aren't you?"
+    say "Moon-Angel: 'You are a chatty little fellow, aren't you?'"
 end
 if talk = talk & moonangelmood > 20 & moonangelmood < 26 then
 do
     moonangelmood = moonangelmood + 1
     moonangelcadence = day2
-    say "Moon Angel: Good day. Are you enjoying your stay in the moon-house?"
+    say "Moon-Angel: 'Good day. Are you enjoying your stay in the moon-house?'"
 end
 if talk = talk & moonangelmood = 26 then
 do
     moonangelmood = moonangelmood + 1
     moonangelcadence = day2
-    say "Moon Angel: You're a nice child. Here."
+    say "Moon-Angel: 'You're a less-annoying child than some of the others. Here.'"
     say ""
-    say "The Moon Angel reveals a holographic playing card from under his robe and places it in your hand. While this gesture left you starstruck, you are more surprised by a short flashing smile that enters his beautiful face. He then dissapears down the hallway and leaves you to your chores."
+    say "The Moon-Angel reveals a holographic playing card from under his robe and places it in your hand. While this gesture left you starstruck, you are more surprised by a short flashing smile that enters his beautiful face. He then dissapears down the hallway and leaves you to your chores."
     card10 = moon angel
     card10b = 1
 end
 if talk = talk & moonangelmood > 26 then
 do
-    say "Moon Angel: Good day child."
+    say "Moon-Angel: 'Good day "name"."
     moonangelcadence = day2
 end
 end
-if response = 2 & moonangelcadence = day2 then
+if response = 3 & moonangelcadence = day2 then
 do
     say ""
-    say "It's probably best to leave the Moon Angel alone."
+    say "It's probably best to leave the Moon-Angel alone."
 end
 if response = 4 then
 do
+    say "The twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Will you LOOK out the window?"
     say ""
-    say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. It was a long day and you are sleepy. Goodnight!"
-    day2 = day2 + 1 
-    response = 0
-    maninmoonswitch = random(1,4)
-    moonangelswitch = random(1,4)
-    gardenswitch = random(1,4)
+    pull window
+    say "You entered: " window
+    say ""
+if window = look then
+do
+    say "You get lost in the complex tapestry of scenes--of people, places, colors and sounds too plentiful to name here. While it is tempting to devote oneself to a life of complete sensory abandonment right there on the second floor of the moon-house, you are on a mission to acquire playing cards with the limited time allotted. You had better get going now."
+    windowthreat = windowthreat + 1
+    window = ""
+end
+end
+if response = 5 then
+do
+    say "You stand on the top floor of the moon-house. There is nothing above you aside from a hollow, empty sky."
+    say ""
+    say "A basket of brilliantly shining stars of red, white, and blue welcome you to your day's labor. A bundle of lamb's-wool rests next to the basket. Will you POLISH the stars and set them in the sky?"
+    say ""
+    pull stars
+    say "You entered: " stars
+    say ""
+end
+if stars = polish | stars = yes then
+do
+    say "You sit on the wooden bench and pick up the first star, rubbing it with the lamb's-wool. As you rub the star it grows brighter and brighter until it throbs with light as if alive. You repeat this process with the remaining stars before casting them into the sky."
+    credits = credits + 300
+    stars = ""
+end
+else
+if stars = no then
+do
+    say "You slacker..."
+end
+if response = read then
+do
+    say ""
+    say "------------------------------------------------------------"
+    say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
+    say ""
+    say "Moon-kitchen: My humble abode! Please excuse the mess—a guy's got to have hobbies, you know.'"
+    say ""
+    say "Moon-house Technician Quarters: Your room has enjoyed a good many previous children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the moon-house technician apprenticeship program. I do hope that you stay the full year."
+    say ""
+    say "He does moon-angely things--is that a word? If not, it should be. He and I get along as much as a domestic cat and dog tolerate each other, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone."
+    say ""
+    say "Upstairs Windows: The twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
+    say ""
+    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor each day in exchange for room and board. You will also be allotted a meager 1-credit-per-day stipend which you may later exchange for the coveted playing cards."
+    say ""
+    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows—she might even part with a rare playing card of her own!"
+    say ""
+    say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You might need a different strategy to get at his card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. Beyond that, I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
+    say ""
+    say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH. You may also input numbers when presented with a list of values."
+    say ""
+    say "You may re-read this document at any time by using the READ command."
+    say ""
+    say "Anyways, I think that's it for now! Toodles!"
+    say "------------------------------------------------------------"
+    response = ""
 end
 end
 
