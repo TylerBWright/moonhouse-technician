@@ -1,178 +1,3 @@
-say "  _  _   __    __   __ _       _  _   __   _  _  ____  ____ "
-BEEP(659,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 1
-    LOG = TIME('E')
-    END
-say " ( \/ ) /  \  /  \ (  ( \ ___ / )( \ /  \ / )( \/ ___)(  __)"
-BEEP(659,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 2
-    LOG = TIME('E')
-    END
-say " / \/ \(  O )(  O )/    /(___)) __ ((  O )) \/ (\___ \ ) _) "
-BEEP(698,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 3
-    LOG = TIME('E')
-    END
-say " \_)(_/ \__/  \__/ \_)__)     \_)(_/ \__/ \____/(____/(____)"
-BEEP(783,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 4
-    LOG = TIME('E')
-    END
-say "  ____  ____  ___  _  _  __ _  __  ___  __   __   __ _      "
-BEEP(783,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 5
-    LOG = TIME('E')
-    END
-say " (_  _)(  __)/ __)/ )( \(  ( \(  )/ __)(  ) / _\ (  ( \     "
-BEEP(698,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 6
-    LOG = TIME('E')
-    END
-say "   )(   ) _)( (__ ) __ (/    / )(( (__  )( /    \/    /     "
-BEEP(659,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 7
-    LOG = TIME('E')
-    END
-say "  (__) (____)\___)\_)(_/\_)__)(__)\___)(__)\_/\_/\_)__)     "
-BEEP(587,400)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 8
-    LOG = TIME('E')
-    END
-say ''
-say '************************'
-say ''
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%###############@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%+..............:#%%@@@%@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%*......................-#+.=%@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:.............................:@=.=@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%-.........................................*@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:.............................................*@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-.......................................=@+...*@-.%@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.....................................................#@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.............................................+%-.....#@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.........................................................@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.....................................................#%:.@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+............................................................:%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+...................................................+%:......:%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+...................................................::....+*.:%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.........................................................#%.:%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.....................................................=+:.:-*#@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.....................................................:-..=*-=%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=:.............................................:=:.-=:.=====+%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.............................................:=:.-=:.===+=+%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+-:.............................................:-:...--++-=%@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.........................................:-:.-+:.-=+*==@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=:........................................-*=:..::+*-:#@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=:.............................::....::...=#-.+%--%@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-:........:...............:.:**...-*+:.......:*@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-......:@*.............*@:........:@+.....*@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:......-%=.=%-........:##.:%*:....+@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#.........*@@%-........-@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+........:#@:..:%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
-say ''
-say '************************'
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 10
-    LOG = TIME('E')
-    END
-say "An interactive fiction game adaptation of the 1895 Howard Pyle fairytale, **The Garden Behind the Moon**"
-say ""
-say "Developed by Tyler Wright for ParserComp 2024 with the Object REXX mainframe language."
-say ""
-say "Would you like to read the instructions before playing the game? (YES/NO)"
-pull response
-say ""
-if response = yes then
-do
-    say "INSTRUCTIONS"
-    say ""
-    response = ""
-end
-say 'Are you ready to play the game? (YES/NO)'
-pull response
-say ''
-if response = yes then
-do
-    say ''
-    say 'With one burst of breath, you put out all eleven candles on your birthday cake and slowly open your eyes to a magnificent sight! Your dream has come true--you are on the surface of the moon!'
-    say ""
-    say "                     :+:   +=   =+.  :+-   +=   ++:  -+-                   "            
-    say "                     +%+   %#   %%-  =%*   %%.  %%=  +%+                   "           
-    say "                     *@*   @@.  @@=  +@%   @@:  @@=  #@#                   "     
-    say "                  .#%*@%*%=@%*%*%@%#%*@%*%*@@#%*@@%###@*                   "    
-    say "                  :%%*@#*%=@%*%*%%#%%*@%*%*@%#%#@%%%%*%*                   "   
-    say "                @@=  *@*   @@.  @@=  +@%   @@:  @@=  #@@%@:                "  
-    say "             =@@     *@*   @@.  @@=  +@%   @@:  @@=  *@#   @@.             " 
-    say "             =@@     :+:   +=   ==.  :+-   +=   +=.  :+:   @%.             "
-    say "             =@@                                           @@.             "
-    say "             =@@@@=                                     *@=@%.             "
-    say "             :**...::                                 :. . *+              "
-    say "             =@@  :@@                                *@*   @%.             "
-    say "             =@@     *@@%@*@@%@%@@@@@#@@%@%@@@@@@@@@@      @@.             "
-    say "             -%%      :..: ::=%##%#%%:::*%*%%=:::::::      %#              "
-    say "             =@%             =@%%@%%@   *@*@%:             @%.             "
-    say "             =@@           @@%@%     +@#     =@%           @@.             "
-    say "             -%%           %#*%*             :%*           %#              "
-    say "             =@@           @%%@%             =@#           @%:             "
-    say "     =@@@@#@@@@@             =@%@@=        @@:             @@%@%@@@@@      "
-    say "   **           **:             %%***   =*:             =*.          =*=   "
-    say "  .**           **-             ***%%   =*:             =*           =*=   "
-    say "@@=               :@@             :@@#@%             #@#                %@-"
-    say "@@=                  *@@%@*@@%@%@@@@@#@@%@%@@@@@@@@@@                   %@-"
-    say "%@=                  =*++*-**+*+*****=**+*=**********                   #@:"
-    say "@@=                                                                     #@-"
-    say "  .%@                                                                *@*   "
-    say "    ..=--=:==-=======:=--=.=--=--=-==:=--=:==-=-=====:=-:=.=-:=-==-==..    "
-    say ''
-end
-else
-if response <> yes then
-do
-    exit
-end
-say 'What is your name?'
-pull name
-say ''
-say 'Welcome 'name'. You are about to discover the great mysteries of the moon-house!'
-say ''
-say 'The Moon-Angel stands before you, and his silver eyes searches your soul. He speaks.'
-say ''
-say "Moon-Angel: 'It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?'"
-say ''
-say 'How will you respond? (YES/NO)'
-pull response
-say ''
-if response = yes then
-do
-    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work! Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
-end
-else
-if response = no then
-do
-    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
-end
-else
-if response <> no and response <> yes then
-do
-    say "Moon Angel: 'Do not bother me with such nonsense. Go and seek out the Man-in-the-moon and he will put you to work.'"
-end
-
 moonhouse = 0
 day1 = "Sunday"
 day2 = 1
@@ -225,6 +50,210 @@ maninmoontext = "The Man-in-the-moon gently puffs on a long pipe and eyes you cu
 moonangeltext = "The Moon-Angel is seen gazing out of the window at the cosmos. He is in deep thought and hardly notices your presence."
 gardentext = "A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and they listen intently to her words."
 
+
+say "  _  _   __    __   __ _       _  _   __   _  _  ____  ____ "
+BEEP(880,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > .5
+    LOG = TIME('E')
+    END
+say " ( \/ ) /  \  /  \ (  ( \ ___ / )( \ /  \ / )( \/ ___)(  __)"
+BEEP(523,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 1
+    LOG = TIME('E')
+    END
+say " / \/ \(  O )(  O )/    /(___)) __ ((  O )) \/ (\___ \ ) _) "
+BEEP(587,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 1.5
+    LOG = TIME('E')
+    END
+say " \_)(_/ \__/  \__/ \_)__)     \_)(_/ \__/ \____/(____/(____)"
+BEEP(349,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 2
+    LOG = TIME('E')
+    END
+say "  ____  ____  ___  _  _  __ _  __  ___  __   __   __ _      "
+BEEP(349,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 2.5
+    LOG = TIME('E')
+    END
+say " (_  _)(  __)/ __)/ )( \(  ( \(  )/ __)(  ) / _\ (  ( \     "
+BEEP(587,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 3
+    LOG = TIME('E')
+    END
+say "   )(   ) _)( (__ ) __ (/    / )(( (__  )( /    \/    /     "
+BEEP(659,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 3.5
+    LOG = TIME('E')
+    END
+say "  (__) (____)\___)\_)(_/\_)__)(__)\___)(__)\_/\_/\_)__)     "
+BEEP(523,600)
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 4
+    LOG = TIME('E')
+    END
+say ''
+say '************************'
+say ''
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%###############@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%+..............:#%%@@@%@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%*......................-#+.=%@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:.............................:@=.=@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%-.........................................*@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:.............................................*@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-.......................................=@+...*@-.%@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.....................................................#@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.............................................+%-.....#@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.........................................................@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.....................................................#%:.@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+............................................................:%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+...................................................+%:......:%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+...................................................::....+*.:%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.........................................................#%.:%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.....................................................=+:.:-*#@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+.....................................................:-..=*-=%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=:.............................................:=:.-=:.=====+%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.............................................:=:.-=:.===+=+%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+-:.............................................:-:...--++-=%@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.........................................:-:.-+:.-=+*==@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=:........................................-*=:..::+*-:#@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=:.............................::....::...=#-.+%--%@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-:........:...............:.:**...-*+:.......:*@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-......:@*.............*@:........:@+.....*@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:......-%=.=%-........:##.:%*:....+@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#.........*@@%-........-@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+........:#@:..:%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+say ''
+say '************************'
+    LOG = TIME('E')
+    DO UNTIL TIME('E') > 8
+    LOG = TIME('E')
+    END
+say ""
+say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon"'
+say ""
+say "Developed by Tyler Wright for ParserComp 2024."
+say ""
+say 'Before we begin, what is your name? Please type in your name and press ENTER.'
+pull name
+say ''
+say 'Welcome 'name'. You are about to discover the great mysteries of the moon-house!'
+say ''
+say "Would you like instructions before playing the game? (YES/NO)"
+pull response
+say ""
+if response = yes then
+do
+    response = ""
+    say "INSTRUCTIONS"
+    say ""
+    say "This is a classic parser-based text adventure game. The player must type in their choices to interact within the game world. It's not too hard... after all, you just did it to get to these instructions!"
+    say ""
+    say "This story is set within the quirky realm of the moon-house, home of the Man-in-the-moon, the Moon-Angel, and the Lady of the Garden. The game begins on your eleventh birthday and lasts for an entire moon year. In this time, you will build relationships with the denizens of the moon-house, explore a little bit of the cosmos through the moon windows, hang out in your bunk, collect exclusive trading cards, and get lots of moon-house technician duties accomplished. Very slice-of-life. :)"
+    say ""
+    say "This game is intended to be played at a leisurely pace as a year can be a long time! It is HIGHLY RECOMMENDED that you leave the game console open and find time here and there (a couple of minutes in-between real-world stuff?) to fully experience the moon-house in all its sublime beauty. While the days sort of blend together here, there is a warmth to the interactions that must be experienced over a prolonged period of time in order to be fully appreciated. This disembodied narrator voice reassures you that the journey is worth it, in as much as someone of my ilk might through the simplicities of unicode."
+    say ""
+    say "Are you tracking so far? (YES/NO)"
+    pull response
+if response = yes then
+do
+    say ""
+    say "Everything that you need to be a successful moon-house technician is displayed in your navigational dashboard. This dashboard displays critical information like your name, the month and day, your total number of credits, your card collection, and a menu of locations to visit in any given day. Below is what you will see each day in the moon-house, so you might as well get familiarized with it now! Behold--your eyes and ears around here:"
+    say ""
+    say "*********************************************************************************"
+    say "| Moon-house Technician"
+    say "| "
+    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
+    say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
+    say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
+    say "|"
+    say "| Location: MOON-HOUSE"
+    say "|" setting
+    say "|"
+    say "| Where do you want to go?"
+    say "|"
+    say "| 1. First Floor: Moon-kitchen"
+    say "| 2. First Floor: Moon-house Technician Quarters"
+    say "| 3. Second Floor: Moon-Angel"
+    say "| 4. Second Floor: Upstairs Windows"
+    say "| 5. Third Floor: Moon-house Technician Job Site"
+    say "| 6. Moon-garden"
+    say "| [card name]"
+    say "|"
+    say "**********************************************************************************"
+    say ""
+    say "Still with me? (YES/NO)"
+    pull response
+if response = yes then
+do
+    response = ""
+    say ""
+    say "The Man-in-the-moon will tell you more, and boy does he have a lot to say! Lean on him for information. There are a total of twelve trading cards--some may be purchased from the Man-in-the-moon with your moon-house technician salary, and a few are gifted after making friends with others. You have twelve months to collect them all. Once you turn twelve, you have to go back--it's one of the house rules."
+    say ""
+    say "One last thing about cards... Once you get one, you can type in its name and get a look at it in all its ASCII art glory!"
+    say ""
+end
+end
+response = ""
+end
+say 'Are you ready to play the game? (YES/NO)'
+pull response
+say ''
+if response = yes then
+do
+say '************************'
+    say ''
+    say 'Today is your eleventh birthday! You close your eyes and emit a single sharp burst of breath, extinguishing the candles on your birthday cake. You open your eyes to a magnificent sight. Your dream has come true--you are on the surface of the moon!'
+    say ""
+    say 'What a peculiar place in its silent, powdery grandeur. A strange building catches your eye and you begin to make your way for it.'
+    say ""
+end
+else
+if response <> yes then
+do
+    exit
+end
+say '************************'
+say ""
+say "You've reached the entrance of the large, shimmering palace."
+say ""
+say 'The Moon-Angel stands before you and his silvery eyes searches your soul. He speaks.'
+say ''
+say "Moon-Angel: 'It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?'"
+say ''
+say 'How will you respond? (YES/NO)'
+pull response
+say ''
+if response = yes then
+do
+    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
+end
+else
+if response = no then
+do
+    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
+end
+else
+if response <> no and response <> yes then
+do
+    say "Moon Angel: 'Do not bother me with such nonsense. Go and seek out the Man-in-the-moon and he will put you to work.'"
+end
 
 
 
