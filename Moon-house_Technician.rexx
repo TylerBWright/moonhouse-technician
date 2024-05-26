@@ -50,55 +50,34 @@ maninmoontext = "The Man-in-the-moon gently puffs on a long pipe and eyes you cu
 moonangeltext = "The Moon-Angel is seen gazing out of the window at the cosmos. He is in deep thought and hardly notices your presence."
 gardentext = "A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and they listen intently to her words."
 
+G_Sharp = 415
+F_Sharp = 370
+E = 330
+B = 247
 
+Q = 500
+H = 1000
+T = 1500
+W = 2000
+
+BEEP(G_Sharp, Q)
 say "  _  _   __    __   __ _       _  _   __   _  _  ____  ____ "
-BEEP(880,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > .5
-    LOG = TIME('E')
-    END
+BEEP(E, Q)
 say " ( \/ ) /  \  /  \ (  ( \ ___ / )( \ /  \ / )( \/ ___)(  __)"
-BEEP(523,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 1
-    LOG = TIME('E')
-    END
+BEEP(F_Sharp, Q)
 say " / \/ \(  O )(  O )/    /(___)) __ ((  O )) \/ (\___ \ ) _) "
-BEEP(587,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 1.5
-    LOG = TIME('E')
-    END
+BEEP(B, Q)
+CALL SLEEP 1
 say " \_)(_/ \__/  \__/ \_)__)     \_)(_/ \__/ \____/(____/(____)"
-BEEP(349,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 2
-    LOG = TIME('E')
-    END
+BEEP(B, Q)
 say "  ____  ____  ___  _  _  __ _  __  ___  __   __   __ _      "
-BEEP(349,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 2.5
-    LOG = TIME('E')
-    END
+BEEP(F_Sharp, Q)
 say " (_  _)(  __)/ __)/ )( \(  ( \(  )/ __)(  ) / _\ (  ( \     "
-BEEP(587,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 3
-    LOG = TIME('E')
-    END
+BEEP(G_Sharp, Q)
 say "   )(   ) _)( (__ ) __ (/    / )(( (__  )( /    \/    /     "
-BEEP(659,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 3.5
-    LOG = TIME('E')
-    END
+BEEP(E, T)
 say "  (__) (____)\___)\_)(_/\_)__)(__)\___)(__)\_/\_/\_)__)     "
-BEEP(523,600)
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 4
-    LOG = TIME('E')
-    END
+CALL SLEEP 0.5
 say ''
 say '************************'
 say ''
@@ -140,10 +119,7 @@ say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
 say ''
 say '************************'
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 8
-    LOG = TIME('E')
-    END
+call sleep 2
 say ""
 say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon"'
 say ""
@@ -242,12 +218,12 @@ pull response
 say ''
 if response = yes then
 do
-    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
+    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon in the Moon-kitchen and he will provide you with further instructions.'"
 end
 else
 if response = no then
 do
-    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
+    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon in the Moon-kitchen and he will put you to work.'"
 end
 else
 if response <> no and response <> yes then
