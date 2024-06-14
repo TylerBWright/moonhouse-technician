@@ -60,23 +60,24 @@ H = 1000
 T = 1500
 W = 2000
 
-BEEP(G_Sharp, Q)
+
 say "  _  _   __    __   __ _       _  _   __   _  _  ____  ____ "
-BEEP(E, Q)
+BEEP(G_Sharp, Q)
 say " ( \/ ) /  \  /  \ (  ( \ ___ / )( \ /  \ / )( \/ ___)(  __)"
-BEEP(F_Sharp, Q)
+BEEP(E, Q)
 say " / \/ \(  O )(  O )/    /(___)) __ ((  O )) \/ (\___ \ ) _) "
-BEEP(B, Q)
-CALL SLEEP 1
+BEEP(F_Sharp, Q)
 say " \_)(_/ \__/  \__/ \_)__)     \_)(_/ \__/ \____/(____/(____)"
 BEEP(B, Q)
+CALL SLEEP 0.5
 say "  ____  ____  ___  _  _  __ _  __  ___  __   __   __ _      "
-BEEP(F_Sharp, Q)
+BEEP(B, Q)
 say " (_  _)(  __)/ __)/ )( \(  ( \(  )/ __)(  ) / _\ (  ( \     "
-BEEP(G_Sharp, Q)
+BEEP(F_Sharp, Q)
 say "   )(   ) _)( (__ ) __ (/    / )(( (__  )( /    \/    /     "
-BEEP(E, T)
+BEEP(G_Sharp, Q)
 say "  (__) (____)\___)\_)(_/\_)__)(__)\___)(__)\_/\_/\_)__)     "
+BEEP(E, Q)
 CALL SLEEP 0.5
 say ''
 say '************************'
@@ -119,13 +120,13 @@ say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
 say ''
 say '************************'
-call sleep 2
+call sleep 3
 say ""
 say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon"'
 say ""
 say "Developed by Tyler Wright for ParserComp 2024."
 say ""
-say 'Before we begin, what is your name? Please type in your name and press ENTER.'
+say 'Before we begin, what is your name? Please type your NAME and press ENTER.'
 pull name
 say ''
 say 'Welcome 'name'. You are about to discover the great mysteries of the moon-house!'
@@ -142,7 +143,7 @@ do
     say ""
     say "This story is set within the quirky realm of the moon-house, home of the Man-in-the-moon, the Moon-Angel, and the Lady of the Garden. The game begins on your eleventh birthday and lasts for an entire moon year. In this time, you will build relationships with the denizens of the moon-house, explore a little bit of the cosmos through the moon windows, hang out in your bunk, collect exclusive trading cards, and get lots of moon-house technician duties accomplished. Very slice-of-life. :)"
     say ""
-    say "This game is intended to be played at a leisurely pace as a year can be a long time! It is HIGHLY RECOMMENDED that you leave the game console open and find time here and there (a couple of minutes in-between real-world stuff?) to fully experience the moon-house in all its sublime beauty. While the days sort of blend together here, there is a warmth to the interactions that must be experienced over a prolonged period of time in order to be fully appreciated. This disembodied narrator voice reassures you that the journey is worth it, in as much as someone of my ilk might through the simplicities of unicode."
+    say "This game should be played at a leisurely pace as a year can be a long time! It is HIGHLY RECOMMENDED to leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house in all its sublime beauty. While the days sort of blend together here, it must be experienced over a prolonged period of time in order to be appreciated in its most complete form. This disembodied narrator voice approves."
     say ""
     say "Are you tracking so far? (YES/NO)"
     pull response
@@ -199,6 +200,7 @@ say '************************'
     say ""
     say 'What a peculiar place in its silent, powdery grandeur. A strange building catches your eye and you begin to make your way for it.'
     say ""
+    CALL SLEEP 3
 end
 else
 if response <> yes then
@@ -218,12 +220,12 @@ pull response
 say ''
 if response = yes then
 do
-    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon in the Moon-kitchen and he will provide you with further instructions.'"
+    say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards so that we might entice the odd child to our humble abode. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
 end
 else
 if response = no then
 do
-    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon in the Moon-kitchen and he will put you to work.'"
+    say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
 end
 else
 if response <> no and response <> yes then
@@ -361,6 +363,8 @@ do
     say "          @%##.                            :%#%*.           "
     say "           .##.      .%#           .#*.    :%%%*.           "
     say "------------------------------------------------------------"
+    say ""
+    say "For, of course, no one wants to live in the moon-house forever--that is, no one except the Man-in-the-moon, and he does not mind it any more than a cat minds living in the kitchen."
 response = ""
 end
 if response = 2 & card1b = 1 then
@@ -420,195 +424,195 @@ do
 end
 if day2 = 1 | day2 = 8 | day2 = 15 | day2 = 22 | day2 = 29 | day2 = 36 | day2 = 43 | day2 = 50 | day2 = 57 | day2 = 64 | day2 = 71 | day2 = 78 | day2 = 85 | day2 = 92 | day2 = 99 | day2 = 106 | day2 = 113 | day2 = 120 | day2 = 127 | day2 = 134 | day2 = 141 | day2 = 148 | day2 = 155 | day2 = 162 | day2 = 169 | day2 = 176 | day2 = 183 | day2 = 190 | day2 = 197 | day2 = 204 | day2 = 211 | day2 = 218 | day2 = 225 | day2 = 232 | day2 = 239 | day2 = 246 | day2 = 253 | day2 = 260 | day2 = 267 | day2 = 274 | day2 = 281 | day2 = 288 | day2 = 295 | day2 = 302 | day2 = 309 | day2 = 316 | day2 = 323 | day2 = 330 then
 do
-day1 = "Sunday"
+    day1 = "Sunday"
 end
 if day2 = 2 | day2 = 9 | day2 = 16 | day2 = 23 | day2 = 30 | day2 = 37 | day2 = 44 | day2 = 51 | day2 = 58 | day2 = 65 | day2 = 72 | day2 = 79 | day2 = 86 | day2 = 93 | day2 = 100 | day2 = 107 | day2 = 114 | day2 = 121 | day2 = 128 | day2 = 135 | day2 = 142 | day2 = 149 | day2 = 156 | day2 = 163 | day2 = 170 | day2 = 177 | day2 = 184 | day2 = 191 | day2 = 198 | day2 = 205 | day2 = 212 | day2 = 219 | day2 = 226 | day2 = 233 | day2 = 240 | day2 = 247 | day2 = 254 | day2 = 261 | day2 = 268 | day2 = 275 | day2 = 282 | day2 = 289 | day2 = 296 | day2 = 303 | day2 = 310 | day2 = 317 | day2 = 324 | day2 = 331 then
 do
-day1 = "Monday"
+    day1 = "Monday"
 end
 if day2 = 3 | day2 = 10 | day2 = 17 | day2 = 24 | day2 = 31 | day2 = 38 | day2 = 45 | day2 = 52 | day2 = 59 | day2 = 66 | day2 = 73 | day2 = 80 | day2 = 87 | day2 = 94 | day2 = 101 | day2 = 108 | day2 = 115 | day2 = 122 | day2 = 129 | day2 = 136 | day2 = 143 | day2 = 150 | day2 = 157 | day2 = 164 | day2 = 171 | day2 = 178 | day2 = 185 | day2 = 192 | day2 = 199 | day2 = 206 | day2 = 213 | day2 = 220 | day2 = 227 | day2 = 234 | day2 = 241 | day2 = 248 | day2 = 255 | day2 = 262 | day2 = 269 | day2 = 276 | day2 = 283 | day2 = 290 | day2 = 297 | day2 = 304 | day2 = 311 | day2 = 318 | day2 = 325 | day2 = 332 then
 do
-day1 = "Tuesday"
+    day1 = "Tuesday"
 end
 if day2 = 4 | day2 = 11 | day2 = 18 | day2 = 25 | day2 = 32 | day2 = 39 | day2 = 46 | day2 = 53 | day2 = 60 | day2 = 67 | day2 = 74 | day2 = 81 | day2 = 88 | day2 = 95 | day2 = 102 | day2 = 109 | day2 = 116 | day2 = 123 | day2 = 130 | day2 = 137 | day2 = 144 | day2 = 151 | day2 = 158 | day2 = 165 | day2 = 172 | day2 = 179 | day2 = 186 | day2 = 193 | day2 = 200 | day2 = 207 | day2 = 214 | day2 = 221 | day2 = 228 | day2 = 235 | day2 = 242 | day2 = 249 | day2 = 256 | day2 = 263 | day2 = 270 | day2 = 277 | day2 = 284 | day2 = 291 | day2 = 298 | day2 = 305 | day2 = 312 | day2 = 319 | day2 = 326 | day2 = 333 then
 do
-day1 = "Wednesday"
+    day1 = "Wednesday"
 end
 if day2 = 5 | day2 = 12 | day2 = 19 | day2 = 26 | day2 = 33 | day2 = 40 | day2 = 47 | day2 = 54 | day2 = 61 | day2 = 68 | day2 = 75 | day2 = 82 | day2 = 89 | day2 = 96 | day2 = 103 | day2 = 110 | day2 = 117 | day2 = 124 | day2 = 131 | day2 = 138 | day2 = 145 | day2 = 152 | day2 = 159 | day2 = 166 | day2 = 173 | day2 = 180 | day2 = 187 | day2 = 194 | day2 = 201 | day2 = 208 | day2 = 215 | day2 = 222 | day2 = 229 | day2 = 236 | day2 = 243 | day2 = 250 | day2 = 257 | day2 = 264 | day2 = 271 | day2 = 278 | day2 = 285 | day2 = 292 | day2 = 299 | day2 = 306 | day2 = 313 | day2 = 320 | day2 = 327 | day2 = 334 then
 do
-day1 = "Thursday"
+    day1 = "Thursday"
 end
 if day2 = 6 | day2 = 13 | day2 = 20 | day2 = 27 | day2 = 34 | day2 = 41 | day2 = 48 | day2 = 55 | day2 = 62 | day2 = 69 | day2 = 76 | day2 = 83 | day2 = 90 | day2 = 97 | day2 = 104 | day2 = 111 | day2 = 118 | day2 = 125 | day2 = 132 | day2 = 139 | day2 = 146 | day2 = 153 | day2 = 160 | day2 = 167 | day2 = 174 | day2 = 181 | day2 = 188 | day2 = 195 | day2 = 202 | day2 = 209 | day2 = 216 | day2 = 223 | day2 = 230 | day2 = 237 | day2 = 244 | day2 = 251 | day2 = 258 | day2 = 265 | day2 = 272 | day2 = 279 | day2 = 286 | day2 = 293 | day2 = 300 | day2 = 307 | day2 = 314 | day2 = 321 | day2 = 328 | day2 = 335 then
 do
-day1 = "Friday"
+    day1 = "Friday"
 end
 if day2 = 7 | day2 = 14 | day2 = 21 | day2 = 28 | day2 = 35 | day2 = 42 | day2 = 49 | day2 = 56 | day2 = 63 | day2 = 70 | day2 = 77 | day2 = 84 | day2 = 91 | day2 = 98 | day2 = 105 | day2 = 112 | day2 = 119 | day2 = 126 | day2 = 133 | day2 = 140 | day2 = 147 | day2 = 154 | day2 = 161 | day2 = 168 | day2 = 175 | day2 = 182 | day2 = 189 | day2 = 196 | day2 = 203 | day2 = 210 | day2 = 217 | day2 = 224 | day2 = 231 | day2 = 238 | day2 = 245 | day2 = 252 | day2 = 259 | day2 = 266 | day2 = 273 | day2 = 280 | day2 = 287 | day2 = 294 | day2 = 301 | day2 = 308 | day2 = 315 | day2 = 322 | day2 = 329 | day2 = 336 then
 do
-day1 = "Saturday"
+    day1 = "Saturday"
 end
 if day2 = 28 then
 do
-month = "October"
+    month = "October"
 end 
 if day2 = 56 then
 do
-month = "November"
+    month = "November"
 end 
 if day2 = 84 then
 do
-month = "December"
+    month = "December"
 end 
 if day2 = 112 then
 do
-month = "January"
+    month = "January"
 end 
 if day2 = 140 then
 do
-month = "Feburary"
+    month = "Feburary"
 end 
 if day2 = 168 then
 do
-month = "March"
+    month = "March"
 end 
 if day2 = 196 then
 do
-month = "April"
+    month = "April"
 end 
 if day2 = 224 then
 do
-month = "May"
+    month = "May"
 end 
 if day2 = 252 then
 do
-month = "June"
+    month = "June"
 end 
 if day2 = 280 then
 do
-month = "July"
+    month = "July"
 end 
 if day2 = 308 then
 do
-month = "August"
+    month = "August"
 end 
 if day2 = 336 then
 do
-month = "Happy Birthday!"
+    month = "Happy Birthday!"
 end 
 if maninmoonswitch = 1 then
 do
-maninmoontext = "You spy the Man-in-the-moon lounging in a hammock reading a book, 'The Merry Adventures of Robin Hood,' by Howard Pyle. Every few seconds he is heard rolling in laughter. He knows you're there but refuses to look up to meet your gaze."
+    maninmoontext = "You spy the Man-in-the-moon lounging in a hammock reading a book, 'The Merry Adventures of Robin Hood,' by Howard Pyle. Every few seconds he is heard rolling in laughter. He knows you're there but refuses to look up to meet your gaze."
 end
 if maninmoonswitch = 2 then
 do
-maninmoontext = "The Man-in-the-moon's grin is somehow larger than usual. He must be pleased to see you."
+    maninmoontext = "The Man-in-the-moon's grin is somehow larger than usual. He must be pleased to see you."
 end
 if maninmoonswitch = 3 then
 do
-maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper down a block from your house, only hairier and crinklier."
+    maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper down a block from your house, only hairier and crinklier."
 end
 if maninmoonswitch = 4 then
 do
-maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent of smoke that dissolves into the moon-house vents overhead."
+    maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent of smoke that dissolves into the moon-house vents overhead."
 end
 if maninmoonswitch = 5 then
 do
-maninmoontext = "Man-in-the-moon: 'How do you do, "name"?'"
+    maninmoontext = "Man-in-the-moon: 'How do you do, "name"?'"
 end
 if maninmoonswitch = 6 then
 do
-maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are myself, the Moon-Angel, and the beautiful keeper of the garden. I 'spose I am a bit of a housecat muhself! Har!'"
+    maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are myself, the Moon-Angel, and the beautiful keeper of the garden. I 'spose I am a bit of a housecat muhself! Har!'"
 end
 if maninmoonswitch = 7 then
 do
-maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony of activity that unfolds in all its whimsy. I'm just the narrator and I don't get paid enough."
+    maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony of activity that unfolds in all its whimsy. I'm just the narrator and I don't get paid enough."
 end
 if maninmoonswitch = 8 then
 do
-maninmoontext = "Man-in-the-moon: 'I hear that my colleague the Moon-Angel carries a very rare playing card. He's a prickly fella at times, but underneath all that moon mist is a heart of silver. I'm certain you can get through to him one of these days.'"
+    maninmoontext = "Man-in-the-moon: 'I hear that my colleague the Moon-Angel carries a very rare playing card. He's a prickly fella at times, but underneath all that moon mist is a heart of silver. I'm certain you can get through to him one of these days.'"
 end
 if maninmoonswitch = 9 then
 do
-maninmoontext = "Man-in-the-moon: 'You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an assistant to lend a heart. Who knows; she might even part with a rare playing card of her own!'"
+    maninmoontext = "Man-in-the-moon: 'You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an assistant to lend a heart. Who knows; she might even part with a rare playing card of her own!'"
 end
 if maninmoonswitch = 10 then
 do
-maninmoontext = "Man-in-the-moon: 'Normally I might have something erudite to say; perhaps something to aid you in your happenings around here. This is not one of those moments, my dear child.' The Man-in-the-moon goes back to smoking his long tobacco pipe."
+    maninmoontext = "Man-in-the-moon: 'Normally I might have something erudite to say; perhaps something to aid you in your happenings around here. This is not one of those moments, my dear child.' The Man-in-the-moon goes back to smoking his long tobacco pipe."
 end
 if maninmoonswitch = 11 then
 do
-maninmoontext = "Man-in-the-moon: 'The Moon-Angel and I each have our individual areas of expertise. He makes sense of the cosmic happenings outside of the moon-windows. I am a much simpler denizen of the moon-house. But the Moon-Angel doesn't share as much as he had in times past, so good luck getting anything out of him. Immortality hits each of us differently, or so it seems.'"
+    maninmoontext = "Man-in-the-moon: 'The Moon-Angel and I each have our individual areas of expertise. He makes sense of the cosmic happenings outside of the moon-windows. I am a much simpler denizen of the moon-house. But the Moon-Angel doesn't share as much as he had in times past, so good luck getting anything out of him. Immortality hits each of us differently, or so it seems.'"
 end
 if maninmoonswitch = 12 then
 do
-maninmoontext = "The Man-in-the-moon is feeling a bit under the weather, sneezing through his whiskers and sniffling through puffy eyes. He is busy now with his knitting, but he never neglects the opportunity to welcome a guest."
+    maninmoontext = "The Man-in-the-moon is feeling a bit under the weather, sneezing through his whiskers and sniffling through puffy eyes. He is busy now with his knitting, but he never neglects the opportunity to welcome a guest."
 end
 if maninmoonswitch = 13 then
 do
-maninmoontext = "The Man-in-the-moon is deep in study of the almanac by candle-light. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night scholarship."
+    maninmoontext = "The Man-in-the-moon is deep in study of the almanac by candle-light. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night scholarship."
 end
 if maninmoonswitch = 14 then
 do
-maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way and talking all the while under his breath."
+    maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way and talking all the while under his breath."
 end
 if maninmoonswitch = 15 then
 do
-maninmoontext = "Man-in-the-moon: 'Tell me "name", had the earthlings won the War of 1812? One of the last children who visited me spoke of it through hushed whispers but had not returned to satiate my curiosity. Why, he must have his own face of gray whiskers now! Hrm.'"
+    maninmoontext = "Man-in-the-moon: 'Tell me "name", had the earthlings won the War of 1812? One of the last children who visited me spoke of it through hushed whispers but had not returned to satiate my curiosity. Why, he must have his own face of gray whiskers now! Hrm.'"
 end
 if maninmoonswitch = 16 then
 do
-maninmoontext = "Man-in-the-moon: 'Would you like to hear me play the fiddle, "name"?'"
+    maninmoontext = "Man-in-the-moon: 'Would you like to hear me play the fiddle, "name"?'"
 end
 if maninmoonswitch = 17 then
 do
-maninmoontext = "Be careful, the Man-in-the-moon is in a strong storytelling mood this evening!"
+    maninmoontext = "Be careful, the Man-in-the-moon is in a strong storytelling mood this evening!"
 end
 if maninmoonswitch = 18 then
 do
-maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less and less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to get creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a collector of sea periwinkles muhself, but who am I to judge?'"
+    maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less and less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to get creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a collector of sea periwinkles muhself, but who am I to judge?'"
 end
 if maninmoonswitch = 19 then
 do
-maninmoontext = "You startled the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still emits a bout of laughter before asking the status of your health."
+    maninmoontext = "You startled the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still emits a bout of laughter before asking the status of your health."
 end
 if maninmoonswitch = 20 then
 do
-maninmoontext = "The Man-in-the-moon is searching frantically for something. 'Where's muh pipe," name"? This cannot be happening to me right now.' You spy the very article poking through his mane of gray hair and point. He feels relief in his embarrassment, regains his composure, and resumes his puffing."
+    maninmoontext = "The Man-in-the-moon is searching frantically for something. 'Where's muh pipe," name"? This cannot be happening to me right now.' You spy the very article poking through his mane of gray hair and point. He feels relief in his embarrassment, regains his composure, and resumes his puffing."
 end
 if maninmoonswitch = 21 then
 do
-maninmoontext = "Man-in-the-moon: 'There was one lad, David, who came around these parts. He grew into a very capable hero; having bested the Iron Man and saved the dear Princess Aurelia on his black steed. Truly a legend! Despite his glowing paladin achievements, I am still of the mind that his proficiency in star-polishing is the real unspoken story here. An expert moon-house technician is a thankless job, but one with seismic implications that knows no bounds... Yes sir, he was the best darn moon-calf we ever had.'"
+    maninmoontext = "Man-in-the-moon: 'There was one lad, David, who came around these parts. He grew into a very capable hero; having bested the Iron Man and saved the dear Princess Aurelia on his black steed. Truly a legend! Despite his glowing paladin achievements, I am still of the mind that his proficiency in star-polishing is the real unspoken story here. An expert moon-house technician is a thankless job, but one with seismic implications that knows no bounds... Yes sir, he was the best darn moon-calf we ever had.'"
 end
 if maninmoonswitch = 22 then
 do
-maninmoontext = "Man-in-the-moon: 'The Moon-Angel doesn't often pay me a visit here in the moon-kitchen. I believe the last time was some thirty-seven years back when I locked myself in that-there cupboard up there. I wish I had a better story for you, but that's all I've got. Ha!'"
+    maninmoontext = "Man-in-the-moon: 'The Moon-Angel doesn't often pay me a visit here in the moon-kitchen. I believe the last time was some thirty-seven years back when I locked myself in that-there cupboard up there. I wish I had a better story for you, but that's all I've got. Ha!'"
 end
 if maninmoonswitch = 23 then
 do
-maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he has turned into something of a grandfather figure for you."
+    maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he has turned into something of a grandfather figure for you."
 end
 if moonangelmood > 0 & moonangelmood < 6 then
 do
-moonangelmood2 = "Grumpy"
+    moonangelmood2 = "Grumpy"
 end
 if moonangelmood > 5 & moonangelmood < 11 then
 do
-moonangelmood2 = "Standoffish"
+    moonangelmood2 = "Standoffish"
 end
 if moonangelmood > 10 & moonangelmood < 16 then
 do
-moonangelmood2 = "Mum"
+    moonangelmood2 = "Mum"
 end
 if moonangelmood > 15 & moonangelmood < 21 then
 do
-moonangelmood2 = "Curious"
+    moonangelmood2 = "Curious"
 end
 if moonangelmood > 20 & moonangelmood < 26 then
 do
-moonangelmood2 = "Pleasant"
+    moonangelmood2 = "Pleasant"
 end
 if moonangelmood = 26 then
 do
-moonangelmood2 = "Friendly"
+    moonangelmood2 = "Friendly"
 end
     say ""
     say "*********************************************************************************"
@@ -636,8 +640,8 @@ end
     say "**********************************************************************************"
     say ""
 pull response
-say "You entered: " response
-say ""
+    say "You entered: " response
+    say ""
 if response = man in the moon & card1b = 1 then
 do
     say "Man-in-the-moon"
@@ -667,6 +671,8 @@ do
     say "          @%##.                            :%#%*.           "
     say "           .##.      .%#           .#*.    :%%%*.           "
     say "------------------------------------------------------------"
+    say ""
+    say "For, of course, no one wants to live in the moon-house forever--that is, no one except the Man-in-the-moon, and he does not mind it any more than a cat minds living in the kitchen."
 response = ""
 end
 if response = moon calf & card2b = 1 then
@@ -706,6 +712,8 @@ do
     say "+@*@@:. ..        ....:@#%%+%#*@=.... ..   ..          .... "
     say "-=-==.                .====-====:                           "
     say "------------------------------------------------------------"
+    say ""
+    say "David--David the simpleton--David the moon-calf--really had the golden key, and was the hero of heroes of whom all the world was talking."
 response = ""
 end
 if response = master cobbler & card3b = 1 then
@@ -739,6 +747,8 @@ do
     say "..**                                                    ..%*"
     say "  ::                                                      ::"
     say "------------------------------------------------------------"
+    say ""
+    say "But there was one in the village who neither laughed at David, nor called him moon-calf. That was Hans Krout, the cobbler. For Hans Kraut was also moon-struck."
 response = ""
 end
 if response = baby & card4b = 1 then
@@ -766,6 +776,8 @@ do
     say "               :%*%%      *%=%+%+%=%#%*%%*#%%.              "
     say "                :.::      .:.:.:.:.:::.::.:::               "
     say "------------------------------------------------------------"
+    say ""
+    say "It was not until after sundown that he was able to leave the baby, for the little one cried and fretted, and fretted and cried, until David thought she would never be quiet."
 response = ""
 end
 if response = phyllis & card5b = 1 then
@@ -801,6 +813,8 @@ do
     say "  :&$. ;&$&&                                           x&X&$"
     say "  :Xx  ;XxXX                                           +X+Xx"
     say "------------------------------------------------------------"
+    say ""
+    say "There was one little child that David liked better than all the other children; her name was Phyllis, and she was a princess--for she wore a golden coronet."
 response = ""
 end
 if response = old woman & card6b = 1 then
@@ -836,6 +850,8 @@ do
     say "  :X;:::;.                               :;:;:        :x+   "
     say "  ;X+                                                 :Xx   "
     say "------------------------------------------------------------"
+    say ""
+    say "That dear old woman who lives up on the cliff in the Land of Nowhere--that dear old woman with the red petticoat."
 response = ""
 end
 if response = black horse & card7b = 1 then
@@ -867,6 +883,8 @@ do
     say "      &$&&&$&x&X&$&.                     &&&+               "
     say "                                       &x&&&$&:             "
     say "------------------------------------------------------------"
+    say ""
+    say "The Black Horse circled nearer and nearer, and though its body was black, its wings glistened as white as snow."
 response = ""
 end
 if response = iron man & card8b = 1 then
@@ -900,6 +918,8 @@ do
     say "*%.      .%**%**.    .%*#%*#%*   .%*              **     .%*"
     say "..        ......      ........    ..              ..      .."
     say "------------------------------------------------------------"
+    say ""
+    say "Jingle! clink! crash! bang! then the door opened, and in came the Iron Man, breathing fire and smoke out of his nostrils."
 response = ""
 end
 if response = king & card9b = 1 then
@@ -936,6 +956,8 @@ do
     say "   55   55       131551171      111135333       557  55   17"
     say "   007  08       90509              40609       807  08     "
     say "------------------------------------------------------------"
+    say ""
+    say "But the poor King, her father, was more and more sad every day. For nobody had ever seen such a little child as the Princess."
 response = ""
 end
 if response = moon angel & card10b = 1 then
@@ -972,6 +994,8 @@ do
     say "                                 :===+==-====+<*++=+-       "
     say "                                      >@<%}#@)@)            "
     say "------------------------------------------------------------"
+    say ""
+    say "There he stood gazing, gazing at the star, and in his eyes were two shining stars just like the one at which he was looking, and the two stars in his eyes shone now red, now blue, and flickered and blazed..."
 response = ""
 end
 if response = beautiful lady & card11b = 1 then
@@ -1002,6 +1026,8 @@ do
     say "      *@%%@##@%%     .@*@@             .@*@*%#              "
     say "        #%@##@%%@#        %%@*@@%%@*@#%%@*                  "
     say "------------------------------------------------------------"
+    say ""
+    say "...the most beautiful lady that David had ever seen--a lady with a soft, gentle face, and smooth hair, and eyes as blue as the sky. She was the teacher."
 response = ""
 end
 if response = princess aurelia & card12b = 1 then
@@ -1042,6 +1068,8 @@ do
     say ":=-==           ==           ==:====:          -=:==        "
     say "   @@.          @@*@*%@*@@%@+@@   @@-          %@=@@        "
     say "------------------------------------------------------------"
+    say ""
+    say "And she was a real Princess too, for she came into the world with a golden coronet on her head and a golden star on her shoulder, and so the Queen named her Princess Aurelia."
 response = ""
 end
 if response = 1 then
