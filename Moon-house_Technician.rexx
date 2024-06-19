@@ -37,6 +37,7 @@ card12 = ???
 card20b = 0
 setting = "The moon-house is quiet and still."
 month = "September"
+engraving = ""
 moonangelmood = 0
 moonangelmood2 = ""
 moonangeldisplay = ""
@@ -369,10 +370,22 @@ response = ""
 end
 if response = 2 & card1b = 1 then
 do
+    say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. Will you SLEEP?"
+    pull room
+    if room = sleep then
+    do
     say "You retire to your room for the day."
     day2 = day2 + 1
-    response = ""
     moonhouse = 1
+    response = 0
+    room = 0
+    end
+    if room = look then
+    do
+    say "You see engravings."
+    response = 0
+    room = 0
+    end
 end
 if response = read then
 do
@@ -1175,13 +1188,24 @@ end
 end
 if response = 2 then
 do
-    say ""
-    say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. It was a long day and you are sleepy. Goodnight!"
-    day2 = day2 + 1 
+    say "You stand in your living quarters. Will you SLEEP?"
+    pull room
+    if room = sleep then
+    do
+    say "It was a long day and you are sleepy. Goodnight!"
+    day2 = day2 + 1
     response = 0
+    room = 0
     maninmoonswitch = random(1,23)
     moonangelswitch = random(1,4)
     gardenswitch = random(1,4)
+    end
+    if room = look then
+    do
+    say "You see engravings."
+    response = 0
+    room = 0
+    end
 end
 if response = 3 & moonangelcadence <> day2 then
 do
