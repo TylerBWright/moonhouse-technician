@@ -34,7 +34,7 @@ card10b = 0
 card11 = ???
 card11b = 0
 card12 = ???
-card20b = 0
+card12b = 0
 setting = "The moon-house is quiet and still."
 month = "September"
 engraving = ""
@@ -286,7 +286,7 @@ do
 if tutorial <> skip then
 do
     say ""
-    say "Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time."
+    say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
     say ""
     say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type README at the menu to learn more about the Moon-house."
     say ""
@@ -298,7 +298,7 @@ do
     say ""
     say "Try as you might but you cannot escape the the orbit of the Man-in-the-moon, so arrested is your attention on him."
     say ""
-    say "Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time."
+    say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
     say ""
     say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type README at the menu to learn more about the Moon-house."
     say ""
@@ -514,9 +514,10 @@ if day2 = 308 then
 do
     month = "August"
 end 
-if day2 = 336 then
+if day2 > 335 then
 do
     month = "Happy Birthday!"
+    moonhouse = 2
 end 
 if maninmoonswitch = 1 then
 do
@@ -1201,7 +1202,16 @@ do
     if room = sleep then
     do
     say "It was a long day and you are sleepy. Goodnight!"
-    day2 = day2 + 1
+    say ""
+    say "ZZZZzzzz"
+    BEEP(B, W)
+    say ""
+    CALL SLEEP 0.5
+    say "ZZZZzzzzZZZZzzzz"
+    BEEP(B, W)
+    say ""
+    CALL SLEEP 0.5
+    day2 = day2 + 150
     response = 0
     room = 0
     maninmoonswitch = random(1,23)
@@ -1312,7 +1322,7 @@ do
     response = 0
     say "Moon-Angel: 'Here.'"
     say ""
-    say "The Moon-Angel reveals a holographic playing card from under his robe and places it in your hand. While this gesture left you starstruck, you are more surprised by a short flashing smile that enters his beautiful face. He then dissapears down the hallway and leaves you to your chores."
+    say "The Moon-Angel reveals a holographic  [MOON ANGEL] playing card from under his robe and places it in your hand. While this gesture left you starstruck, you are more surprised by a short flashing smile that enters his beautiful face. He then dissapears down the hallway and leaves you to your chores."
     card10 = moon angel
     card10b = 1
     moonangelmood = moonangelmood + 1
@@ -1357,6 +1367,16 @@ end
 if stars = polish | stars = yes then
 do
     say "You sit on the wooden bench and pick up the first star, rubbing it with the lamb's-wool. As you rub the star it grows brighter and brighter until it throbs with light as if alive. You repeat this process with the remaining stars before casting them into the sky."
+    say ""
+    say "*"
+    CALL SLEEP 0.5
+    BEEP(F_Sharp, Q)
+    say "  *"
+    CALL SLEEP 0.5
+    BEEP(G_Sharp, Q)
+    say "    *"
+    CALL SLEEP 0.5
+    BEEP(E, Q)
     credits = credits + 300
     stars = ""
 end
@@ -1369,20 +1389,20 @@ end
 if response = 6 & day1 = "Saturday" & gardencadence <> day2 then
 do
     say "You had a good time in the garden."
-    LOG = TIME('E')
-    DO UNTIL TIME('E') > 5
-    LOG = TIME('E')
-    END
+    say ""
+    CALL SLEEP 0.5
     gardencadence = day2
 end
 if response = 6 & day1 = "Saturday" & gardencadence = day2 then
 do
     say "The door to the garden is closed for the evening. Come back next week!"
-    gardencadence = day2
+    CALL SLEEP 0.5
+    ardencadence = day2
 end
 if response = 6 & day1 <> "Saturday" then
 do
     say "The door to the garden behind the moon is locked. A sign reads: 'Moon calfs are welcome on Saturdays.'"
+    CALL SLEEP 0.5
 end
 if response = readme then
 do
@@ -1412,5 +1432,65 @@ do
     say "------------------------------------------------------------"
     response = ""
 end
+end
+
+    say "ZZZZzzzz"
+    BEEP(B, W)
+    say ""
+    CALL SLEEP 0.5
+    say "ZZZZzzzzZZZZzzzz"
+    BEEP(B, W)
+    say ""
+    CALL SLEEP 0.5
+    BEEP(B, W)
+    say "ZZZZZZzzzzzZZZZzzzzz"
+    say ""
+    CALL SLEEP 0.5
+    say "You awaken from your bunk to silver moonlight pouring through your cosmic window. Today is a special day, for it is your one-year Moon-house anniversary! More importantly, however, it is your twelfth birthday, meaning you get a complementary card from the Man-in-the-moon."
+    say ""
+    say "You fling open the door and make your way through the corridor--there isn't a moment to lose! You arrive before the moon-kitchen and knock in the same manner that you always had, a rap and a tap and a tap. The Man-in-the-moon opens the door, revealing a face more glum than any you had yet witnessed. His attempts at overriding his melancholy with birthday glee is mostly ineffective for the moment. He speaks."
+    say ""
+    say "Man-in-the-moon: 'Happy Birthday my dear " name "! You have made it one year in the Moon-house! And, as promised, here is your birthday present.'"
+    say ""
+    say "The old little man of whimsy hands you a card. You feel a course of energy connect with your palm and reverberate down your arm. This [PRINCESS AURELIA] card has a special energy about it! The Man-in-the moon again speaks."
+    say ""
+    say "Man-in-the-moon: 'Do you remember what I told you when you first arrived at the Moon-house? You have to go home now and become an adult...'"
+    say ""
+    say "Nobody over twelve can remain in this strange celestial lair, and you've overstayed your welcome by three hours already."
+    say ""
+    say "Man-in-the-moon: 'Are you ready to return? (YES/NO)'"
+    say ""
+    pull 
+    card12 = Princess Aurelia
+    card12b = 1
+    setting = "Your house is quiet and still."
+    house = 1
+
+
+do while house = 1
+    say ""
+    say "*********************************************************************************"
+    say "| Moon-house Technician"
+    say "| "
+    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
+    say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
+    say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
+    say "|"
+    say "| Location: YOUR HOUSE"
+    say "|" setting
+    say "|"
+    say "| Where do you want to go?"
+    say "|"
+    say "| 1. First Floor: Your Kitchen"
+    say "| 2. First Floor: Your Sleeping Quarters"
+    say "| 3. Second Floor: Moon-Angel"
+    say "| 4. Second Floor: Upstairs Windows"
+    say "| 5. Third Floor: Your Job Site"
+    say "| 6. Your Garden"
+    say "| [card name]"
+    say "|"
+    say "**********************************************************************************"
+    say ""
 end
 
