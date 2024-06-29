@@ -3,6 +3,7 @@ day1 = "Sunday"
 day2 = 1
 moonangelcadence = 0
 gardencadence = 0
+workcadence = 0
 card1 = ???
 card1b = 0
 card2 = ???
@@ -61,7 +62,12 @@ H = 1000
 T = 1500
 W = 2000
 
-
+say ""
+say "Before we begin, what is your name? Please type your NAME and press ENTER."
+pull name
+say ""
+say 'Welcome 'name'. You are about to discover the great mysteries of the moon-house!'
+say ""
 say "  _  _   __    __   __ _       _  _   __   _  _  ____  ____ "
 BEEP(G_Sharp, Q)
 say " ( \/ ) /  \  /  \ (  ( \ ___ / )( \ /  \ / )( \/ ___)(  __)"
@@ -121,21 +127,14 @@ say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 say '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
 say ''
 say '************************'
-call sleep 3
+call sleep 1
 say ""
 say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon"'
 say ""
 say "Developed by Tyler Wright for ParserComp 2024."
-say ""
-say 'Before we begin, what is your name? Please type your NAME and press ENTER.'
-pull name
-say ''
-say 'Welcome 'name'. You are about to discover the great mysteries of the moon-house!'
-say ''
-say "Would you like instructions before playing the game? (YES/NO)"
 pull response
 say ""
-if response = yes then
+if response = 1 | response <> 1 then
 do
     response = ""
     say "INSTRUCTIONS"
@@ -146,11 +145,9 @@ do
     say ""
     say "This game should be played at a leisurely pace as a year can be a long time! Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house in all its sublime beauty. While the days sort of blend together here, it must be experienced over a prolonged period of time to fully appreciate."
     say ""
-    say "Are you tracking so far? (YES/NO)"
     pull response
-if response = yes then
+if response = 1 | response <> 1 then
 do
-    say ""
     say "Everything that you need to be a successful moon-house technician is displayed in your navigational dashboard. This dashboard displays critical information like your name, the month and day, your total number of credits, your card collection, and a menu of locations to visit in any given day. Below is what you will see each day in the moon-house, so you might as well get familiarized with it now! Behold--your eyes and ears around here:"
     say ""
     say "*********************************************************************************"
@@ -178,24 +175,28 @@ do
     say ""
     say "Type in '1' to navigate to the moon-kitchen, '2' for the Moon-house technician sleeping quarters, and so on."
     say ""
-    say "Still with me? (YES/NO)"
     pull response
-if response = yes then
+if response = 1 | response <> 1 then
 do
     response = ""
-    say ""
     say "The Man-in-the-moon will tell you more, and boy does he have a lot to say! Lean on him for information. There are a total of twelve trading cards--some may be purchased from the Man-in-the-moon with your technician salary, and a few are gifted after making friends and doing favors. You have twelve months to collect them all. Once you turn twelve, you have to go back--it's one of the house rules."
     say ""
     say "One last thing about cards... Once you get one, type in its [CARD NAME] on the menu and get a look at it in all its ASCII art glory!"
     say ""
+    pull response
+    if respond = 1 | respond <> 1 then
+    do
+    say "So"
+    CALL SLEEP 0.5
+    say "    It"
+    CALL SLEEP 0.5
+    say "        Begins..."
 end
 end
-response = ""
 end
-say 'Are you ready to play the game? (YES/NO)'
+end
 pull response
-say ''
-if response = yes then
+if response = 1 | response <> 1 then
 do
 say '************************'
     say ''
@@ -203,38 +204,50 @@ say '************************'
     say ""
     say 'What a peculiar place in its silent, powdery grandeur. A strange building catches your eye and you begin to make your way for it.'
     say ""
-end
-else
-if response <> yes then
-do
-    exit
-end
 say '************************'
-say ""
-say "You've reached the entrance of the large, shimmering palace."
-say ""
-say 'The Moon-Angel stands before you and his silvery eyes searches your soul. He speaks.'
-say ''
-say "Moon-Angel: 'It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?'"
-say ''
-say 'How will you respond? (YES/NO)'
+pull response
+if response = 1 | response <> 1 then
+do
+    say ""
+    say "You've reached the entrance of the large, shimmering palace."
+    say ""
+    say 'The Moon-Angel stands before you and his silvery eyes searches your soul. He speaks.'
+    say ''
+    say "Moon-Angel: 'It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?'"
+    say ''
+    say 'How will you respond? (YES/NO)'
 pull response
 say ''
 if response = yes then
 do
     say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards in order to get help around here. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    end
 end
 else
 if response = no then
 do
     say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    end
 end
 else
 if response <> no and response <> yes then
 do
     say "Moon Angel: 'Do not bother me with such nonsense. Go and seek out the Man-in-the-moon and he will put you to work.'"
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    end
 end
-
+end
 
 
 do while moonhouse = 0
@@ -283,26 +296,19 @@ do
     card1b = 1
     response = ""
     pull tutorial
-if tutorial <> skip then
+if tutorial = 0 | tutorial <> 0 then
 do
     say ""
     say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
     say ""
     say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type README at the menu to learn more about the Moon-house."
     say ""
-    response = ""
-end
-else
-if tutorial = skip then
-do
-    say ""
-    say "Try as you might but you cannot escape the the orbit of the Man-in-the-moon, so arrested is your attention on him."
-    say ""
-    say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
-    say ""
-    say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type README at the menu to learn more about the Moon-house."
+    pull response
+    if response = 1 | response <> 1 then
+    do
     say ""
     response = ""
+    end
 end
 end
 if response = man in the moon & card1b = 1 then
@@ -336,14 +342,22 @@ do
     say "------------------------------------------------------------"
     say ""
     say "For, of course, no one wants to live in the moon-house forever--that is, no one except the Man-in-the-moon, and he does not mind it any more than a cat minds living in the kitchen."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = 2 & card1b = 1 then
 do
     say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. Will you SLEEP?"
+    say ""
     pull room
     if room = sleep then
     do
+    say ""
     say "You retire to your room for the day."
     day2 = day2 + 1
     moonhouse = 1
@@ -400,7 +414,7 @@ do
     say "------------------------------------------------------------"
     say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
     say ""
-    say "Moon-kitchen: My humble abode! Please excuse the mess—a guy's got to have hobbies, you know.'"
+    say "Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'"
     say ""
     say "Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
     say ""
@@ -408,19 +422,25 @@ do
     say ""
     say "Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
     say ""
-    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a meager 1-credit-per-star stipend which you may exchange for the coveted playing cards."
+    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards."
     say ""
-    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows—she might even part with a rare playing card of her own."
+    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own."
     say ""
     say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
     say ""
     say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH, README. You may also input numbers for lists."
     say ""
-    say "You may re-read this document at any time by using the README command."
+    say "Re-read this document at any time by using the README command."
     say ""
     say "Anyways, I think that's it for now! Toodles!"
     say "------------------------------------------------------------"
     response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 end
 
@@ -434,87 +454,87 @@ card8 = "$60"
 card9 = "$60"
 
 do while moonhouse = 1
-if windowthreat = 10 then 
+if windowthreat = 5 then 
 do
     say ""
-    say "Before you could even think of turning back to the daily routine of the moon-house, you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow, he manages to extricate you from the moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome with your fixation on the windows when you should have been getting to work."
+    say "You're about to resume your daily Moon-house routine, but out of nowhere you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow he manages to extricate you from the Moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome due to your fixation on the windows when you should have been staying busy."
     say ""
     say "GAME OVER"
     exit
 end
-if day2 = 1 | day2 = 8 | day2 = 15 | day2 = 22 | day2 = 29 | day2 = 36 | day2 = 43 | day2 = 50 | day2 = 57 | day2 = 64 | day2 = 71 | day2 = 78 | day2 = 85 | day2 = 92 | day2 = 99 | day2 = 106 | day2 = 113 | day2 = 120 | day2 = 127 | day2 = 134 | day2 = 141 | day2 = 148 | day2 = 155 | day2 = 162 | day2 = 169 | day2 = 176 | day2 = 183 | day2 = 190 | day2 = 197 | day2 = 204 | day2 = 211 | day2 = 218 | day2 = 225 | day2 = 232 | day2 = 239 | day2 = 246 | day2 = 253 | day2 = 260 | day2 = 267 | day2 = 274 | day2 = 281 | day2 = 288 | day2 = 295 | day2 = 302 | day2 = 309 | day2 = 316 | day2 = 323 | day2 = 330 then
+if day2 = 1 | day2 = 8 | day2 = 15 | day2 = 22 | day2 = 29 | day2 = 36 | day2 = 43 | day2 = 50 | day2 = 57 | day2 = 64 | day2 = 71 | day2 = 78 then
 do
     day1 = "Sunday"
 end
-if day2 = 2 | day2 = 9 | day2 = 16 | day2 = 23 | day2 = 30 | day2 = 37 | day2 = 44 | day2 = 51 | day2 = 58 | day2 = 65 | day2 = 72 | day2 = 79 | day2 = 86 | day2 = 93 | day2 = 100 | day2 = 107 | day2 = 114 | day2 = 121 | day2 = 128 | day2 = 135 | day2 = 142 | day2 = 149 | day2 = 156 | day2 = 163 | day2 = 170 | day2 = 177 | day2 = 184 | day2 = 191 | day2 = 198 | day2 = 205 | day2 = 212 | day2 = 219 | day2 = 226 | day2 = 233 | day2 = 240 | day2 = 247 | day2 = 254 | day2 = 261 | day2 = 268 | day2 = 275 | day2 = 282 | day2 = 289 | day2 = 296 | day2 = 303 | day2 = 310 | day2 = 317 | day2 = 324 | day2 = 331 then
+if day2 = 2 | day2 = 9 | day2 = 16 | day2 = 23 | day2 = 30 | day2 = 37 | day2 = 44 | day2 = 51 | day2 = 58 | day2 = 65 | day2 = 72 | day2 = 79 then
 do
     day1 = "Monday"
 end
-if day2 = 3 | day2 = 10 | day2 = 17 | day2 = 24 | day2 = 31 | day2 = 38 | day2 = 45 | day2 = 52 | day2 = 59 | day2 = 66 | day2 = 73 | day2 = 80 | day2 = 87 | day2 = 94 | day2 = 101 | day2 = 108 | day2 = 115 | day2 = 122 | day2 = 129 | day2 = 136 | day2 = 143 | day2 = 150 | day2 = 157 | day2 = 164 | day2 = 171 | day2 = 178 | day2 = 185 | day2 = 192 | day2 = 199 | day2 = 206 | day2 = 213 | day2 = 220 | day2 = 227 | day2 = 234 | day2 = 241 | day2 = 248 | day2 = 255 | day2 = 262 | day2 = 269 | day2 = 276 | day2 = 283 | day2 = 290 | day2 = 297 | day2 = 304 | day2 = 311 | day2 = 318 | day2 = 325 | day2 = 332 then
+if day2 = 3 | day2 = 10 | day2 = 17 | day2 = 24 | day2 = 31 | day2 = 38 | day2 = 45 | day2 = 52 | day2 = 59 | day2 = 66 | day2 = 73 | day2 = 80 then
 do
     day1 = "Tuesday"
 end
-if day2 = 4 | day2 = 11 | day2 = 18 | day2 = 25 | day2 = 32 | day2 = 39 | day2 = 46 | day2 = 53 | day2 = 60 | day2 = 67 | day2 = 74 | day2 = 81 | day2 = 88 | day2 = 95 | day2 = 102 | day2 = 109 | day2 = 116 | day2 = 123 | day2 = 130 | day2 = 137 | day2 = 144 | day2 = 151 | day2 = 158 | day2 = 165 | day2 = 172 | day2 = 179 | day2 = 186 | day2 = 193 | day2 = 200 | day2 = 207 | day2 = 214 | day2 = 221 | day2 = 228 | day2 = 235 | day2 = 242 | day2 = 249 | day2 = 256 | day2 = 263 | day2 = 270 | day2 = 277 | day2 = 284 | day2 = 291 | day2 = 298 | day2 = 305 | day2 = 312 | day2 = 319 | day2 = 326 | day2 = 333 then
-do
+if day2 = 4 | day2 = 11 | day2 = 18 | day2 = 25 | day2 = 32 | day2 = 39 | day2 = 46 | day2 = 53 | day2 = 60 | day2 = 67 | day2 = 74 | day2 = 81 then
+do 
     day1 = "Wednesday"
 end
-if day2 = 5 | day2 = 12 | day2 = 19 | day2 = 26 | day2 = 33 | day2 = 40 | day2 = 47 | day2 = 54 | day2 = 61 | day2 = 68 | day2 = 75 | day2 = 82 | day2 = 89 | day2 = 96 | day2 = 103 | day2 = 110 | day2 = 117 | day2 = 124 | day2 = 131 | day2 = 138 | day2 = 145 | day2 = 152 | day2 = 159 | day2 = 166 | day2 = 173 | day2 = 180 | day2 = 187 | day2 = 194 | day2 = 201 | day2 = 208 | day2 = 215 | day2 = 222 | day2 = 229 | day2 = 236 | day2 = 243 | day2 = 250 | day2 = 257 | day2 = 264 | day2 = 271 | day2 = 278 | day2 = 285 | day2 = 292 | day2 = 299 | day2 = 306 | day2 = 313 | day2 = 320 | day2 = 327 | day2 = 334 then
+if day2 = 5 | day2 = 12 | day2 = 19 | day2 = 26 | day2 = 33 | day2 = 40 | day2 = 47 | day2 = 54 | day2 = 61 | day2 = 68 | day2 = 75 | day2 = 82 then
 do
     day1 = "Thursday"
 end
-if day2 = 6 | day2 = 13 | day2 = 20 | day2 = 27 | day2 = 34 | day2 = 41 | day2 = 48 | day2 = 55 | day2 = 62 | day2 = 69 | day2 = 76 | day2 = 83 | day2 = 90 | day2 = 97 | day2 = 104 | day2 = 111 | day2 = 118 | day2 = 125 | day2 = 132 | day2 = 139 | day2 = 146 | day2 = 153 | day2 = 160 | day2 = 167 | day2 = 174 | day2 = 181 | day2 = 188 | day2 = 195 | day2 = 202 | day2 = 209 | day2 = 216 | day2 = 223 | day2 = 230 | day2 = 237 | day2 = 244 | day2 = 251 | day2 = 258 | day2 = 265 | day2 = 272 | day2 = 279 | day2 = 286 | day2 = 293 | day2 = 300 | day2 = 307 | day2 = 314 | day2 = 321 | day2 = 328 | day2 = 335 then
+if day2 = 6 | day2 = 13 | day2 = 20 | day2 = 27 | day2 = 34 | day2 = 41 | day2 = 48 | day2 = 55 | day2 = 62 | day2 = 69 | day2 = 76 | day2 = 83 then
 do
     day1 = "Friday"
 end
-if day2 = 7 | day2 = 14 | day2 = 21 | day2 = 28 | day2 = 35 | day2 = 42 | day2 = 49 | day2 = 56 | day2 = 63 | day2 = 70 | day2 = 77 | day2 = 84 | day2 = 91 | day2 = 98 | day2 = 105 | day2 = 112 | day2 = 119 | day2 = 126 | day2 = 133 | day2 = 140 | day2 = 147 | day2 = 154 | day2 = 161 | day2 = 168 | day2 = 175 | day2 = 182 | day2 = 189 | day2 = 196 | day2 = 203 | day2 = 210 | day2 = 217 | day2 = 224 | day2 = 231 | day2 = 238 | day2 = 245 | day2 = 252 | day2 = 259 | day2 = 266 | day2 = 273 | day2 = 280 | day2 = 287 | day2 = 294 | day2 = 301 | day2 = 308 | day2 = 315 | day2 = 322 | day2 = 329 | day2 = 336 then
+if day2 = 7 | day2 = 14 | day2 = 21 | day2 = 28 | day2 = 35 | day2 = 42 | day2 = 49 | day2 = 56 | day2 = 63 | day2 = 70 | day2 = 77 | day2 = 84 then
 do
     day1 = "Saturday"
 end
-if day2 = 28 then
+if day2 = 9 then
 do
     month = "October"
 end 
-if day2 = 56 then
+if day2 = 16 then
 do
     month = "November"
 end 
-if day2 = 84 then
+if day2 = 23 then
 do
     month = "December"
 end 
-if day2 = 112 then
+if day2 = 30 then
 do
     month = "January"
 end 
-if day2 = 140 then
+if day2 = 37 then
 do
     month = "Feburary"
 end 
-if day2 = 168 then
+if day2 = 44 then
 do
     month = "March"
 end 
-if day2 = 196 then
+if day2 = 51 then
 do
     month = "April"
 end 
-if day2 = 224 then
+if day2 = 58 then
 do
     month = "May"
 end 
-if day2 = 252 then
+if day2 = 65 then
 do
     month = "June"
 end 
-if day2 = 280 then
+if day2 = 72 then
 do
     month = "July"
 end 
-if day2 = 308 then
+if day2 = 79 then
 do
     month = "August"
 end 
-if day2 > 335 then
+if day2 > 83 then
 do
     month = "Happy Birthday!"
     moonhouse = 2
@@ -695,7 +715,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "For, of course, no one wants to live in the moon-house forever--that is, no one except the Man-in-the-moon, and he does not mind it any more than a cat minds living in the kitchen."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = moon calf & card2b = 1 then
 do
@@ -736,7 +762,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "David--David the simpleton--David the moon-calf--really had the golden key, and was the hero of heroes of whom all the world was talking."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = master cobbler & card3b = 1 then
 do
@@ -771,7 +803,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "But there was one in the village who neither laughed at David, nor called him moon-calf. That was Hans Krout, the cobbler. For Hans Kraut was also moon-struck."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = baby & card4b = 1 then
 do
@@ -800,7 +838,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "It was not until after sundown that he was able to leave the baby, for the little one cried and fretted, and fretted and cried, until David thought she would never be quiet."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = phyllis & card5b = 1 then
 do
@@ -837,7 +881,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "There was one little child that David liked better than all the other children; her name was Phyllis, and she was a princess--for she wore a golden coronet."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = old woman & card6b = 1 then
 do
@@ -874,7 +924,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "That dear old woman who lives up on the cliff in the Land of Nowhere--that dear old woman with the red petticoat."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = black horse & card7b = 1 then
 do
@@ -907,7 +963,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "The Black Horse circled nearer and nearer, and though its body was black, its wings glistened as white as snow."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = iron man & card8b = 1 then
 do
@@ -942,7 +1004,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "Jingle! clink! crash! bang! then the door opened, and in came the Iron Man, breathing fire and smoke out of his nostrils."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = king & card9b = 1 then
 do
@@ -980,7 +1048,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "But the poor King, her father, was more and more sad every day. For nobody had ever seen such a little child as the Princess."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = moon angel & card10b = 1 then
 do
@@ -1018,7 +1092,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "There he stood gazing, gazing at the star, and in his eyes were two shining stars just like the one at which he was looking, and the two stars in his eyes shone now red, now blue, and flickered and blazed..."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = beautiful lady & card11b = 1 then
 do
@@ -1050,7 +1130,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "...the most beautiful lady that David had ever seen--a lady with a soft, gentle face, and smooth hair, and eyes as blue as the sky. She was the teacher."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = princess aurelia & card12b = 1 then
 do
@@ -1092,7 +1178,13 @@ do
     say "------------------------------------------------------------"
     say ""
     say "And she was a real Princess too, for she came into the world with a golden coronet on her head and a golden star on her shoulder, and so the Queen named her Princess Aurelia."
-response = ""
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = 1 then
 do
@@ -1123,16 +1215,28 @@ do
     card2c = "SOLD"
     credits = credits - 10
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 2 & credits > 9 & card3b = 0 then
 do
-    say "Master cobbler."
+    say "Hans Kraut the cobbler was starstruck."
     card3 = master cobbler
     card3b = 1
     card3c = "SOLD"
     credits = credits - 10
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 3 & credits > 19 & card4b = 0 then
@@ -1143,6 +1247,12 @@ do
     card4c = "SOLD"
     credits = credits - 20
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 4 & credits > 19 & card5b = 0 then
@@ -1153,6 +1263,12 @@ do
     card5c = "SOLD"
     credits = credits - 20
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 5 & credits > 29 & card6b = 0 then
@@ -1163,6 +1279,12 @@ do
     card6c = "SOLD"
     credits = credits - 30
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 6 & credits > 29 & card7b = 0 then
@@ -1173,6 +1295,12 @@ do
     card7c = "SOLD"
     credits = credits - 30
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 7 & credits > 59 & card8b = 0 then
@@ -1183,6 +1311,12 @@ do
     card8c = "SOLD"
     credits = credits - 60
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 else
 if buy = 8 & credits > 59 & card9b = 0 then
@@ -1193,30 +1327,35 @@ do
     card9c = "SOLD"
     credits = credits - 60
     buy = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 end
 if response = 2 then
 do
     say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. Will you SLEEP?"
+    say ""
     pull room
     if room = sleep then
     do
+    say ""
     say "It was a long day and you are sleepy. Goodnight!"
     say ""
-    say "ZZZZzzzz"
-    BEEP(B, W)
-    say ""
-    CALL SLEEP 0.5
-    say "ZZZZzzzzZZZZzzzz"
-    BEEP(B, W)
-    say ""
-    CALL SLEEP 0.5
-    day2 = day2 + 150
+    day2 = day2 + 1
     response = 0
     room = 0
     maninmoonswitch = random(1,23)
     moonangelswitch = random(1,4)
     gardenswitch = random(1,4)
+        if day2 > 335 then
+        do
+        month = "Happy Birthday!"
+        moonhouse = 2
+        end 
     end
     if room = look then
     do
@@ -1281,6 +1420,12 @@ do
     moonangeldisplay = "MOON ANGEL MOOD: "
     say "The Moon-Angel ignores you. He does not appear to be interested in engaging in conversation with you... or anybody else for that matter."
     moonangelmood = moonangelmood + 1
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if talk = talk & moonangelmood > 5 & moonangelmood < 11 then
 do
@@ -1289,6 +1434,12 @@ do
     response = 0
     say "The Moon-Angel brushes you away and resumes his stargazing."
     moonangelmood = moonangelmood + 1
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if talk = talk & moonangelmood > 10 & moonangelmood < 16 then
 do
@@ -1298,6 +1449,12 @@ do
     say "The Moon-Angel shares a few brief emotionless pleasantries before departing... doing whatever moon angels do out there in the cosmos."
     talk = ""
     moonangelmood = moonangelmood + 1
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if talk = talk & moonangelmood > 15 & moonangelmood < 21 then
 do
@@ -1306,6 +1463,12 @@ do
     response = 0
     say "Moon-Angel: 'You are a chatty little fellow, aren't you?'"
     moonangelmood = moonangelmood + 1
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if talk = talk & moonangelmood > 20 & moonangelmood < 26 then
 do
@@ -1314,6 +1477,12 @@ do
     response = 0
     say "Moon-Angel: 'Good day. Are you enjoying your stay in the moon-house?'"
     moonangelmood = moonangelmood + 1
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if talk = talk & moonangelmood = 26 then
 do
@@ -1326,6 +1495,12 @@ do
     card10 = moon angel
     card10b = 1
     moonangelmood = moonangelmood + 1
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if talk = talk & moonangelmood > 26 then
 do
@@ -1333,12 +1508,24 @@ do
     talk = ""
     response = 0
     moonangelcadence = day2
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 end
 if response = 3 & moonangelcadence = day2 then
 do
     say ""
     say "It's probably best to leave the Moon-Angel alone."
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = 4 then
 do
@@ -1352,9 +1539,15 @@ do
     say "You get lost in the complex tapestry of scenes--of people, places, colors and sounds too plentiful to name here. While it is tempting to devote oneself to a life of complete sensory abandonment right there on the second floor of the moon-house, you are on a mission to acquire playing cards with the limited time allotted. You had better get going now."
     windowthreat = windowthreat + 1
     window = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 end
-if response = 5 then
+if response = 5 & workcadence <> day2 then
 do
     say "You stand on the top floor of the moon-house. There is nothing above you aside from a hollow, empty sky."
     say ""
@@ -1377,32 +1570,69 @@ do
     say "    *"
     CALL SLEEP 0.5
     BEEP(E, Q)
-    credits = credits + 300
+    credits = credits + 5
     stars = ""
+    response = ""
+    workcadence = workcadence + 1
 end
 else
 if stars = no then
 do
     say "You slacker..."
     stars = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 5 & workcadence = day2 then
+do
+    say "You've already done your share of the work for today. Take the day off!"
+    say ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = 6 & day1 = "Saturday" & gardencadence <> day2 then
 do
     say "You had a good time in the garden."
     say ""
-    CALL SLEEP 0.5
     gardencadence = day2
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = 6 & day1 = "Saturday" & gardencadence = day2 then
 do
     say "The door to the garden is closed for the evening. Come back next week!"
-    CALL SLEEP 0.5
-    ardencadence = day2
+    gardencadence = day2
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = 6 & day1 <> "Saturday" then
 do
     say "The door to the garden behind the moon is locked. A sign reads: 'Moon calfs are welcome on Saturdays.'"
-    CALL SLEEP 0.5
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 if response = readme then
 do
@@ -1410,27 +1640,33 @@ do
     say "------------------------------------------------------------"
     say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
     say ""
-    say "Moon-kitchen: My humble abode! Please excuse the mess—a guy's got to have hobbies, you know.'"
+    say "Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'"
     say ""
-    say "Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
+    say "Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just LOOK at the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
     say ""
     say "Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella."
     say ""
     say "Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
     say ""
-    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a meager 1-credit-per-star stipend which you may exchange for the coveted playing cards."
+    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards."
     say ""
-    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows—she might even part with a rare playing card of her own."
+    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own."
     say ""
     say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
     say ""
     say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH, README. You may also input numbers for lists."
     say ""
-    say "You may re-read this document at any time by using the README command."
+    say "Re-read this document at any time by using the README command."
     say ""
     say "Anyways, I think that's it for now! Toodles!"
     say "------------------------------------------------------------"
     response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
 end
 end
 
@@ -1452,19 +1688,54 @@ end
     say ""
     say "Man-in-the-moon: 'Happy Birthday my dear " name "! You have made it one year in the Moon-house! And, as promised, here is your birthday present.'"
     say ""
-    say "The old little man of whimsy hands you a card. You feel a course of energy connect with your palm and reverberate down your arm. This [PRINCESS AURELIA] card has a special energy about it! The Man-in-the moon again speaks."
+    say "The old little man of whimsy hands you a card. You feel a course of energy connect with your palm and reverberate down your arm. This [PRINCESS AURELIA] card has a special energy about it! The Man-in-the-moon allows you a moment of celebration before transitioning into another topic."
     say ""
-    say "Man-in-the-moon: 'Do you remember what I told you when you first arrived at the Moon-house? You have to go home now and become an adult...'"
+    say "Man-in-the-moon: 'Do you remember what I told you when you first arrived at the Moon-house?'"
     say ""
-    say "Nobody over twelve can remain in this strange celestial lair, and you've overstayed your welcome by three hours already."
+    say "You were hoping that he wouldn't bring that detail up. Nobody over twelve can remain in this strange celestial lair, and you've overstayed your welcome by three hours already."
     say ""
-    say "Man-in-the-moon: 'Are you ready to return? (YES/NO)'"
+    say "Man-in-the-moon: ' You must go back and grow up... Are you ready to return? (YES/NO)'"
     say ""
-    pull 
     card12 = Princess Aurelia
     card12b = 1
-    setting = "Your house is quiet and still."
+    setting = "It looks like you still have your cards!"
+    pull gohome
+    if gohome = yes | gohome <> yes then
+    do
+    say ""
+    say "The unmistakable figure of the Moon-Angel slips into the moon-kitchen, his silver robe fluttering behind him and the minute stars within the fabric glistening brilliantly. His eyes search your soul and you realize, instinctively, that you are about to awaken from the Moon-house dream. While the Moon-Angel did not verbalize to you with his voice, he was able to transfer innumerable ideas and concepts from his mind to yours... and suddenly now you understand."
+    say ""
+    pull understand
+    if understand = 0 | understand <> 0 then
+    do
+    say "Now"
+    CALL SLEEP 0.5
+    say "    You"
+    CALL SLEEP 0.5
+    say "        Understand..."
+    pull ending
+    if ending = 0 | understand <> 0 then
+    do
+    say ""
+    say "Moon-Angel: "name", come to me."
+    say ""
+    say "You glance at the Man-in-the-moon and he returns a subtle wink. You refocus back on the Moon-Angel and make your approach."
+    say ""
+    say "His massive arms wrap around you, emmitting an electric current that courses through each of your extremities. You feel the sensation of being thrusted into the air and ejected into a new reality--a foreign sensation! You are somewhere else entirely separate from the Moon-house. You are being transported through the interstitial regions between worlds!"
+    say ""
+    pull final
+    if final = 0 | understand <> 0 then
+    do
+    say "*"
+    CALL SLEEP 0.5
+    say "***"
+    CALL SLEEP 0.5
+    say "******"
     house = 1
+    end
+    end
+    end
+    end
 
 
 do while house = 1
@@ -1492,5 +1763,579 @@ do while house = 1
     say "|"
     say "**********************************************************************************"
     say ""
+    pull response
+    say "You entered: " response
+    say ""
+if response = man in the moon & card1b = 1 then
+do
+    say "Man-in-the-moon"
+    say "------------------------------------------------------------"
+    say "   :#%%%@%   :*#%%@% .%#      @@@%#*.   %@%@%*.             "
+    say "   :*#:.%% .*#.:#%:.@%%#    %@ :@# :*+. %%.:%*.   %% :%*.   "
+    say "   :##: ..  .:*#%%@%...:**.  .@@@%#*.   .. :%*.   ..  .     "
+    say "    .:**:     ......   :**.   ......     .%*:. .%*          "
+    say "     .#%:            .%#..  %@@%         :@%.  .%*     :%*. "
+    say "     :%%: @%         .%%    %@@@      %% :@%.   . @@%#.     "
+    say "       .**%*   .*#%#%* .****#%%%%#*+. **#%#*.          :*+. "
+    say "   .+***:.%#+*****:...  ...........:+=#*.:#*.        :*=:   "
+    say "+*++::::  ::*#**::     .=++=****    ::::  :-*=.   ***+:.    "
+    say "*#-:.       :=*+.      .:-**#%%#=====-     :*+.   ##-:      "
+    say "#%        +===--.         --==%%%#---:==== :%*.   %%        "
+    say "======. ==@%--                =======-=====+%*.   ==        "
+    say " .=+====%#+=                     .===-=-==+++==-=:==-==:    "
+    say "     .==%#==                ====      =======-==%*=+=+#*=-=-"
+    say "        ==%*        -:      =+++-:      --=+==--#*   :**+=#+"
+    say "        ::#*      ::#*         .*+      %#   .++%*::::*=..#*"
+    say "       .**  ..   .**                    **..   .*+%%*+. .:*+"
+    say "       .#* .**.                          .#*.  .#*%#   :*+. "
+    say "       .@%@@                  @@           -@#.        :%#. "
+    say "          @%    ..             :@#    %%...-@%%*:....-%%%#@*"
+    say "          @%...:*%:                     %@@@@*..%*%@%%%*.   "
+    say "          @@#%#*:                        .%@@*:             "
+    say "          @%##.                            :%#%*.           "
+    say "           .##.      .%#           .#*.    :%%%*.           "
+    say "------------------------------------------------------------"
+    say ""
+    say "For, of course, no one wants to live in the moon-house forever--that is, no one except the Man-in-the-moon, and he does not mind it any more than a cat minds living in the kitchen."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = moon calf & card2b = 1 then
+do
+    say "David the Moon-calf"
+    say "------------------------------------------------------------"
+    say "                 :@@%@=@%@@*@%*@*@@%@=@%                    "
+    say "            .--:-:====:====-==-=-====:==--:                 "
+    say "            :@@*@*@@#@=@%@@+@%*@*@@#@=@%@@-                 "
+    say "       .@%#@*@@*@*@@%@=@%@@*@%*@*@@%@=@%@@*@#               "
+    say "       .@%#@*@@*@*@@%@=@%       :@@%@=@%@@*@#               "
+    say "     .:.+==+==+:-:==--:=-       :-=--:+==+-==::.            "
+    say "     *@=@%*@*%@                      :@#%@*@*#@-            "
+    say "     *@=@%#@=                             -@##@*@@          "
+    say "     =*-       =*=**+*:       =*=**+*-*=     +*=**          "
+    say "   ..*%=     ..+%+%%*%-       +%+%%*%=%*     *%+%%          "
+    say "  :@@%@=    :@@*@*O@%@-         :@@%O=@%.    #@*@@          "
+    say "  :@@%@=                 @@=                 #@*@@          "
+    say "  .**::.                 **:  -=:            +*=**          "
+    say "  :%%.                   #%-  +#-            *%=%%          "
+    say "  :@@%@=              .@%.                =@##@*@@          "
+    say "  :%%*%=            *%-                   -%**%-            "
+    say "  .===*-            -=::::::::            :*++*:            "
+    say "     *@=              .@%@@*@%            -@##@-            "
+    say "     *@=@%.                            .@@*@#               "
+    say "     ...#*+*-    :**+*-****=**=*=**.    ##=#+               "
+    say "        *++*=    :**=*-****=**=*=**     **=*=               "
+    say "          *@=         .@%@@*@%         .@@-                 "
+    say "          *@*@@*@=                   :@%@@-                 "
+    say "          :::**=*-                 =+-****:                 "
+    say "            :##+#=                 *#=#*##:                 "
+    say "               *@*@@%@=@%@@*@%*@*@@.   .@@*@##@*@@%@:       "
+    say "               +%=  *%-                 %%:       *%=%*     "
+    say "          :::::=+-::=+:                 ++:::     =+-+=::.  "
+    say "          *@*@@*@*@@%@-                .@@*@#     #@=@%@@:  "
+    say "+@*@@%@=@%.      :@@%@=@%     *@*@@%@=@%  =@#         .@@*@*"
+    say "+@*@@:. ..        ....:@#%%+%#*@=.... ..   ..          .... "
+    say "-=-==.                .====-====:                           "
+    say "------------------------------------------------------------"
+    say ""
+    say "David--David the simpleton--David the moon-calf--really had the golden key, and was the hero of heroes of whom all the world was talking."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = master cobbler & card3b = 1 then
+do
+    say "Master Cobbler Hans Krout"
+    say "------------------------------------------------------------"
+    say "   .@##@%%@#  #%@##@%%@##@%%@##@%%@##@%%@##@.               "
+    say "  #%@#   .@##@.      .@##@..@#  #%. #@%%@##@.               "
+    say "  #%  #@%%              #@.         #@%%@##@%%              "
+    say "  ==  =+.                             ==+==+==              "
+    say "  ::--=+.       --:-----          ----==::=+==              "
+    say ":: .+=-=    ::::+=-=-=+=        ::=--===::-===              "
+    say "*%.:%*      *%##%#.O.:%*        *#..O.*%%*  *#              "
+    say "  *%%*        *#%**%##%*  ..    *%%**%##%*  *#              "
+    say "  *#%*                    **    **     .%*  **              "
+    say "  #%@##@.               #@.      .@#   .@#  #%.             "
+    say "  #%@##@%%              #@.      .@#   .@##@%%              "
+    say "#@%%@#  #%@#            #@%%@#   .@#  #%@#                  "
+    say "  #%    #%@#                  #@%%    #%                    "
+    say "  +**++*+**+                          ++                    "
+    say "  +*::::::**=*      ==+==*==    ==+==+**                    "
+    say "  ::      -:+#.     ::-::-**==-=**-:+#::                    "
+    say "            *#::          ==+==+==  *#::                    "
+    say "          ..=***:.                  *#**:.......            "
+    say "         .#*  **#*                  *#**#**#**#*            "
+    say "        #%@#   .@##@.            .@##@.     #%@##@%%        "
+    say "  #%@##@%%        #@%%          #%@#        #%@#  #%@##@.   "
+    say "#@%%@##@.           #%@##@%%@##@%%                    #@.   "
+    say "#@%%  #@%%                                              #%  "
+    say "*%**.                                                   *#%*"
+    say "..**                                                    ..%*"
+    say "  ::                                                      ::"
+    say "------------------------------------------------------------"
+    say ""
+    say "But there was one in the village who neither laughed at David, nor called him moon-calf. That was Hans Krout, the cobbler. For Hans Kraut was also moon-struck."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = baby & card4b = 1 then
+do
+    say "Baby"
+    say "------------------------------------------------------------"
+    say "         =@*@+@%@*@@%%                                      "
+    say "     #@*@*@-          @@*@%@+@*@*@+@%@*                     "
+    say "   #@%@        :@#@@    *@%@+@:     .@#@@%@@@#@:            "
+    say "   #@.         :@*        #@+@#@=        %@@@#@%@:          "
+    say "   +*.     :*:              -*=*:          **    :*=*-      "
+    say "   =*-=  :==*:    ==--==    -*=*:          **:=. .:-*==:    "
+    say "   +#*%..-#+#:   .%%**##    =%*%=          ##*%:.  -%*%=..  "
+    say "     *%+@:        %%        =@*%-            =%#@: -@*%=@*  "
+    say "       +@*@=              #@+@:                #@+@*@=  @@@#"
+    say "     #@*@*@=          @@*@%@.                      =@+   .@#"
+    say "     #@*@*@*@+@%@#@@%%                             =@=      "
+    say "     +#                                            :#+#=    "
+    say "     +#-+.                                          :-%=    "
+    say "     =+=%::.                                         :%=    "
+    say "       =%+%-                                         :%=    "
+    say "       +@*@*@+@#                                     :@+    "
+    say "         =@*@+@%@#@@                           #@+@*@=      "
+    say "           -@+@# .@@%@@@*@%@.              @@#@%@:          "
+    say "               :%*%%      *%=%+%+%=%#%*%%*#%%.              "
+    say "                :.::      .:.:.:.:.:::.::.:::               "
+    say "------------------------------------------------------------"
+    say ""
+    say "It was not until after sundown that he was able to leave the baby, for the little one cried and fretted, and fretted and cried, until David thought she would never be quiet."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = phyllis & card5b = 1 then
+do
+    say "Phyllis"
+    say "------------------------------------------------------------"
+    say "  :&$.        ;&&$&:  &&:      $&$&&$&X&$  X&&&&            "
+    say "  :$$$$X$X  X$; .X$:  $$.                $$: ;$$X$:         "
+    say "  :&$$&$&X::$&;  X&;::&$:                &&;:+&&$&;:.       "
+    say "  ;&&&&&&&&&&&+  $&X&$&&:                &&&&&&&&&$&x       "
+    say "  ;&&&&&&&&&                             &&&&&&&&&$&&&&:    "
+    say "  :&$::+&$&&X$XXXx$+$+         x$xXXx$+$x::X&&&&$&$&x:.     "
+    say " .;$X. ;$X$$XXX$$X$+X+         +Xx$$X$+X+  x$$$$$$X$+..     "
+    say "x&$&$. +&$&&  ;&&$&:             ;&&$&;    X&&&&&&$&$&&:    "
+    say "X&$&$. +&&&&&&&&&$&X&X         $&$&&$&X&$  X&&&&&&: :&&:    "
+    say "x&$&&&&$&$&&          &&: ;&&&&              :&&&&: :&&$&+  "
+    say ":;:;;$&$&$&$          &$x+X&&&&              :$&$&:  ;;X&+  "
+    say "     $&&&$&&          &&&&&&&&&              ;&&&&:    X&x  "
+    say "     $&+  &&                                 ;&&&&: :&&&&x  "
+    say "     $&;  &&     X&x&x         X&X&$         :&&&&$&$&$:    "
+    say "     x$;  $X     :;;$+;;;;;;;;;X$+;;       :;+X$X$x$xXX.    "
+    say "     X&;  &$       ;&X&$&&&&&&&$&;         X&$&&$&X&$&$:    "
+    say "     $&&&&&&          &&&&X                X&&&&&&$&x       "
+    say "       +&&&&&&+                          &&: ;&&&&$&x       "
+    say "       +&$&&::;XXx$:                +$+$x::  ;&&::::.       "
+    say "       +&$&&  ;&&$&;               .X&X&$    ;&&            "
+    say "       +&&&&     $&X&X         $&$&&$&X&$&&: ;&&            "
+    say "                 $&X&$&&&&&&&&&&&+  X&X&$  X&X              "
+    say "              :x+.:.:.:..::::::.:   .:.:.xxX$XxXxX.         "
+    say "              :XX                        xx+xxX$X$:........."
+    say "              ;&$                            ;&&&&$&$&&&&$&$"
+    say "          &&&&+                                   x&$&&:    "
+    say "  :&$. ;&$&&                                           x&X&$"
+    say "  :Xx  ;XxXX                                           +X+Xx"
+    say "------------------------------------------------------------"
+    say ""
+    say "There was one little child that David liked better than all the other children; her name was Phyllis, and she was a princess--for she wore a golden coronet."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = old woman & card6b = 1 then
+do
+    say "Old Woman with the Red Petticoat"
+    say "------------------------------------------------------------"
+    say "                &&X&X&&$&X&;      +&X&X    ;&+              "
+    say "         :;;;;;;++:......;+;;;;;;;..:+;;;. :+;;;;;.         "
+    say "       ..;X+XxXxXX:......+X+X+XXxX..:X+XX..;XxX+XX:.        "
+    say "      .&&X&X&X&$&&X&X&&$&X&X&X&&. +&X&X&&$&: :&X&&$&:       "
+    say "     &$  +&X&X&&.        X&X&X&&$&x&X&X&&$&+&+  &&$&:       "
+    say "     &&&&X&X&X&&. +&X&&$&X&X&X&&. +&;      ;&X&X&&$&:       "
+    say "  :+;x+::;x+x+++  ;x;::++::;x+xx;+;x;+;++;+;x+x+xx:::+;     "
+    say "  ;&+$X  +&x&x$$:.+&+  $$. ;&x&&$&+&+&x&&X&+&x$x&&. :&X     "
+    say "  ;&+         $$&&X&+  $$.   :&&$&.                 :&X     "
+    say "  ;&x                  $&X&;    $&.                 :&$     "
+    say "x&X&x    +&X&X&&.        X&X&X&&$&.        ;&X&X&&: :&$     "
+    say "+X;::    :::::xx++;+:    :::::::::  :+;++;+;X+::::. .::+;   "
+    say "+$;           XXXX+$+::           .:;$x$$x$;X;        :$X   "
+    say "x&;               +&X&&           +&X&X               :&$   "
+    say "x&;                                                   :&$   "
+    say "+$;   .$$x$x$XXX$$x$x$$X$.   :$$X$+$x$x$$X$+$x$x      :$X   "
+    say "+$:  x+:::::::XX:::::::XX;x;x+$$:::::::$$:::::::xx.   :$x   "
+    say "+$;  $X       XX       XX+X+X+$$.     .$$.      $$:   :$x..."
+    say "x&;  &$       &&.      $&.   :&&.     .&&.      &&:   :&$$&:"
+    say "x&;             &&X&X&&         $&+&X&X                  $&:"
+    say "+$;                    XXx$+$x$$.                        X$:"
+    say "+X:   .++;+;+;++++:    :::::::::  ;+;+;++++.             xX:"
+    say "+X:  ..XX+X+X+xxXX:...............;X+X+XX+X:..           xX:"
+    say "x&;  &$         &&X&X&&$&X&X&X&&$&.        ;&+           $&:"
+    say "x&;                                   .&&.            :&$   "
+    say "..;&+$$$&:                             ..X&+&+        :&X   "
+    say "  :X;:::;.                               :;:;:        :x+   "
+    say "  ;X+                                                 :Xx   "
+    say "------------------------------------------------------------"
+    say ""
+    say "That dear old woman who lives up on the cliff in the Land of Nowhere--that dear old woman with the red petticoat."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = black horse & card7b = 1 then
+do
+    say "Black Horse"
+    say "------------------------------------------------------------"
+    say "                                                ;&:         "
+    say "                                           &$&x&X&: ;&$&&&  "
+    say "                                 &&&&&$&x&&&+  &X&X&+&$&&&  "
+    say "                               &$      &x   .&x&: ;&+&$&&&  "
+    say "                             $&  &&&&&$&x&&&+  &X&X&+&$&&&  "
+    say "                           +&XX$XX&XX$x&+&X$x&+&+&+&;$x$X$  "
+    say "                       +X;$x&X$&XX&XX  &+&X$;  &x&+&+&x&X$  "
+    say "                   .$+$$&+&          $+&+&$&x$;&: ;&+&x&$$  "
+    say "               .$+$;&:                    :&X&+&+$+&+&X&$$  "
+    say "            x;x+$;     ;x;x;x                     ;$;$+$XX  "
+    say "        ;;;;x;x:       ;x    :;                       :x++  "
+    say "    :.::+;. . .        :+  O ;+                    :.:;+++  "
+    say "    +;:::.              :;+  .:                   :+.:.:::  "
+    say ";x;;;:                   :;:;                     .;        "
+    say "+$                   :X.       X+                           "
+    say "X&$$                   +$+&x&XX             :&:             "
+    say "X&$X                                      .&x$.             "
+    say "+$XX&x&XXX$x&+$:                       &+$X$;               "
+    say "    $x&X    &;                   X&X$&x&+                   "
+    say "        &&&x             x&$&&&&$&&&&&$&x                   "
+    say "  &&&$&$             ;&&&x&            &x&X                 "
+    say "    &$&$         :&+&X&.                 &&&+               "
+    say "      &$&&&$&x&X&$&.                     &&&+               "
+    say "                                       &x&&&$&:             "
+    say "------------------------------------------------------------"
+    say ""
+    say "The Black Horse circled nearer and nearer, and though its body was black, its wings glistened as white as snow."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = iron man & card8b = 1 then
+do
+    say "Iron Man"
+    say "------------------------------------------------------------"
+    say "                    #%@#%@%%@#%@%%@#%@%%@#%@%%@#            "
+    say "                  %@%%@#%@%%@#%@%%@#%@%%@#%@%%@#@@          "
+    say "               .@#%@%%@#%@%%@#%@%%@#%@%%@#%@%%@*@@%%        "
+    say "               .*+*****+*****+*****+*****+**+**+**++        "
+    say "              -=..++=++=++=++=++=++=++=++=++=++=..==        "
+    say "  ::          ==  :-:::::-::+=++==+=++==:::-::::  ::::      "
+    say "::==::        ==           .============           .*=      "
+    say "*@..%*..      **..      ......        ......      .:%*      "
+    say "*%.   *%.      .%*      *%**%*        **%*#%      *#%*      "
+    say "*%##  *%.      .%*                                *#%*      "
+    say "  #%  #@.      .@#  #%@#%@%%@#        #%@#%@%%@#@@%%        "
+    say "  #%. #@.      .@#%@%%@#%@%%@#        #%@#%@%%@#@@%%        "
+    say "  #%  #@.         %@%%@#%@%%@#        #%@#%@%%@*@@%#        "
+    say "  **  *%.         *%##%*#%*#%*        *#%*%%*#%*%%**        "
+    say "  +*  *#.         ..***+*#**#+        ***+*#**#+*#..        "
+    say "  +*  +*.           ::::*#***+        +**+*****+*#==+=      "
+    say "  ++  +*.               *****+==-==-==+**+**+**+**+**+==    "
+    say "  **  *#::          ::::*#**#+*#**#+*#**#+*#**#+++**#+##    "
+    say "  **  +***    ......**#+*#**#+*#**#+**++#+*#**#+  **#+##...."
+    say "  **    **    **#**#**#**#**#**#**#+   .#+*#**#+  **#+##**#+"
+    say "  #%    #%  %@%%@#%@%%@#%@%%  %@%%@#   .@#%@%%  @@ .@*@@%%@*"
+    say "#@%%    #%@#%@%%@#%@..@#%@%%@#%@%%@#%@%%@#%@%%@#@@ .@*@@%%@*"
+    say "#@%%@##@%%@##@..@#%@%%@#%@%%  %@%%@#      %@%%  @@%%@*@@ .@*"
+    say "        #%@#  #%@#  #%@*%@%#  %@%%@*      %@%#  %@%#  @@%#  "
+    say "*%.      .%**%**.    .%*#%*#%*   .%*              **     .%*"
+    say "..        ......      ........    ..              ..      .."
+    say "------------------------------------------------------------"
+    say ""
+    say "Jingle! clink! crash! bang! then the door opened, and in came the Iron Man, breathing fire and smoke out of his nostrils."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = king & card9b = 1 then
+do
+    say "King"
+    say "------------------------------------------------------------"
+    say "               00       5060080509    30980                 "
+    say "               223313333321    123333332222                 "
+    say "               009050800405    308004040980                 "
+    say "               00  70800          00403  80                 "
+    say "               00     00          00     80                 "
+    say "               55                        55                 "
+    say "               66                        46                 "
+    say "               00                        98                 "
+    say "               00                        80                 "
+    say "               99                        69                 "
+    say "          11711441171111717111171111717115571717            "
+    say "          88584889820988584889828988505869950584            "
+    say "          00604       00          00       50409            "
+    say "        08  20600803  00          00  309805040980905       "
+    say "        9455717115935269          6935294717136549593       "
+    say "        94997    5939499          9959594    79469592       "
+    say "          001                                1098090508     "
+    say "109  402  001      70800          00403      1098090508     "
+    say "795  593  997      79477           7593      795 729394447  "
+    say "795  293  547      745              341      195  29345691  "
+    say "109  402    20600803  00          00  3098050409  505  001  "
+    say "109  402    204       00605    30800     80502       08001  "
+    say "784  583  991             799497           58595     86  392"
+    say "745  12177447              2232            1234577   45  142"
+    say "109     08001                                109807  08  304"
+    say "109007  08              506008050800            807  08  304"
+    say "   907  09         70980502    30900503         907  09  305"
+    say "   55   55       131551171      111135333       557  55   17"
+    say "   007  08       90509              40609       807  08     "
+    say "------------------------------------------------------------"
+    say ""
+    say "But the poor King, her father, was more and more sad every day. For nobody had ever seen such a little child as the Princess."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = moon angel & card10b = 1 then
+do
+    say "Moon Angel"
+    say "------------------------------------------------------------"
+    say "         -%@)@*    >@]@}]@=  ##       >@<%}#@+    ]@*  "
+    say "       +)<)]  =))<):    <)>)>))  -)<))-      =)>])<)*]<     "
+    say "      :=<><< :=<<><:: ::><*<>><::-<>><-  ::::-<*<<><+<>     "
+    say "     [@>@}%@)@)@#}%>@]%}]@)@)}#)@<%][@-  #}}@)@)@@-  @}     "
+    say "  =@@}@>@}@@  =@#       ]@=                     @@}@>@}@@=  "
+    say ">#)##[#>#)    =#}         +#)[[)#<#][#-  }[}#<#)##-  #[##)#<"
+    say "+<*<<><+<*  :==<<         =<*+++*+<*+*:  <>+*=*=<<:  <><<*<+"
+    say ">#)##[#>#]  <#)#}         +#)  O -#]     }[   O ##-  #[##)#<"
+    say "<@]@@  +@[  )@*              ##)@)@[       }@)@]@@}@*  %@)@)"
+    say "<@]@@  +@[  )@*  }%: -@}                   #@+    ]@*  %@)@)"
+    say "*)>))  =)>  *)=  ==  :)<=*:         +*:    <)=  **>)+  ==+)*"
+    say ">}<}#  +})  <}+      -}])}=         ]}-    ]}=  }}]}+    +}<"
+    say "<@]@@  +@[  )@*         ]@=      =@[}@]@<  }@+  @@-      *@)"
+    say "<@]@@    -%@  =@#}%>@<              }@]@<%}     @@-         "
+    say ":-=]]><: :]]  =])--*]*  *<-         ----:--  -<+--          "
+    say "  -]])[: :[[::=])  +]*  >]=::     :::: : ::::=[<            "
+    say "     [@: -%@)@*           *@)    =@[}@]@<%}#@)@]            "
+    say "     [@:    )@*  }%>@]@}     ##              +@)            "
+    say "     )[+)>  >[>)<::::=[)     ::*)=           =[>))>)=       "
+    say "     >)+]<  *)*]]::  :<>::     >]+:::::::::::=)*))<]+::     "
+    say "       +@[    =@#}%:    ]@=    )@)@[}@]@<%}#@+    ]@>@}     "
+    say "       +@[         >@]@}]@)@)    =@[}@]@<%}          @}     "
+    say "     <[*})         ::-}]:::::    -})]}=::::          }]][-  "
+    say "     +>=>+           :)<         -)>+>:  ----:       >*))=-:"
+    say "                     -@}         =@[     %}#@+         %@)@)"
+    say "                                 =@[     %}#@+       @}  *@)"
+    say "                                 -#)]}-      +}<}}]}*       "
+    say "                                 :===+==-====+<*++=+-       "
+    say "                                      >@<%}#@)@)            "
+    say "------------------------------------------------------------"
+    say ""
+    say "There he stood gazing, gazing at the star, and in his eyes were two shining stars just like the one at which he was looking, and the two stars in his eyes shone now red, now blue, and flickered and blazed..."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = beautiful lady & card11b = 1 then
+do
+    say "Beautiful Lady"
+    say "------------------------------------------------------------"
+    say "  #%@%*@%%@#  #%@#%@%%  @@%%@*@@ .@*@#%#    %%@*@+@%@*@+    "
+    say "*@.   *@.                  .@*  %%@*  %%@*  %%@*@+@%@*@+@#  "
+    say "    %%   .%##@.   %@#%%*@@##    %%%*@#%%%*@* :%*@+%%%*@+@*  "
+    say "==. ==  ====   .===+. .  . .=-== .==+=  .     . . ==..+-    "
+    say "=+. ++  ==:::---+=::        :::: .::*=            :: .::-:  "
+    say "=+. ++  ==::=+==+=::::             .=-      :::.:.:.    +=  "
+    say "*@. %%  *%%**@**%**%**..                  ..#*%+%=%*..  @*.."
+    say "*%. %%  *#  *%. .... .%*        ..       .%*  .... :%=  %#%="
+    say "*%..%#  *#. *%..%*#% .%*        #*       .%+ :%*%+ :%=   :%="
+    say "  *%@%*@#%@#   .%*%O.   @@      %%@*   .%*   :%*O+   :@+    "
+    say "*@%%@%*@.   #@%%@#%@%%@*@@       .@*   .@*@*%%@*@+@%@+  @#  "
+    say "*@%%@%*@..@#                     .@*                    @#  "
+    say "  #%@%*@.                        .@*@#                  @#  "
+    say "  +*#**#.                     ##**#+#*             :#+#=    "
+    say "=***#*+#++                    ........             .#=..    "
+    say "::+***::+*           .+=      ++   .+=   .+-==    +=*=      "
+    say "  +***-=+*=-         .*+==-==-**-==-**===-*=*+ .=:*+-:      "
+    say "  +*#*+#==#*         .+=##**+=++==#++===+=#+== .#=+=        "
+    say "  =+#*+#:.*+..  ..      ****.....:#=.....:*=  .:#=          "
+    say "    **+#**  *#..*+        **#+#***#+#***#=   .*+#=          "
+    say "    @%*@%%@##@.   %@%%                      %#              "
+    say "      *@%%@##@%%     .@*@@             .@*@*%#              "
+    say "        #%@##@%%@#        %%@*@@%%@*@#%%@*                  "
+    say "------------------------------------------------------------"
+    say ""
+    say "...the most beautiful lady that David had ever seen--a lady with a soft, gentle face, and smooth hair, and eyes as blue as the sky. She was the teacher."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = princess aurelia & card12b = 1 then
+do
+    say "Princess Aurelia"
+    say "------------------------------------------------------------"
+    say "        %@=@%        %@*@@        @@+@@                     "  
+    say "        ...=-..    .........    ..==::.                     "  
+    say "          .@%%@#  =@*     #@+  :@%@@-                       " 
+    say "          .@%   @@.          @@   @@-                       " 
+    say "           ==                     ==:                       "
+    say "          .@%                     @@-                       "
+    say "          .@%                     @@-                       "
+    say "          .%*                     #%-                       "
+    say "          .%*                     %%:                       "
+    say "        %@:  %@%@@.          @@=@%  :@@                     "
+    say "     +@@        @@*@*%@*@@%@+@@        +@+                  "
+    say "     -**        --:-:--:--:-:--        -*-                  "
+    say "     +@@                               +@+                  "
+    say "   @@#@@     %@#             @@        +@+                  "
+    say "   ##:..=+.  +#=     =+:     *#   =+:++ ..++                "
+    say "   %%.  *%:  *%*     #%-     %%   %%=%%   %%.               "
+    say "*@*@@.    .@%%@%@@*@*%@*@@%@+@@=@%@@-     @@:               "
+    say "=#=     +*:                         .**   ##=**             "
+    say "=#-     *#:                         .##   **=##             "
+    say "*@+     %@:  %@%@@*@*     #@+@@=@%  :@@     =@@             "
+    say "+%=     *%:     %%.          #%     .%%     -%%             "
+    say "=*-..   +*.     ==   ..      ==     .**     :**..           "
+    say "*@*@@.  %@:          %@=            :@@     =@@%@:          "
+    say "   @@.  %@:          %@*@@          :@@        %@-          "
+    say "   ++.  =+.          ::.::          .++        =+:          "
+    say "   @@.  %@:                         :@@        %@-          "
+    say "*@*@@.  %@:     @@*@*%@*@@%@+@@     :@@        %@-          "
+    say "+@=       .%#*%*  =@*%@*@@#@=       :@@        #@:          "
+    say "+@=       .@##@*  -@*%@*%@#%=       :%@        *@:          "
+    say "*@+          %@%@@.               @@-          %@-          "
+    say "*@*@@.         .@@.          %@=@%@@-          #@=@%        "
+    say ":=-==           ==           ==:====:          -=:==        "
+    say "   @@.          @@*@*%@*@@%@+@@   @@-          %@=@@        "
+    say "------------------------------------------------------------"
+    say ""
+    say "And she was a real Princess too, for she came into the world with a golden coronet on her head and a golden star on her shoulder, and so the Queen named her Princess Aurelia."
+    response = ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 1 then
+    do
+    say "You are in your kitchen. Your eyes tell you it's a familiar sight, and yet it feels quite unfamiliar... Your memory of the moon-kitchen and the Man-in-the-moon tinkering and telling stories brings you great joy. The quiet here is unsettling."
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 2 then
+    do
+    say "You are in your room. There's more stuff here to keep a person occupied, but your Moon-house living quarters were comfortable in their simplicity."
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 3 then
+    do
+    say "Your dog, Manny the Moon Angel, is curled up here and deep in sleep. His silver fur glows in the streaming sunlight from a window."
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 4 then
+    do
+    say "You stand before the second-floor windows and gaze out at a dynamic, moving world of squirrels, children, and cars driving by. While the sights that the Moon-house windows provide are far more vibrant in their pastel colors and hyperrealistic tendency, these earth windows will do. You rather enjoy the peaceful serenity of the outside."
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 5 then
+    do
+    say "You are sitting at your desk in the makeshift attic workspace, the place where you work from home. You would like to have a job that is more physically demanding, like that brief stint as a moon-house technician. But you've grown now and cannot go back."
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+end
+if response = 6 then
+    do
+    say "You are in your backyard garden. The tomatoes, green peppers, and eggplant are coming along nicely! You catch a sweet whiff of kitchen herbs and it activates a memory of another time--perhaps a past life? The sundial looks similar to the one along the garden behind the moon... the place where moon-calfs congregate."
+    say ""
+    say " _____|\____"
+    say " \___   ___/"
+    say "   ou|t|grabe"
+    say "     | |  LLC"
+    say "     | |"
+    say "    /   \"
+    say "   /-----\"
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
+    end
+end
 end
 
