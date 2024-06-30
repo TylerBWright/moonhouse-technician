@@ -1159,22 +1159,18 @@ process_day_of_the_week:
     if (day_number - 1) // 7 = 0 then
     do
         day_of_the_week = "Sunday"
-        say sunday
     end
     else if (day_number - 1) // 7 = 1 then
     do
         day_of_the_week = "Monday"
-        say monday
     end
     else if (day_number - 1) // 7 = 2 then
     do
         day_of_the_week = "Tuesday"
-        say tues
     end
     else if (day_number - 1) // 7 = 3 then
     do 
         day_of_the_week = "Wednesday"
-        say wed
     end
     else if (day_number - 1) // 7 = 4 then
     do
@@ -1187,10 +1183,6 @@ process_day_of_the_week:
     else if (day_number - 1) // 7 = 6 then
     do
         day_of_the_week = "Saturday"
-    end
-    else
-    do
-        say hwegses
     end
     return
 
