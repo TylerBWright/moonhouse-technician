@@ -638,13 +638,13 @@ do while moonhouse = 1
             end
         end
         else
-        if buy = 8 & credits > 59 & card9b = 0 then
+        if buy = 8 & credits > 119 & card9b = 0 then
         do
             say "Man-in-the-moon: 'The King card. He's the fairytale type to show up once in the prologue of a story and then in the concluding chapter. I know his type!'"
             card9 = king
             card9b = 1
             card9c = "SOLD"
-            credits = credits - 60
+            credits = credits - 120
             buy = ""
             pull response
             say "You entered: " response
@@ -1046,7 +1046,7 @@ do while house = 1
         pull response
         say "You entered: " response
         say ""
-        if response = "look" | response = "yes" then
+        if response = "LOOK" | response = "YES" then
         do
             say "You notice something shiny under your bed. Is that a card?!"
             say ""
