@@ -131,7 +131,7 @@ say ''
 say '************************'
 call sleep 1
 say ""
-say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon"'
+say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon: A Real Story of the Moon-Angel"'
 say ""
 say "Developed by Tyler Wright (Outgrabe) for ParserComp 2024."
 pull response
@@ -143,16 +143,18 @@ do
     say ""
     say "This is a classic parser-based text adventure game. The player types in their command and presses ENTER. It's not too hard... after all, you just did it to get to these instructions."
     say ""
-    say "This story is set within the quirky realm of the moon-house, home of the Man-in-the-moon and the Moon-Angel. The moon-house offers the experience of a lifetime! You will be--"
+    say "You find yourself in the strange realm of the moon-house, as originally described in Howard Pyle's imaginative fairytale. The moon-house offers a host of unique opportunities, including--"
     say ""
-    say "- building relationships with curious moon-house denizens"
-    say "- gazing through moon windows into the cosmic beyond"
-    say "- hanging out in your bunk!"
+    say "- making friends with strange occuptants of the moon-house"
+    say "- moon window gazing into the cosmic beyond"
+    say "- hanging out in your bunk"
     say "- getting lots of moon-house technician duties accomplished"
     say "- collecting exclusive trading cards"
     say "- and more..."
     say ""
-    say "Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house vibe. While the days sort of blend together here, you must immerse yourself in the weird subroutines and procedural rhetoric over a prolonged period of time to get the full effect."
+    say "It's a very cozy, slice-of-life experience for lovers of nineteenth-century science fiction. Plus there's ASCII playing cards. A first?"
+    say ""
+    say "Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house vibe. While the days sort of blend together here, you must immerse yourself in the strange subroutines and procedural rhetoric to experience it in its fullness."
     say ""
     pull response
 if response = 1 | response <> 1 then
