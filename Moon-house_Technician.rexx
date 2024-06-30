@@ -926,6 +926,12 @@ do while moonhouse = 1
     end
 end
 
+call pull_any_key
+say "Can you believe that today is your last day in the moon-house? You spend it with friends exploring every field, statue, row of cabbage, and game parlour. Everybody laughs and shares jokes, including the Beautiful Lady who has as good a riddle as any. You argue over which tree is the elder of the bunch, how many bands an armadillo has, and other epiphanies set at random like the smattering of the stars above. You give each child a hug before a final embrace with the Beautiful Lady, and so it ends."
+say ""
+say "You head back to your bunk and fall fast asleep."
+say ""
+call pull_any_key
 say "ZZZZzzzz"
 BEEP(B, W)
 say ""
