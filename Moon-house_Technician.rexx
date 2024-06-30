@@ -133,7 +133,7 @@ call sleep 1
 say ""
 say '"Moon-house Technician" is a spiritual successor to the 1895 Howard Pyle fairytale "The Garden Behind the Moon: A Real Story of the Moon-Angel"'
 say ""
-say "Developed by Tyler Wright (Outgrabe) for ParserComp 2024."
+say "Developed by Tyler Wright (Outgrabe) for ParserComp 2024 (https://itch.io/jam/parsercomp-2024)"
 pull response
 say ""
 if response = 1 | response <> 1 then
@@ -145,16 +145,16 @@ do
     say ""
     say "You find yourself in the strange realm of the moon-house, the setting of Howard Pyle's imaginative fairytale. The moon-house offers a host of unique opportunities, including--"
     say ""
-    say "- making friends with strange occuptants of the moon-house"
+    say "- making friends with legendary moon-house occupants"
     say "- moon window gazing into the cosmic beyond"
     say "- hanging out in your bunk"
     say "- getting lots of moon-house technician duties accomplished"
-    say "- collecting exclusive trading cards"
+    say "- collecting exclusive ASCII art trading cards"
     say "- and more..."
     say ""
-    say "It's a very cozy, slice-of-life experience for lovers of nineteenth-century science fiction. Plus there's ASCII playing cards. A first?"
+    say "It's a very cozy, slice-of-life experience for lovers of nineteenth-century science fiction."
     say ""
-    say "Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house vibe. While the days sort of blend together here, you must immerse yourself in the strange subroutines and procedural rhetoric to experience it in its fullness."
+    say "Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house vibe. While the days sort of blend together here, you must immerse yourself in the strange subroutines and procedural rhetoric to experience it in its ethereal fullness."
     say ""
     pull response
 if response = 1 | response <> 1 then
@@ -822,7 +822,7 @@ do
 end
 if gardenswitch = 4 then
 do
-    gardentext = "The Beautiful Lady had you cut up some melon and pass it out to the children, but as soon as you caught one child, two others would run off! This back-and-forth rigmarole kept you busy today, and you're just about ready to call it a day. Still, it is a rare treat to be able to see other children. It gets rather lonely when the Man-in-the-moon and the Moon-Angel are the only persons keeping you company. One is an eccentric hobbyist and the other an aloof cosmic entity--both too preoccupied to care for a child."
+    gardentext = "The Beautiful Lady had you cut up some melon and pass it out to the children, but as soon as you caught one child, two others would run off! This back-and-forth rigmarole kept you busy today, and you're just about ready to call it a day. Still, it is a rare treat to be able to see other children. It gets rather lonely with just the Man-in-the-moon and the Moon-Angel keeping you company. One is an eccentric hobbyist and the other an aloof cosmic entity--both too preoccupied to care for a child."
 end
 if gardenswitch = 5 then
 do
@@ -1669,7 +1669,7 @@ do
         say "There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?"
         say ""
     pull room
-    say "You entered: " response
+    say "You entered: " room
     say ""
     if room = carve & engraving = "" then
     do
@@ -1800,7 +1800,7 @@ do
     response = 0
     say "Moon-Angel: 'Here.'"
     say ""
-    say "The Moon-Angel reveals a holographic [MOON ANGEL] playing card from under his robe and places it in your hand. While this gesture left you star-struck, you are more surprised by a short burst of smile radiating out of his face. For a brief moment in time, the Moon-Angel willingly and gracefully decided that he might lower himself down to the human level in order to empathize with you. He then dissapears down the hallway and leaves you to your chores."
+    say "The Moon-Angel reveals a holographic [MOON ANGEL] playing card from under his robe and places it in your hand. While this gesture left you star-struck, you are more surprised by a short burst of smile radiating out of his face. For a brief moment in time, the Moon-Angel willingly decided that he might lower himself down to the human level in order to empathize with you. He then dissapears down the hallway and leaves you to your chores."
     card10 = moon angel
     card10b = 1
     moonangelmood = moonangelmood + 1
