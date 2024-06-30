@@ -141,16 +141,16 @@ do
     response = ""
     say "INSTRUCTIONS"
     say ""
-    say "This is a classic parser-based text adventure game. The player must type in their choices to interact within the game world. It's not too hard... after all, you just did it to get to these instructions!"
+    say "This is a classic parser-based text adventure game. The player types their command and presses ENTER. It's not too hard... after all, you just did it to get to these instructions!"
     say ""
-    say "This story is set within the quirky realm of the moon-house, home of the Man-in-the-moon, the Moon-Angel, and the Lady of the Garden. The game begins on your eleventh birthday and lasts for an entire moon year. In this time, you will build relationships with the denizens of the moon-house, explore a little bit of the cosmos through the moon windows, hang out in your bunk, collect exclusive trading cards, and get lots of moon-house technician duties accomplished. Very slice-of-life. :)"
+    say "This story is set within the quirky realm of the moon-house, home of the Man-in-the-moon, the Moon-Angel, and the Beautiful Lady of the Garden. The game begins on your eleventh birthday and lasts for an entire moon year. In this time, you will build relationships with the denizens of the moon-house, explore a little bit of the cosmos through the moon windows, hang out in your bunk, collect exclusive trading cards, and get lots of moon-house technician duties accomplished. Very slice-of-life. :)"
     say ""
-    say "This game should be played at a leisurely pace as a year can be a long time! Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house in all its sublime beauty. While the days sort of blend together here, it must be experienced over a prolonged period of time to fully appreciate."
+    say "This game should be played at a leisurely pace as a year can be a long time! Leave the game console open and find time here and there (a couple of minutes in-between dusting your shelves?) to fully experience the moon-house vibe. While the days sort of blend together here, it must be experienced over a prolonged period of time to make sense. Don't give up!"
     say ""
     pull response
 if response = 1 | response <> 1 then
 do
-    say "Everything that you need to be a successful moon-house technician is displayed in your navigational dashboard. This dashboard displays critical information like your name, the month and day, your total number of credits, your card collection, and a menu of locations to visit in any given day. Below is what you will see each day in the moon-house, so you might as well get familiarized with it now! Behold--your eyes and ears around here:"
+    say "Everything that you need to be a successful moon-house technician is displayed in your navigational dashboard (see below). This dashboard displays critical information like your name, the month and day, your total number of credits, your card collection, and a menu of locations to visit in any given day. Below is what you will see each day in the moon-house, so you might as well get familiarized with it now! Behold--your eyes and ears around here:"
     say ""
     say "*********************************************************************************"
     say "| Moon-house Technician"
@@ -174,16 +174,27 @@ do
     say "| [CARD NAME]"
     say "|"
     say "**********************************************************************************"
+    pull response
+    if response = 1 | response <> 1 then
+    do
     say ""
-    say "Type in '1' to navigate to the moon-kitchen, '2' for the Moon-house technician sleeping quarters, and so on."
+    response = ""
+    end
+    say "So if I wanted to head over to the moon-kitchen, I would find it in this directory, type in its number--so '1'--and press ENTER. Same for any other location."
     say ""
+    pull response
+    if response = 1 | response <> 1 then
+    do
+    say ""
+    response = ""
+    end
     pull response
 if response = 1 | response <> 1 then
 do
     response = ""
-    say "The Man-in-the-moon will tell you more, and boy does he have a lot to say! Lean on him for information. There are a total of twelve trading cards--some may be purchased from the Man-in-the-moon with your technician salary, and a few are gifted after making friends and doing favors. You have twelve months to collect them all. Once you turn twelve, you have to go back--it's one of the house rules."
+    say "The Man-in-the-moon will tell you more, and boy does he have a lot to say! Lean on him for information. There are a total of twelve trading cards--some may be purchased from the Man-in-the-moon with your technician salary, and a few are awarded or gifted. You have twelve months to collect them all. Once you turn twelve, you have to go back--it's one of the house rules."
     say ""
-    say "One last thing about cards... Once you get one, type in its [CARD NAME] on the menu and get a look at it in all its ASCII art glory!"
+    say "One last thing about cards... Once you get one, type in its [CARD NAME] on the menu and get a good look at it in all its ASCII art glory!"
     say ""
     pull response
     if respond = 1 | respond <> 1 then
@@ -202,18 +213,18 @@ if response = 1 | response <> 1 then
 do
 say '************************'
     say ''
-    say 'Today is your eleventh birthday! You close your eyes and emit a single sharp burst of breath, extinguishing the candles on your birthday cake. You open your eyes to a magnificent sight. Your dream has come true--you are on the surface of the moon!'
+    say 'Today is your eleventh birthday! You close your eyes and blow a single sharp burst of breath, extinguishing the candles on your cake. You open your eyes to a magnificent sight. Your dream has come true--you are on the surface of the moon!'
     say ""
-    say 'What a peculiar place in its silent, powdery grandeur. A strange building catches your eye and you begin to make your way for it.'
+    say 'What a peculiar place in its silent, powdery grandeur. A strange building catches your eye, and you begin to advance toward it.'
     say ""
 say '************************'
 pull response
 if response = 1 | response <> 1 then
 do
     say ""
-    say "You've reached the entrance of the large, shimmering palace."
+    say "You've reached the entrance of a large, shimmering palace."
     say ""
-    say 'The Moon-Angel stands before you and his silvery eyes searches your soul. He speaks.'
+    say 'The Moon-Angel stands before you and his silvery eyes search your soul. He speaks.'
     say ''
     say "Moon-Angel: 'It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?'"
     say ''
@@ -223,7 +234,6 @@ do
     say ""
 if response = yes then
 do
-    say ""
     say "Moon-Angel: 'I figured as much. Earth children stopped dreaming of the garden behind the moon long ago. The Man-in-the-moon and I have resorted to offering rare collectible playing cards in order to get help around here. Just know that we will not part with these cards without putting you straight to work. Go and seek out the Man-in-the-moon and he will provide you with further instructions.'"
     pull response
     if response = 1 | response <> 1 then
@@ -234,7 +244,6 @@ end
 else
 if response = no then
 do
-    say ""
     say "Moon-Angel: 'So there is hope yet for the earth dwellers. At any rate, as long as you are here why don't you make yourself useful? Go and seek out the Man-in-the-moon and he will put you to work.'"
     pull response
     if response = 1 | response <> 1 then
@@ -295,13 +304,13 @@ say ""
 if response = 1 & card1b = 0 then
 do
     say ""
-    say "You walk down a hallway with starlight from windows illuminating you with every fourth step. You approach a plain and yet strangely otherworldly door and are welcomed to the odours of a fine broth beckoning for you to draw nearer. You hear a muffled fiddle rising to a cescrendo and then cascading and resting at the center of the moon-kitchen beyond. You push the door open and enter."
+    say "You walk down a hallway and starlight from windows illuminates you along the stretch. You approach a plain and yet strangely otherworldly door and are welcomed to the odours of a fine broth beckoning for you to draw nearer. You hear a muffled fiddle rising to a cescendo and then cascading and resting at the center of the moon-kitchen beyond. You push the door open and enter."
     say ""
     say "Old man: 'Happy Birthday! This playing card is on the house. Isn't it handsome? It's yours truly, the Man-in-the-moon! The next one is going to come at a price.'"
     say ""
     say "You obtained the [MAN IN THE MOON] card."
     say ""
-    say "The Man-in-the-moon has abandoned his fiddle for now, switching over to a match which he sparks and lowers to the bowl of a long tobacco pipe. The vein in his forehead pulsates as he puffs and the machinery of his mind pieces together his next response. He reminds you of some amalgamation of U.S. presidents Teddy Roosevelt and Rutherford B. Hayes, only older even than both of them combined... and then some."
+    say "The Man-in-the-moon has abandoned his fiddle for now and switches over to a match which he sparks and lowers to the bowl of a long tobacco pipe. The vein in his forehead pulsates as he puffs, and the machinery of his mind pieces together his next response. He reminds you of some amalgam of U.S. presidents Teddy Roosevelt and Rutherford B. Hayes, only older even than both of them combined..."
     say ""
     say "Man-in-the-moon: 'Welcome to the glorious moon-house! Are the earth children taken by playing card mania once again? We haven't had visitors in some time and those stars aren't going to polish themselves. Are you ready to get started?'"
     say ""
@@ -315,7 +324,7 @@ do
     say ""
     say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
     say ""
-    say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type README at the menu to learn more about the Moon-house."
+    say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type READ at the menu to learn more about the moon-house."
     say ""
     pull response
     if response = 1 | response <> 1 then
@@ -376,13 +385,13 @@ do
 end
 if response = 6 & card1b = 1 & gardenswitch = 1 then
 do
-    say "A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and they listen intently to her words."
+    say "A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and listening intently to her words."
     say ""
     say "Beautiful Lady: 'Welcome to our garden," name". Do not be afraid! Children, please welcome our newest visitor!'"
     say ""
-    say "The children poke and prod at you and say funny little things. You spend some time running and playing with the children in the garden, hiding behind the sundial and other exotic terrain. The Beautiful Lady motions for you to come over, and you cannot help but listen to her every word, so taken are you by her grace."
+    say "The children poke and prod at you and speak in amusing ways foreign to you. You spend some time running and playing with the children in the garden, hiding behind the sundial and discovering exotic terrain. The Beautiful Lady motions for you to come over, and you cannot help but listen to her every word, so taken are you by her grace."
     say ""
-    say "Beautiful Lady: 'You were such an expert teacher's assistant today, young one! You may come and help me any time you'd like! The door to the garden will open for you on Saturdays.'"
+    say "Beautiful Lady: 'You were such an expert teacher's assistant today, young one! You may come and help me any time you'd like. The door to the garden will open for you on Saturdays.'"
     gardenswitch = 2
     pull response
     if response = 1 | response <> 1 then
@@ -398,7 +407,7 @@ do
     pull room
     say "You entered: " room
     say ""
-    if room = sleep then
+    if room = sleep | room = yes then
     do
     say ""
     say "You retire to your room for the day."
@@ -409,7 +418,7 @@ do
     end
     if room = look then
     do
-    say "Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its previous inhabitants."
+    say "Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its prior inhabitants."
     say ""
     response = 0
     room = 0
@@ -420,23 +429,22 @@ do
     say ""
     if room = look & engraving <> "" then
     do
-    say "------------------------------------------------------------"
-    say ""
-    say "Margaret from Oklahoma wuz here! Spice gurls r back!"
-    say ""
-    say "Why don't they talk to me? I'm just a stupid moon-calf... Billy"
-    say ""
-    say "Jared Negrete (1991)"
-    say ""
-    say "Wilhelm - 1904"
-    say ""
-    say "David the moon-calf"
-    say ""
+    say " -----------------------------------------------------------"
+    say "|"
+    say "|Margaret frum Oklahoma wuz here! U can do this!"
+    say "|"
+    say "|Why don't they talk to me? I'm just a stupid moon-calf... Billy"
+    say "|"
+    say "|Jared Negrete (1991)"
+    say "|"
+    say "|The Moon Angel is my friend always. Wilhelm, 1904"
+    say "|"
+    say "|David & Phyllis"
+    say "|"
     room = 0
-    say engraving
-    say ""
-    say "------------------------------------------------------------"
-    say ""
+    say "|"engraving
+    say "|"
+    say " ------------------------------------------------------------"
     pull response
     if response = 1 | response <> 1 then
     do
@@ -446,22 +454,22 @@ do
     end
     if room = look & engraving = "" then
     do
-    say "------------------------------------------------------------"
-    say ""
-    say "Margaret from Oklahoma wuz here! Spice gurls r back!"
-    say ""
-    say "Why don't they talk to me? I'm just a stupid moon-calf... Billy"
-    say ""
-    say "Jared Negrete (1991)"
-    say ""
-    say "Wilhelm - 1904"
-    say ""
-    say "David the moon-calf"
-    say ""
+    say " -----------------------------------------------------------"
+    say "|"
+    say "|Margaret frum Oklahoma wuz here! U can do this!"
+    say "|"
+    say "|Why don't they talk to me? I'm just a stupid moon-calf... Billy"
+    say "|"
+    say "|Jared Negrete (1991)"
+    say "|"
+    say "|The Moon Angel is my friend always. Wilhelm, 1904"
+    say "|"
+    say "|David & Phyllis"
+    say "|"
     room = 0
-    say engraving
-    say ""
-    say "------------------------------------------------------------"
+    say "|"engraving
+    say "|"
+    say " ------------------------------------------------------------"
     say ""
     say "There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?"
     pull room
@@ -470,7 +478,7 @@ do
     if room = carve & engraving = "" then
     do
     say ""
-    say "You remove your red pocket knife, ready to add your unique engraving to the bottom of your bunk. What will you carve?"
+    say "You remove your red pocket knife, ready to add your unique contribution to the bottom of your bunk. What sort of message will you carve? Carve it here..."
     room = 0
     pull carve
     say "You entered: " carve
@@ -479,22 +487,22 @@ do
     do
     engraving = carve
     say ""
-    say "------------------------------------------------------------"
-    say ""
-    say "Margaret from Oklahoma wuz here! Spice gurls r back!"
-    say ""
-    say "Why don't they talk to me? I'm just a stupid moon-calf... Billy"
-    say ""
-    say "Jared Negrete (1991)"
-    say ""
-    say "Wilhelm - 1904"
-    say ""
-    say "David the moon-calf"
-    say ""
+    say " -----------------------------------------------------------"
+    say "|"
+    say "|Margaret frum Oklahoma wuz here! U can do this!"
+    say "|"
+    say "|Why don't they talk to me? I'm just a stupid moon-calf... Billy"
+    say "|"
+    say "|Jared Negrete (1991)"
+    say "|"
+    say "|The Moon Angel is my friend always. Wilhelm, 1904"
+    say "|"
+    say "|David & Phyllis"
+    say "|"
     room = 0
-    say engraving
-    say ""
-    say "------------------------------------------------------------"
+    say "|"engraving
+    say "|"
+    say " ------------------------------------------------------------"
     say ""
     pull response
     if response = 1 | response <> 1 then
@@ -510,29 +518,29 @@ end
 if response = readme | response = read then
 do
     say ""
-    say "------------------------------------------------------------"
-    say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
-    say ""
-    say "Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'"
-    say ""
-    say "Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
-    say ""
-    say "Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella."
-    say ""
-    say "Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
-    say ""
-    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards."
-    say ""
-    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own."
-    say ""
-    say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
-    say ""
-    say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH, README. You may also input numbers for lists."
-    say ""
-    say "Re-read this document at any time by using the README command."
-    say ""
-    say "Anyways, I think that's it for now! Toodles!"
-    say "------------------------------------------------------------"
+    say " -----------------------------------------------------------"
+    say "|MOON-HOUSE CHEESECRUMBS AND NUGGETS by MAN-IN-THE-MOON"
+    say "|"
+    say "|Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'"
+    say "|"
+    say "|Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship Program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
+    say "|"
+    say "|Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella."
+    say "|"
+    say "|Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
+    say "|"
+    say "|Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards."
+    say "|"
+    say "|Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own."
+    say "|"
+    say "|Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that "name". I am also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
+    say "|"
+    say "|Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, WORK, READ. You may also input numbers (1-9) for lists."
+    say "|"
+    say "|Re-read this document at any time by using the READ command."
+    say "|"
+    say "|Anyways, I think that's it for now! Toodles!"
+    say " -----------------------------------------------------------"
     response = ""
     pull response
     if response = 1 | response <> 1 then
@@ -556,7 +564,7 @@ do while moonhouse = 1
 if windowthreat = 5 then 
 do
     say ""
-    say "You're about to resume your daily Moon-house routine, but out of nowhere you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow he manages to extricate you from the Moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome due to your fixation on the windows when you should have been staying busy."
+    say "You're about to resume your daily moon-house routine, but out of nowhere you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow he manages to extricate you from the moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome. Too busy looking out of windows when you should have been working!"
     say ""
     say "GAME OVER"
     exit
@@ -648,11 +656,11 @@ do
 end
 if maninmoonswitch = 3 then
 do
-    maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper down a block from your house, only hairier and crinklier."
+    maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper a block down from your house, only hairier and crinklier. He is the most ancient specimen of human that your eyes have taken in and accepted."
 end
 if maninmoonswitch = 4 then
 do
-    maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent of smoke that dissolves into the moon-house vents overhead."
+    maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent that dissolves into the moon-house vents overhead. He appears quite Alice in Wonderland Caterpillary standing there!"
 end
 if maninmoonswitch = 5 then
 do
@@ -660,11 +668,11 @@ do
 end
 if maninmoonswitch = 6 then
 do
-    maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are myself, the Moon-Angel, and the beautiful keeper of the garden. I 'spose I am a bit of a housecat muhself! Har!'"
+    maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are me, the Moon-Angel, and the beautiful keeper of the garden. I 'spose I am a bit of a housecat muhself! Har!'"
 end
 if maninmoonswitch = 7 then
 do
-    maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony of activity that unfolds in all its whimsy. I'm just the narrator and I don't get paid enough."
+    maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony of activity that unfolds in this queer place. I'm just the narrator and I don't get paid enough to do that."
 end
 if maninmoonswitch = 8 then
 do
@@ -688,11 +696,11 @@ do
 end
 if maninmoonswitch = 13 then
 do
-    maninmoontext = "The Man-in-the-moon is deep in study of the almanac by candle-light. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night scholarship."
+    maninmoontext = "The Man-in-the-moon is deep in his scholarship of the almanac by candlelight. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night studies."
 end
 if maninmoonswitch = 14 then
 do
-    maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way and talking all the while under his breath."
+    maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way and muttering all the while under his breath."
 end
 if maninmoonswitch = 15 then
 do
@@ -708,11 +716,11 @@ do
 end
 if maninmoonswitch = 18 then
 do
-    maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less and less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to get creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a collector of sea periwinkles muhself, but who am I to judge?'"
+    maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to get creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a collector of sea periwinkles muhself, but who am I to judge?'"
 end
 if maninmoonswitch = 19 then
 do
-    maninmoontext = "You startled the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still emits a bout of laughter before asking the status of your health."
+    maninmoontext = "You startled the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still ejects a bout of laughter before inquiring as to the status of your health."
 end
 if maninmoonswitch = 20 then
 do
@@ -728,7 +736,7 @@ do
 end
 if maninmoonswitch = 23 then
 do
-    maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he has turned into something of a grandfather figure for you."
+    maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he has turned into something of a grandfather figure to you."
 end
 if gardenswitch = 2 then
 do
@@ -740,31 +748,31 @@ do
 end
 if gardenswitch = 4 then
 do
-    gardentext = "The Beautiful Lady had you cut up some melon and pass it out to the children, but as soon as you caught one child, two others would run off! The kids kept you mighty busy today, and you're just about ready to call it a day. Still, it is a treat to be able to see other children when so often it is only the Man-in-the-moon and the Moon-Angel keeping you company."
+    gardentext = "The Beautiful Lady had you cut up some melon and pass it out to the children, but as soon as you caught one child, two others would run off! This back-and-forth rigmarole kept you busy today, and you're just about ready to call it a day. Still, it is a rare treat to be able to see other children. It gets rather lonely when the Man-in-the-moon and the Moon-Angel are the only persons keeping you company. One is an eccentric hobbyist and the other an aloof cosmic entity--both too preoccupied to care for a child."
 end
 if gardenswitch = 5 then
 do
-    gardentext = "The Beautiful Lady had a great idea for a game today! Four teams of children would compete in a map-making competition of the garden behind the moon. You sent each member of your team to chart a particular area and then return to the meetup point where a full map could be constructed from its parts. Your team did not win, but everybody learned something of cartography and entomology."
+    gardentext = "The Beautiful Lady had a great idea for a game today! Four teams of children would compete in a map-making contest. The first team with a complete map of the garden behind the moon wins! You sent each member of your team to chart a particular area and then return to the meetup point where a full map could be constructed from its parts. Your team did not win, but everybody learned something about cartography and entomology."
 end
 if gardenswitch = 6 then
 do
-    gardentext = "You put in a good day's work in the garden as the teacher's assistant, but much of your time was deep in thought, with an inordinate amount of time devoted to the Beautiful Lady. Why is she here? Where does she come from? You've also never seen her short with the children which is quite unlike the teachers of your world. In fact, you've never seen her without a smile, so delightful is she. But is this the ideal state?"
+    gardentext = "You put in a good day's work in the garden as the teacher's assistant, but much of your time was deep in contemplation, with an inordinate amount of time devoted to the Beautiful Lady. Why is she here? Where does she come from? You've also never seen her cross with the children, which is quite unlike the teachers of your world. In fact, you've never seen her without a smile, so delightful is she."
 end
 if gardenswitch = 7 then
 do
-    gardentext = "You play logic puzzles under some variety of flora extinct in your world--a large cycad? Who would have thought that the garden behind the Moon would be so lush and, dare I say, forbidden? Logic puzzles under the stars and with good company--a truly delictable state of affairs!"
+    gardentext = "You play logic puzzles under some variety of flora extinct in your world--a large cycad? Who would have thought that the garden behind the Moon would be so lush and, dare I say, forbidden? Logic puzzles under the stars and with good company--a truly delectable state of affairs!"
 end
 if gardenswitch = 8 then
 do
-    gardentext = "When asked why you have to leave the moon-house on your twelfth birthday, the Beautiful Lady responds simply that you have to grow up. This statement leaves you wondering what that coveted state of adulthood is like. Will you depart from your present being in remarkable ways, like a cicada after a good molt? Will your priorities shift, like which side of the egg ought be excavated first--and other life matters?"
+    gardentext = "When asked why you have to leave the moon-house on your twelfth birthday, the Beautiful Lady responds simply that 'you must grow up.' This statement leaves you wondering what that coveted state of adulthood is like. Will you depart from your present being in remarkable ways, like a cicada after a good molt? Will your priorities shift, like which side of the egg ought to be excavated first--and other matters of life besides?"
 end
 if gardenswitch = 9 then
 do
-    gardentext = "This day in the garden was the moment when you realized that you are beginning to feel like a permanent frequentor of the moon-house or even a member of its royal court. The Beautiful Lady must have sensed this emotion roll over you for she was sure to remind you that the lunar year is nearly over. You were informed before that your stay in the moon-house is a fleeting one, but one year still seems like a long time to you."
+    gardentext = "This day in the garden was the moment when you realized that you are beginning to feel like a permanent frequenter of the moon-house or even a member of its royal court. The Beautiful Lady must have sensed this emotion roll over you for she was sure to remind you that the lunar year is nearly over. You were informed before that your stay in the moon-house is a fleeting one, but one year still seems like a long time to you."
 end
 if gardenswitch = 10 then
 do
-    gardentext = "Beautiful Lady: 'The Moon-Angel does occassionally visit us in the garden, however he is typically lost in his thinking and world-building and merely drifts past us. The Man-in-the-moon is a bit of a shut-in hermit type. We do not receive too many outside visitors--but now you're here. Why, you remind me a bit of David in the way that you give much of yourself to the welfare of the garden's children. You are a born servant leader!"
+    gardentext = "Beautiful Lady: 'The Moon-Angel does occasionally visit us in the garden; however he is typically lost in his thinking and world-building and merely drifts past us. The Man-in-the-moon is a bit of a shut-in hermit type. We do not receive too many outside visitors--but now you're here. Why, you remind me a bit of David in the way that you give much of yourself to the welfare of the garden's children. You are a born servant leader!'"
 end
 if gardenswitch = 11 then
 do
@@ -772,7 +780,7 @@ do
 end
 if gardenswitch = 12 then
 do
-    gardentext = "Despite having already received a playing card for your volunteer spirit, you find that you still take the time to visit the Beautiful Lady and the children. You know that your days here are coming to a close. But do not worry about that for now! You are here and that's all that matters right now. You spend every last moment with the children, valuing each interaction and touched heart."
+    gardentext = "Despite having already received a playing card for your volunteer efforts to date, you find that you still take the time to visit the Beautiful Lady and the children. You know that your days here are coming to a close. But do not worry about that for now! You are here and that's all that matters right now. You spend every last moment with the children, valuing each interaction and touched heart."
 end
 if gardenswitch = 13 then
 do
@@ -1392,7 +1400,7 @@ end
 else
 if buy = 3 & credits > 19 & card4b = 0 then
 do
-    say "Man-in-the-moon: 'I don't know the first thing about babies, but the Moon-Angel has a soft sport for 'em! Your card needs a diaper change.'"
+    say "Man-in-the-moon: 'I don't know the first thing about babies, but the Moon-Angel has a soft sport for 'em! By the way, your card needs a diaper change.'"
     card4 = baby
     card4b = 1
     card4c = "SOLD"
@@ -1412,7 +1420,7 @@ if buy = 4 & credits > 19 & card5b = 0 then
 do
     say "Man-in-the-moon: 'Phyllis laughed like a peal of silver bells and loved to sing! I hear that she and David are married now. They grow up so fast!'"
     say ""
-    say "A single tear drips from the Man-in-the-moon's eye and lands in his moustache. A happy crier is he."
+    say "A single tear drops from the Man-in-the-moon's eye and lands in his moustache. A happy crier is he."
     card5 = phyllis
     card5b = 1
     card5c = "SOLD"
@@ -1468,11 +1476,11 @@ if buy = 7 & credits > 59 & card8b = 0 then
 do
     say "Man-in-the-moon: 'Here is the mighty iron man card! Wait, what's that noise?!'"
     say ""
-    say "The Main-in-the-moon raises his cupped hand to one ear as if to listen. Suddenly you hear a KER-CLANK fill the moon-kitchen, and you quickly identify the culprit--a pile of cooking pots kicked over under the table by the trickster."
+    say "The Main-in-the-moon raises his cupped hand to one ear as if to listen. Suddenly you hear a KER-CLANK fill the moon-kitchen! Your eyes dart about the room, and you identify the culprit--a pile of cooking pots kicked over under the table by a trickster."
     say ""
     say "Man-in-the-moon: 'It's the IRON MAN! Somebody call for David the great iron man slayer! The moon-house is doomed!'"
     say ""
-    say "The Man-in-the-moon is fully convinced that he fooled you, and so joyful is he that you allow him this moment."
+    say "The Man-in-the-moon is fully convinced that he fooled you. So joyful is he that you allow him to revel in his moment."
     card8 = iron man
     card8b = 1
     card8c = "SOLD"
@@ -1522,7 +1530,7 @@ do
     room = 0
     maninmoonswitch = random(1,23)
     moonangelswitch = random(1,4)
-        if day2 > 335 then
+    if day2 > 83 then
         do
         month = "Happy Birthday!"
         moonhouse = 2
@@ -1530,7 +1538,7 @@ do
     end
     if room = look then
     do
-    say "Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its previous inhabitants."
+    say "Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its prior inhabitants."
     say ""
     response = 0
     room = 0
@@ -1541,22 +1549,22 @@ do
     say ""
     if room = look & engraving <> "" then
     do
-    say "------------------------------------------------------------"
-    say ""
-    say "Margaret from Oklahoma wuz here! Spice gurls r back!"
-    say ""
-    say "Why don't they talk to me? I'm just a stupid moon-calf... Billy"
-    say ""
-    say "Jared Negrete (1991)"
-    say ""
-    say "Wilhelm - 1904"
-    say ""
-    say "David the moon-calf"
-    say ""
+    say " -----------------------------------------------------------"
+    say "|"
+    say "|Margaret frum Oklahoma wuz here! U can do this!"
+    say "|"
+    say "|Why don't they talk to me? I'm just a stupid moon-calf... Billy"
+    say "|"
+    say "|Jared Negrete (1991)"
+    say "|"
+    say "|The Moon Angel is my friend always. Wilhelm, 1904"
+    say "|"
+    say "|David & Phyllis"
+    say "|"
     room = 0
-    say engraving
-    say ""
-    say "------------------------------------------------------------"
+    say "|"engraving
+    say "|"
+    say " ------------------------------------------------------------"
     say ""
     pull response
     if response = 1 | response <> 1 then
@@ -1567,22 +1575,22 @@ do
     end
     if room = look & engraving = "" then
     do
-    say "------------------------------------------------------------"
-    say ""
-    say "Margaret from Oklahoma wuz here! Spice gurls r back!"
-    say ""
-    say "Why don't they talk to me? I'm just a stupid moon-calf... Billy"
-    say ""
-    say "Jared Negrete (1991)"
-    say ""
-    say "Wilhelm - 1904"
-    say ""
-    say "David the moon-calf"
-    say ""
+    say " -----------------------------------------------------------"
+    say "|"
+    say "|Margaret frum Oklahoma wuz here! U can do this!"
+    say "|"
+    say "|Why don't they talk to me? I'm just a stupid moon-calf... Billy"
+    say "|"
+    say "|Jared Negrete (1991)"
+    say "|"
+    say "|The Moon Angel is my friend always. Wilhelm, 1904"
+    say "|"
+    say "|David & Phyllis"
+    say "|"
     room = 0
-    say engraving
-    say ""
-    say "------------------------------------------------------------"
+    say "|"engraving
+    say "|"
+    say " ------------------------------------------------------------"
     say ""
     say "There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?"
     say ""
@@ -1592,7 +1600,7 @@ do
     if room = carve & engraving = "" then
     do
     say ""
-    say "You remove your red pocket knife, ready to add your unique engraving to the bottom of your bunk. What will you carve?"
+    say "You remove your red pocket knife, ready to add your unique contribution to the bottom of your bunk. What sort of message will you carve? Carve it here..."
     room = 0
     pull carve
     say ""
@@ -1601,23 +1609,22 @@ do
     if carve <> "" then
     do
     engraving = carve
-    say "------------------------------------------------------------"
-    say ""
-    say "Margaret from Oklahoma wuz here! Spice gurls r back!"
-    say ""
-    say "Why don't they talk to me? I'm just a stupid moon-calf... Billy"
-    say ""
-    say "Jared Negrete (1991)"
-    say ""
-    say "Wilhelm - 1904"
-    say ""
-    say "David the moon-calf"
-    say ""
+    say " -----------------------------------------------------------"
+    say "|"
+    say "|Margaret frum Oklahoma wuz here! U can do this!"
+    say "|"
+    say "|Why don't they talk to me? I'm just a stupid moon-calf... Billy"
+    say "|"
+    say "|Jared Negrete (1991)"
+    say "|"
+    say "|The Moon Angel is my friend always. Wilhelm, 1904"
+    say "|"
+    say "|David & Phyllis"
+    say "|"
     room = 0
-    say engraving
-    say ""
-    say "------------------------------------------------------------"
-    say ""
+    say "|"engraving
+    say "|"
+    say " ------------------------------------------------------------"
     pull response
     if response = 1 | response <> 1 then
     do
@@ -1883,29 +1890,29 @@ end
 if response = readme | response = read then
 do
     say ""
-    say "------------------------------------------------------------"
-    say "MOON-HOUSE CHEESECRUMBS AND NUGGETS"
-    say ""
-    say "Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'"
-    say ""
-    say "Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just LOOK at the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
-    say ""
-    say "Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella."
-    say ""
-    say "Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
-    say ""
-    say "Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards."
-    say ""
-    say "Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own."
-    say ""
-    say "Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that "name". I was also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
-    say ""
-    say "Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, POLISH, README. You may also input numbers for lists."
-    say ""
-    say "Re-read this document at any time by using the README command."
-    say ""
-    say "Anyways, I think that's it for now! Toodles!"
-    say "------------------------------------------------------------"
+    say " -----------------------------------------------------------"
+    say "|MOON-HOUSE CHEESECRUMBS AND NUGGETS by MAN-IN-THE-MOON"
+    say "|"
+    say "|Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'"
+    say "|"
+    say "|Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship Program places on them. I do hope that you stay the full year, but I'm a reasonable fellow."
+    say "|"
+    say "|Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella."
+    say "|"
+    say "|Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world."
+    say "|"
+    say "|Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards."
+    say "|"
+    say "|Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own."
+    say "|"
+    say "|Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that "name". I am also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it."
+    say "|"
+    say "|Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, WORK, READ. You may also input numbers (1-9) for lists."
+    say "|"
+    say "|Re-read this document at any time by using the READ command."
+    say "|"
+    say "|Anyways, I think that's it for now! Toodles!"
+    say " -----------------------------------------------------------"
     response = ""
     pull response
     if response = 1 | response <> 1 then
@@ -1928,15 +1935,15 @@ end
     say "ZZZZZZzzzzzZZZZzzzzz"
     say ""
     CALL SLEEP 0.5
-    say "You awaken from your bunk to silver moonlight pouring through your cosmic window. Today is a special day, for it is your one-year Moon-house anniversary! More importantly, however, it is your twelfth birthday, meaning you get a complementary card from the Man-in-the-moon."
+    say "You awaken from your bunk to silver moonlight pouring through your cosmic window. Today is a special day, for it is your one-year moon-house anniversary! More importantly, however, it is your twelfth birthday, meaning you get a complementary card from the Man-in-the-moon."
     say ""
     say "You fling open the door and make your way through the corridor--there isn't a moment to lose! You arrive before the moon-kitchen and knock in the same manner that you always had, a rap and a tap and a tap. The Man-in-the-moon opens the door, revealing a face more glum than any you had yet witnessed. His attempts at overriding his melancholy with birthday glee is mostly ineffective for the moment. He speaks."
     say ""
-    say "Man-in-the-moon: 'Happy Birthday my dear " name "! You have made it one year in the Moon-house! And, as promised, here is your birthday present.'"
+    say "Man-in-the-moon: 'Happy Birthday my dear " name "! You have made it one year in the moon-house! And, as promised, here is your birthday present.'"
     say ""
     say "The old little man of whimsy hands you a card. You feel a course of energy connect with your palm and reverberate down your arm. This [PRINCESS AURELIA] card has a special energy about it! The Man-in-the-moon allows you a moment of celebration before transitioning into another topic."
     say ""
-    say "Man-in-the-moon: 'Do you remember what I told you when you first arrived at the Moon-house?'"
+    say "Man-in-the-moon: 'Do you remember what I told you when you first arrived at the moon-house?'"
     say ""
     say "You were hoping that he wouldn't bring that detail up. Nobody over twelve can remain in this strange celestial lair, and you've overstayed your welcome by three hours already."
     say ""
@@ -1949,16 +1956,16 @@ end
     if gohome = yes | gohome <> yes then
     do
     say ""
-    say "The unmistakable figure of the Moon-Angel slips into the moon-kitchen, his silver robe fluttering behind him and the minute stars within the fabric glistening brilliantly. His eyes search your soul and you realize, instinctively, that you are about to awaken from the Moon-house dream. While the Moon-Angel did not verbalize to you with his voice, he was able to transfer innumerable ideas and concepts from his mind to yours... and suddenly now you understand."
+    say "The unmistakable figure of the Moon-Angel slips into the moon-kitchen, his silver robe fluttering behind him and the minute stars within the fabric glistening brilliantly. His eyes search your soul and you realize, instinctively, that you are about to awaken from the moon-house dream. While the Moon-Angel did not verbalize to you with his voice, he was able to transfer innumerable ideas and concepts from his mind to yours... and suddenly now you understand."
     say ""
     pull understand
     if understand = 0 | understand <> 0 then
     do
     say "Now"
     CALL SLEEP 0.5
-    say "    You"
+    say "    YOU"
     CALL SLEEP 0.5
-    say "        Understand..."
+    say "        understand..."
     pull ending
     if ending = 0 | understand <> 0 then
     do
@@ -1967,7 +1974,7 @@ end
     say ""
     say "You glance at the Man-in-the-moon and he returns a subtle wink. You refocus back on the Moon-Angel and make your approach."
     say ""
-    say "His massive arms wrap around you, emmitting an electric current that courses through each of your extremities. You feel the sensation of being thrusted into the air and ejected into a new reality--a foreign sensation! You are somewhere else entirely separate from the Moon-house. You are being transported through the interstitial regions between worlds!"
+    say "His massive arms wrap around you, emmitting an electric current that courses through each of your extremities. You feel the sensation of being thrusted into the air and ejected into a new reality--a foreign sensation! You are somewhere else entirely separate from the moon-house. You are being transported through the interstitial regions between worlds!"
     say ""
     pull final
     if final = 0 | understand <> 0 then
@@ -2560,7 +2567,7 @@ do
     say ""
     response = ""
     end
-    say "You moved on from the moon-house, but a part of you remains. Little hints of your existence are discoverable by future tenants of the moon-house scrambling to polish those brilliant, fire-hot stars. YOU are as much a part of the moon-house as the Beautiful Lady of the Garden, the eccentric Man-in-the-moon, and the ever stoic Moon-Angel. And you will forever be remembered in that garden behind the moon..."
+    say "You moved on from the moon-house, but a part of you remains. Future tenants of the moon-house pick up on little hints of your occupancy whilst scrambling to polish those brilliant, fire-hot stars. YOU are as much a part of the moon-house as the Beautiful Lady of the Garden, the eccentric Man-in-the-moon, and the ever stoic Moon-Angel. And you will forever be remembered in that garden behind the moon..."
     pull response
     if response = 1 | response <> 1 then
     do
@@ -2570,7 +2577,7 @@ do
 end
 if response = 1 then
     do
-    say "You are in your kitchen. Your eyes tell you it's a familiar sight, and yet it feels quite unfamiliar... Your memory of the moon-kitchen and the Man-in-the-moon tinkering and telling stories brings you great joy. The quiet here is unsettling."
+    say "You are in your kitchen. Your eyes indicate that it's a familiar sight, and yet it feels quite unfamiliar... A kitchen is supposed to be a place where music is played, stories are told, and almanacs are read by candle light. The quiet here is unsettling."
     pull response
     if response = 1 | response <> 1 then
     do
@@ -2580,7 +2587,7 @@ if response = 1 then
 end
 if response = 2 & engraving <> "" & card13b = 0 then
     do
-    say "You are in your room. There's more stuff here to keep a person occupied, but your Moon-house living quarters were comfortable in their simplicity."
+    say "You are in your room. There's more stuff here to keep a person occupied, but your moon-house living quarters were comfortable in their simplicity."
     say ""
     say "Will you LOOK around?"
     say ""
@@ -2591,11 +2598,11 @@ if response = 2 & engraving <> "" & card13b = 0 then
     do
     say "You notice something shiny under your bed. Is that a card?!"
     say ""
-    say "You pick up the card and begin to examine it. Oh, who will it be?! Well, now doesn't this look familiar? The engraving that you did under the moon-house bunk?"
+    say "You pick up the card and start to examine it. Well, now doesn't this look familiar? It's your engraving under the moon-house bunk that you did all those years ago!"
     say ""
     say engraving
     say ""
-    say "You obtained the [YOU] card! YOU are the most important character in this game! Without YOU, dear player, it wouldn't be interactive fiction. :)"
+    say "You obtained the [YOU] card! YOU are the most important character in this game! It wouldn't be interactive fiction without YOU. :)"
     say ""
     card13 = you
     card13b = 1
@@ -2609,7 +2616,7 @@ if response = 2 & engraving <> "" & card13b = 0 then
 end
 if response = 2 & engraving <> "" & card13b = 1 then
 do
-    say "You are in your room. There's more stuff here to keep a person occupied, but your Moon-house living quarters were comfortable in their simplicity."
+    say "You are in your room. There's more stuff here to keep a person occupied, but your moon-house living quarters were comfortable in their simplicity."
     pull response
     if response = 1 | response <> 1 then
     do
@@ -2619,7 +2626,7 @@ do
 end
 if response = 3 then
     do
-    say "Your dog, Manny the Moon Angel, is curled up here and deep in sleep. His silver fur glows in the streaming sunlight from a window."
+    say "Your dog, Manny the Moon Angel, is curled up here in the corner and deep in sleep. His silver fur glistens in the streaming window sunlight."
     pull response
     if response = 1 | response <> 1 then
     do
@@ -2629,7 +2636,7 @@ if response = 3 then
 end
 if response = 4 then
     do
-    say "You stand before the second-floor windows and gaze out at a dynamic, moving world of squirrels, children, and cars driving by. While the sights that the Moon-house windows provide are far more vibrant in their pastel colors and hyperrealistic tendency, these earth windows will do. You rather enjoy the peaceful serenity of the outside."
+    say "You stand before the second-floor windows and gaze out at a dynamic, moving world of squirrels, children, and cars driving by. While the sights that the moon-house windows provide are far more vibrant in their pastel colors and hyperrealistic tendency, these earth windows will do. You rather enjoy the peaceful serenity of the outside."
     pull response
     if response = 1 | response <> 1 then
     do
@@ -2639,7 +2646,7 @@ if response = 4 then
 end
 if response = 5 then
     do
-    say "You are sitting at your desk in the makeshift attic workspace, the place where you work from home. You would like to have a job that is more physically demanding, like that brief stint as a moon-house technician. But you've grown now and cannot go back."
+    say "You are sitting at your desk in your home office in the attic. You would like to have a job that is more physically demanding, like that star-polishing stint you did back in the day. You've long grown now and will not be permitted back, so you had better get used to the desk job."
     pull response
     if response = 1 | response <> 1 then
     do
@@ -2649,7 +2656,7 @@ if response = 5 then
 end
 if response = 6 then
     do
-    say "You are in your backyard garden. The tomatoes, green peppers, and eggplant are coming along nicely! You catch a sweet whiff of kitchen herbs and it activates a memory of another time--perhaps a past life? The sundial looks similar to the one along the garden behind the moon... the place where moon-calfs congregate."
+    say "You are in your backyard garden. The tomatoes, green peppers, and eggplant are coming along nicely! You catch a sweet whiff of kitchen herbs and it activates a memory of another time--perhaps a past life? The sundial looks similar to the one along the garden behind the moon... the very place where moon-calfs congregate."
     say ""
     say " _____|\____"
     say " \___   ___/"
