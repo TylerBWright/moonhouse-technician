@@ -143,7 +143,7 @@ do
     say ""
     say "This is a classic parser-based text adventure game. The player types in their command and presses ENTER. It's not too hard... after all, you just did it to get to these instructions."
     say ""
-    say "You find yourself in the strange realm of the moon-house, as originally described in Howard Pyle's imaginative fairytale. The moon-house offers a host of unique opportunities, including--"
+    say "You find yourself in the strange realm of the moon-house, the setting of Howard Pyle's imaginative fairytale. The moon-house offers a host of unique opportunities, including--"
     say ""
     say "- making friends with strange occuptants of the moon-house"
     say "- moon window gazing into the cosmic beyond"
