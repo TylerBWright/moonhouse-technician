@@ -1,6 +1,6 @@
 moonhouse = 0
-day1 = "Sunday"
-day2 = 1
+day_of_the_week = "Sunday"
+day_number = 1
 moonangelcadence = 0
 gardencadence = 0
 workcadence = 0
@@ -160,7 +160,7 @@ say ""
 say "*********************************************************************************"
 say "| Moon-house Technician"
 say "| "
-say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+say "| Name:" name "; Month:" month "; Day:" day_of_the_week "; Credits: $" credits ";"
 say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
 say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
 say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
@@ -238,7 +238,7 @@ do while moonhouse = 0
     say "*********************************************************************************"
     say "| Moon-house Technician"
     say "| "
-    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Name:" name "; Month:" month "; Day:" day_of_the_week "; Credits: $" credits ";"
     say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
     say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
     say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
@@ -261,46 +261,119 @@ do while moonhouse = 0
     pull response
     say "You entered: " response
     say ""
-    if response = 1 & card1b <> 0 then
+    call process_show_card(response)
+    if response = 1 then
     do
-        say "You've had enough of the Man-in-the-moon for one day. Come back tomorrow."
-        call pull_any_key
-    end
-    if response = 1 & card1b = 0 then
-    do
-        say ""
-        say "You walk down a hallway and starlight from windows illuminates you along the stretch. You approach a plain and yet strangely otherworldly door and are welcomed to the odours of a fine broth beckoning for you to draw nearer. You hear a muffled fiddle rising to a cescendo and then cascading and resting at the center of the moon-kitchen beyond. You push the door open and enter."
-        say ""
-        say "Old man: 'Happy Birthday! This playing card is on the house. Isn't it handsome? It's yours truly, the Man-in-the-moon! The next one is going to come at a price.'"
-        say ""
-        say "You obtained the [MAN IN THE MOON] card."
-        say ""
-        say "The Man-in-the-moon has abandoned his fiddle for now and switches over to a match which he sparks and lowers to the bowl of a long tobacco pipe. The vein in his forehead pulsates as he puffs, and the machinery of his mind pieces together his next response. He reminds you of some amalgam of U.S. presidents Teddy Roosevelt and Rutherford B. Hayes, only older even than both of them combined..."
-        say ""
-        say "Man-in-the-moon: 'Welcome to the glorious moon-house! Are the earth children taken by playing card mania once again? We haven't had visitors in some time and those stars aren't going to polish themselves. Are you ready to get started?'"
-        say ""
-        say 'How will you respond? (YES/NO)'
-        card1 = man in the moon
-        card1b = 1
-        response = ""
-        pull tutorial
-        if tutorial = 0 | tutorial <> 0 then
+        if card1b = 0 then
         do
             say ""
-            say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
+            say "You walk down a hallway and starlight from windows illuminates you along the stretch. You approach a plain and yet strangely otherworldly door and are welcomed to the odours of a fine broth beckoning for you to draw nearer. You hear a muffled fiddle rising to a cescendo and then cascading and resting at the center of the moon-kitchen beyond. You push the door open and enter."
             say ""
-            say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type READ at the menu to learn more about the moon-house."
+            say "Old man: 'Happy Birthday! This playing card is on the house. Isn't it handsome? It's yours truly, the Man-in-the-moon! The next one is going to come at a price.'"
             say ""
+            say "You obtained the [MAN IN THE MOON] card."
+            say ""
+            say "The Man-in-the-moon has abandoned his fiddle for now and switches over to a match which he sparks and lowers to the bowl of a long tobacco pipe. The vein in his forehead pulsates as he puffs, and the machinery of his mind pieces together his next response. He reminds you of some amalgam of U.S. presidents Teddy Roosevelt and Rutherford B. Hayes, only older even than both of them combined..."
+            say ""
+            say "Man-in-the-moon: 'Welcome to the glorious moon-house! Are the earth children taken by playing card mania once again? We haven't had visitors in some time and those stars aren't going to polish themselves. Are you ready to get started?'"
+            say ""
+            say 'How will you respond? (YES/NO)'
+            card1 = man in the moon
+            card1b = 1
+            response = ""
+            pull tutorial
+            if tutorial = 0 | tutorial <> 0 then
+            do
+                say ""
+                say "Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'"
+                say ""
+                say "You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type READ at the menu to learn more about the moon-house."
+                say ""
+                call pull_any_key
+            end
+        end
+        else
+        do
+            say "You've had enough of the Man-in-the-moon for one day. Come back tomorrow."
             call pull_any_key
         end
     end
-    if response = man in the moon & card1b = 1 then
+    if response = 2 & card1b = 1 then
     do
-        call card_man_in_the_moon
+        if gardenswitch = 2 then
+        do
+            say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. Will you SLEEP?"
+            say ""
+            pull room
+            say "You entered: " room
+            say ""
+            if room = "SLEEP" | room = "YES" then
+            do
+                say ""
+                say "You retire to your room for the night."
+                day_number = day_number + 1
+                moonhouse = 1
+                response = 0
+                room = 0
+            end
+            if room = "LOOK" then
+            do
+                say "Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its prior inhabitants."
+                say ""
+                response = 0
+                room = 0
+                say "Will you LOOK at the engravings?"
+                say ""
+                pull room
+                say "You entered: " room
+                say ""
+                if room = "LOOK" then
+                do
+                    call show_engravings
+                    if engraving = "" then
+                    do
+                        say ""
+                        say "There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?"
+                        pull room
+                        say "You entered: " room
+                        say ""
+                        if room = "CARVE" then
+                        do
+                            say ""
+                            say "You remove your red pocket knife, ready to add your unique contribution to the bottom of your bunk. What sort of message will you carve? Carve it here..."
+                            room = 0
+                            pull carve
+                            say "You entered: " carve
+                            say ""
+                            engraving = carve
+                            say ""
+                            call show_engravings
+                            say ""
+                        end
+                    end
+                    call pull_any_key
+                end
+            end
+        end
+        else
+        do
+            say "You're not quite ready to go back to sleep. Take a look around before calling it a day."
+            call pull_any_key
+        end
     end
-    if response = 2 & card1b = 1 & gardenswitch <> 2 then
+    if response = 3 then
     do
-        say "You're not quite ready to go back to sleep. Take a look around before calling it a day."
+        say "You probably should avoid the Moon-Angel right now. He seemed pretty adamant that you seek out the Man-in-the-moon first."
+        call pull_any_key
+    end
+    if response = 4 then
+    do
+        say "You probably should avoid the Moon-Angel right now. He seemed pretty adamant that you seek out the Man-in-the-moon first."
+        call pull_any_key
+    end
+    if response = 5 then
+    do
+        say "You really are eager to start your moon-house duties, aren't you? Think of today as orientation day. Come back tomorrow."
         call pull_any_key
     end
     if response = 6 & card1b = 1 & gardenswitch = 1 then
@@ -323,81 +396,6 @@ do while moonhouse = 0
     if response = 6 & card1b = 0 then
     do
         say "You don't have time to waste in some moon-garden. The Man-in-the-moon expects you in the moon-kitchen."
-        call pull_any_key
-    end
-    if response = 2 & card1b = 1 & gardenswitch = 2 then
-    do
-        say "You are in your sleeping quarters, a small compartment tucked away in the moon-house. Will you SLEEP?"
-        say ""
-        pull room
-        say "You entered: " room
-        say ""
-        if room = "SLEEP" | room = "YES" then
-        do
-            say ""
-            say "You retire to your room for the night."
-            day2 = day2 + 1
-            moonhouse = 1
-            response = 0
-            room = 0
-        end
-        if room = "LOOK" then
-        do
-            say "Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its prior inhabitants."
-            say ""
-            response = 0
-            room = 0
-            say "Will you LOOK at the engravings?"
-            say ""
-            pull room
-            say "You entered: " room
-            say ""
-            if room = "LOOK" & engraving <> "" then
-            do
-                call show_engravings
-                call pull_any_key
-            end
-            if room = "LOOK" & engraving = "" then
-            do
-                call show_engravings
-                say ""
-                say "There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?"
-                pull room
-                say "You entered: " room
-                say ""
-                if room = "CARVE" & engraving = "" then
-                do
-                    say ""
-                    say "You remove your red pocket knife, ready to add your unique contribution to the bottom of your bunk. What sort of message will you carve? Carve it here..."
-                    room = 0
-                    pull carve
-                    say "You entered: " carve
-                    say ""
-                    if carve <> "" then
-                    do
-                        engraving = carve
-                        say ""
-                        call show_engravings
-                        say ""
-                        call pull_any_key
-                    end 
-                end
-            end
-        end
-    end
-    if response = 3 then
-    do
-        say "You probably should avoid the Moon-Angel right now. He seemed pretty adamant that you seek out the Man-in-the-moon first."
-        call pull_any_key
-    end
-    if response = 4 then
-    do
-        say "You probably should avoid the Moon-Angel right now. He seemed pretty adamant that you seek out the Man-in-the-moon first."
-        call pull_any_key
-    end
-    if response = 5 then
-    do
-        say "You really are eager to start your moon-house duties, aren't you? Think of today as orientation day. Come back tomorrow."
         call pull_any_key
     end
     if response = "README" | response = "READ" then
@@ -448,252 +446,18 @@ do while moonhouse = 1
         say "GAME OVER"
         exit
     end
-    if day2 = 1 | day2 = 8 | day2 = 15 | day2 = 22 | day2 = 29 | day2 = 36 | day2 = 43 | day2 = 50 | day2 = 57 | day2 = 64 | day2 = 71 | day2 = 78 then
-    do
-        day1 = "Sunday"
-    end
-    if day2 = 2 | day2 = 9 | day2 = 16 | day2 = 23 | day2 = 30 | day2 = 37 | day2 = 44 | day2 = 51 | day2 = 58 | day2 = 65 | day2 = 72 | day2 = 79 then
-    do
-        day1 = "Monday"
-    end
-    if day2 = 3 | day2 = 10 | day2 = 17 | day2 = 24 | day2 = 31 | day2 = 38 | day2 = 45 | day2 = 52 | day2 = 59 | day2 = 66 | day2 = 73 | day2 = 80 then
-    do
-        day1 = "Tuesday"
-    end
-    if day2 = 4 | day2 = 11 | day2 = 18 | day2 = 25 | day2 = 32 | day2 = 39 | day2 = 46 | day2 = 53 | day2 = 60 | day2 = 67 | day2 = 74 | day2 = 81 then
-    do 
-        day1 = "Wednesday"
-    end
-    if day2 = 5 | day2 = 12 | day2 = 19 | day2 = 26 | day2 = 33 | day2 = 40 | day2 = 47 | day2 = 54 | day2 = 61 | day2 = 68 | day2 = 75 | day2 = 82 then
-    do
-        day1 = "Thursday"
-    end
-    if day2 = 6 | day2 = 13 | day2 = 20 | day2 = 27 | day2 = 34 | day2 = 41 | day2 = 48 | day2 = 55 | day2 = 62 | day2 = 69 | day2 = 76 | day2 = 83 then
-    do
-        day1 = "Friday"
-    end
-    if day2 = 7 | day2 = 14 | day2 = 21 | day2 = 28 | day2 = 35 | day2 = 42 | day2 = 49 | day2 = 56 | day2 = 63 | day2 = 70 | day2 = 77 | day2 = 84 then
-    do
-        day1 = "Saturday"
-    end
-    if day2 = 9 then
-    do
-        month = "October"
-    end 
-    if day2 = 16 then
-    do
-        month = "November"
-    end 
-    if day2 = 23 then
-    do
-        month = "December"
-    end 
-    if day2 = 30 then
-    do
-        month = "January"
-    end 
-    if day2 = 37 then
-    do
-        month = "Feburary"
-    end 
-    if day2 = 44 then
-    do
-        month = "March"
-    end 
-    if day2 = 51 then
-    do
-        month = "April"
-    end 
-    if day2 = 58 then
-    do
-        month = "May"
-    end 
-    if day2 = 65 then
-    do
-        month = "June"
-    end 
-    if day2 = 72 then
-    do
-        month = "July"
-    end 
-    if day2 = 79 then
-    do
-        month = "August"
-    end 
-    if day2 > 84 then
-    do
-        month = "Happy Birthday!"
-        moonhouse = 2
-    end 
-    if maninmoonswitch = 1 then
-    do
-        maninmoontext = "You spy the Man-in-the-moon lounging in a hammock reading a book, 'The Merry Adventures of Robin Hood,' by Howard Pyle. Every few seconds he is heard rolling in laughter. He knows you're there but refuses to look up to meet your gaze."
-    end
-    if maninmoonswitch = 2 then
-    do
-        maninmoontext = "The Man-in-the-moon's grin is somehow larger than usual. He must be pleased to see you."
-    end
-    if maninmoonswitch = 3 then
-    do
-        maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper a block down from your house, only hairier and crinklier. He is the most ancient specimen of human that your eyes have taken in and accepted."
-    end
-    if maninmoonswitch = 4 then
-    do
-        maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent that dissolves into the moon-house vents overhead. He appears quite Alice in Wonderland Caterpillary standing there!"
-    end
-    if maninmoonswitch = 5 then
-    do
-        maninmoontext = "Man-in-the-moon: 'How do you do, "name"?'"
-    end
-    if maninmoonswitch = 6 then
-    do
-        maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are me, the Moon-Angel, and the beautiful keeper of the garden. I 'spose I am a bit of a housecat muhself! Har!'"
-    end
-    if maninmoonswitch = 7 then
-    do
-        maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony of activity that unfolds in this queer place. I'm just the narrator and I don't get paid enough to do that."
-    end
-    if maninmoonswitch = 8 then
-    do
-        maninmoontext = "Man-in-the-moon: 'I hear that my colleague the Moon-Angel carries a very rare playing card. He's a prickly fella at times, but underneath all that moon mist is a heart of silver. I'm certain you can get through to him one of these days.'"
-    end
-    if maninmoonswitch = 9 then
-    do
-        maninmoontext = "Man-in-the-moon: 'You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an assistant to lend a heart. Who knows; she might even part with a rare playing card of her own!'"
-    end
-    if maninmoonswitch = 10 then
-    do
-        maninmoontext = "Man-in-the-moon: 'Normally I might have something erudite to say; perhaps something to aid you in your happenings around here. This is not one of those moments, my dear child.' The Man-in-the-moon goes back to smoking his long tobacco pipe."
-    end
-    if maninmoonswitch = 11 then
-    do
-        maninmoontext = "Man-in-the-moon: 'The Moon-Angel and I each have our individual areas of expertise. He makes sense of the cosmic happenings outside of the moon-windows. I am a much simpler denizen of the moon-house. But the Moon-Angel doesn't share as much as he had in times past, so good luck getting anything out of him. Immortality hits each of us differently, or so it seems.'"
-    end
-    if maninmoonswitch = 12 then
-    do
-        maninmoontext = "The Man-in-the-moon is feeling a bit under the weather, sneezing through his whiskers and sniffling through puffy eyes. He is busy now with his knitting, but he never neglects the opportunity to welcome a guest."
-    end
-    if maninmoonswitch = 13 then
-    do
-        maninmoontext = "The Man-in-the-moon is deep in his scholarship of the almanac by candlelight. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night studies."
-    end
-    if maninmoonswitch = 14 then
-    do
-        maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way and muttering all the while under his breath."
-    end
-    if maninmoonswitch = 15 then
-    do
-        maninmoontext = "Man-in-the-moon: 'Tell me "name", had the earthlings won the War of 1812? One of the last children who visited me spoke of it through hushed whispers but had not returned to satiate my curiosity. Why, he must have his own face of gray whiskers now! Hrm.'"
-    end
-    if maninmoonswitch = 16 then
-    do
-        maninmoontext = "Man-in-the-moon: 'Would you like to hear me play the fiddle, "name"?'"
-    end
-    if maninmoonswitch = 17 then
-    do
-        maninmoontext = "Be careful, the Man-in-the-moon is in a strong storytelling mood this evening!"
-    end
-    if maninmoonswitch = 18 then
-    do
-        maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to get creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a collector of sea periwinkles muhself, but who am I to judge?'"
-    end
-    if maninmoonswitch = 19 then
-    do
-        maninmoontext = "You startled the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still ejects a bout of laughter before inquiring as to the status of your health."
-    end
-    if maninmoonswitch = 20 then
-    do
-        maninmoontext = "The Man-in-the-moon is searching frantically for something. 'Where's muh pipe," name"? This cannot be happening to me right now.' You spy the very article poking through his mane of gray hair and point. He feels relief in his embarrassment, regains his composure, and resumes his puffing."
-    end
-    if maninmoonswitch = 21 then
-    do
-        maninmoontext = "Man-in-the-moon: 'There was one lad, David, who came around these parts. He grew into a very capable hero; having bested the Iron Man and saved the dear Princess Aurelia on his black steed. Truly a legend! Despite his glowing paladin achievements, I am still of the mind that his proficiency in star-polishing is the real unspoken story here. An expert moon-house technician is a thankless job, but one with seismic implications that knows no bounds... Yes sir, he was the best darn moon-calf we ever had.'"
-    end
-    if maninmoonswitch = 22 then
-    do
-        maninmoontext = "Man-in-the-moon: 'The Moon-Angel doesn't often pay me a visit here in the moon-kitchen. I believe the last time was some thirty-seven years back when I locked myself in that-there cupboard up there. I wish I had a better story for you, but that's all I've got. Ha!'"
-    end
-    if maninmoonswitch = 23 then
-    do
-        maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he has turned into something of a grandfather figure to you."
-    end
-    if gardenswitch = 2 then
-    do
-        gardentext = "The children were particularly playful today! You were able to help one little boy named Ronnie with his timidness, and by the end of the day he was darting this way and that throughout the garden. The children were saddened to see you go."
-    end
-    if gardenswitch = 3 then
-    do
-        gardentext = "You can tell that the children really adore the lady of the garden in the way that they follow alongside her and play with her hair. While you are one of the eldest of the bunch and are expected to assume some degree of maturity in your assistant role, you often feel as though you are the one being doted on by the Beautiful Lady. It cannot be helped!"
-    end
-    if gardenswitch = 4 then
-    do
-        gardentext = "The Beautiful Lady had you cut up some melon and pass it out to the children, but as soon as you caught one child, two others would run off! This back-and-forth rigmarole kept you busy today, and you're just about ready to call it a day. Still, it is a rare treat to be able to see other children. It gets rather lonely with just the Man-in-the-moon and the Moon-Angel keeping you company. One is an eccentric hobbyist and the other an aloof cosmic entity--both too preoccupied to care for a child."
-    end
-    if gardenswitch = 5 then
-    do
-        gardentext = "The Beautiful Lady had a great idea for a game today! Four teams of children would compete in a map-making contest. The first team with a complete map of the garden behind the moon wins! You sent each member of your team to chart a particular area and then return to the meetup point where a full map could be constructed from its parts. Your team did not win, but everybody learned something about cartography and entomology."
-    end
-    if gardenswitch = 6 then
-    do
-        gardentext = "You put in a good day's work in the garden as the teacher's assistant, but much of your time was deep in contemplation, with an inordinate amount of time devoted to the Beautiful Lady. Why is she here? Where does she come from? You've also never seen her cross with the children, which is quite unlike the teachers of your world. In fact, you've never seen her without a smile, so delightful is she."
-    end
-    if gardenswitch = 7 then
-    do
-        gardentext = "You play logic puzzles under some variety of flora extinct in your world--a large cycad? Who would have thought that the garden behind the Moon would be so lush and, dare I say, forbidden? Logic puzzles under the stars and with good company--a truly delectable state of affairs!"
-    end
-    if gardenswitch = 8 then
-    do
-        gardentext = "When asked why you have to leave the moon-house on your twelfth birthday, the Beautiful Lady responds simply that 'you must grow up.' This statement leaves you wondering what that coveted state of adulthood is like. Will you depart from your present being in remarkable ways, like a cicada after a good molt? Will your priorities shift, like which side of the egg ought to be excavated first--and other matters of life besides?"
-    end
-    if gardenswitch = 9 then
-    do
-        gardentext = "This day in the garden was the moment when you realized that you are beginning to feel like a permanent frequenter of the moon-house or even a member of its royal court. The Beautiful Lady must have sensed this emotion roll over you for she was sure to remind you that the lunar year is nearly over. You were informed before that your stay in the moon-house is a fleeting one, but one year still seems like a long time to you."
-    end
-    if gardenswitch = 10 then
-    do
-        gardentext = "Beautiful Lady: 'The Moon-Angel does occasionally visit us in the garden; however he is typically lost in his thinking and world-building and merely drifts past us. The Man-in-the-moon is a bit of a shut-in hermit type. We do not receive too many outside visitors--but now you're here. Why, you remind me a bit of David in the way that you give much of yourself to the welfare of the garden's children. You are a born servant leader!'"
-    end
-    if gardenswitch = 11 then
-    do
-        gardentext = "Today was nickelodeon day in the garden behind the moon. You helped usher the children to their seats and tried to keep them there while the motion pictures flickered. The children now look up to you like an older sibling, entrusting you to make the right decisions for them. While they were enamored in whatever scenes were presented to them on this eve, you were busy watching them and committing them to memory. They became almost like siblings... brother and sister moon-calfs in the garden behind the moon."
-    end
-    if gardenswitch = 12 then
-    do
-        gardentext = "Despite having already received a playing card for your volunteer efforts to date, you find that you still take the time to visit the Beautiful Lady and the children. You know that your days here are coming to a close. But do not worry about that for now! You are here and that's all that matters right now. You spend every last moment with the children, valuing each interaction and touched heart."
-    end
-    if gardenswitch = 13 then
-    do
-        gardentext = "Today will be your last experience in the garden behind the moon, so make it count. You spend the day exploring with friends in tow every field, statue, row of cabbage, and game parlour. Everybody laughs and shares jokes, including the Beautiful Lady who has as good a riddle as any. You argue over which tree is the elder of the bunch, how many bands an armadillo has, and other epiphanies set at random like the smattering of the stars above. You give each child a hug before a final embrace with the Beautiful Lady, and so it ends."
-    end
-    if moonangelmood > 0 & moonangelmood < 6 then
-    do
-        moonangelmood2 = "Grumpy"
-    end
-    if moonangelmood > 5 & moonangelmood < 11 then
-    do
-        moonangelmood2 = "Standoffish"
-    end
-    if moonangelmood > 10 & moonangelmood < 16 then
-    do
-        moonangelmood2 = "Mum"
-    end
-    if moonangelmood > 15 & moonangelmood < 21 then
-    do
-        moonangelmood2 = "Curious"
-    end
-    if moonangelmood > 20 & moonangelmood < 26 then
-    do
-        moonangelmood2 = "Pleasant"
-    end
-    if moonangelmood = 26 then
-    do
-        moonangelmood2 = "Friendly"
-    end
+
+    call process_day_of_the_week
+    call process_month
+    call process_moon_text
+    call process_garden_text
+    call process_moon_angel_mood
+    
     say ""
     say "*********************************************************************************"
     say "| Moon-house Technician"
     say "| "
-    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Name:" name "; Month:" month "; Day:" day_of_the_week "; Credits: $" credits ";"
     say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
     say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
     say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
@@ -718,54 +482,7 @@ do while moonhouse = 1
     pull response
     say "You entered: " response
     say ""
-    if response = man in the moon & card1b = 1 then
-    do
-        call card_man_in_the_moon
-    end
-    if response = moon calf & card2b = 1 then
-    do
-        call card_david
-    end
-    if response = master cobbler & card3b = 1 then
-    do
-        call card_master_cobler
-    end
-    if response = baby & card4b = 1 then
-    do
-        call card_baby
-    end
-    if response = phyllis & card5b = 1 then
-    do
-        call card_phyllis
-    end
-    if response = old woman & card6b = 1 then
-    do
-        call card_old_woman
-    end
-    if response = black horse & card7b = 1 then
-    do
-        call card_black_horse
-    end
-    if response = iron man & card8b = 1 then
-    do
-        call card_iron_man
-    end
-    if response = king & card9b = 1 then
-    do
-        call card_king
-    end
-    if response = moon angel & card10b = 1 then
-    do
-        call card_moon_angel
-    end
-    if response = beautiful lady & card11b = 1 then
-    do
-        call card_beautiful_lady
-    end
-    if response = princess aurelia & card12b = 1 then
-    do
-        call card_princess_aurelia
-    end
+    call process_show_card(response)
     if response = 1 then
     do
         say maninmoontext
@@ -950,12 +667,12 @@ do while moonhouse = 1
         do
             say "It was a long day and you are sleepy. Goodnight!"
             say ""
-            day2 = day2 + 1
+            day_number = day_number + 1
             response = 0
             room = 0
             maninmoonswitch = random(1,23)
             moonangelswitch = random(1,4)
-            if day2 > 83 then
+            if day_number > 83 then
             do
                 month = "Happy Birthday!"
                 moonhouse = 2
@@ -1006,7 +723,7 @@ do while moonhouse = 1
             end
         end
     end
-    if response = 3 & moonangelcadence <> day2 then
+    if response = 3 & moonangelcadence <> day_number then
     do
         say moonangeltext
         response = 0
@@ -1020,7 +737,7 @@ do while moonhouse = 1
         if talk = talk & moonangelmood < 6 then
         do
             talk = ""
-            moonangelcadence = day2
+            moonangelcadence = day_number
             response = 0
             moonangeldisplay = "MOON ANGEL MOOD: "
             say "The Moon-Angel ignores you. He does not appear to be interested in engaging in conversation with you... or anybody else for that matter."
@@ -1030,7 +747,7 @@ do while moonhouse = 1
         if talk = talk & moonangelmood > 5 & moonangelmood < 11 then
         do
             talk = ""
-            moonangelcadence = day2
+            moonangelcadence = day_number
             response = 0
             say "The Moon-Angel brushes you away and resumes his stargazing."
             moonangelmood = moonangelmood + 1
@@ -1039,7 +756,7 @@ do while moonhouse = 1
         if talk = talk & moonangelmood > 10 & moonangelmood < 16 then
         do
             talk = ""    
-            moonangelcadence = day2
+            moonangelcadence = day_number
             response = 0
             say "The Moon-Angel shares a few brief emotionless pleasantries before departing... doing whatever moon angels do out there in the cosmos."
             talk = ""
@@ -1049,7 +766,7 @@ do while moonhouse = 1
         if talk = talk & moonangelmood > 15 & moonangelmood < 21 then
         do
             talk = ""
-            moonangelcadence = day2
+            moonangelcadence = day_number
             response = 0
             say "Moon-Angel: 'You are a chatty little fellow, aren't you?'"
             moonangelmood = moonangelmood + 1
@@ -1058,7 +775,7 @@ do while moonhouse = 1
         if talk = talk & moonangelmood > 20 & moonangelmood < 26 then
         do
             talk = ""
-            moonangelcadence = day2
+            moonangelcadence = day_number
             response = 0
             say "Moon-Angel: 'Good day. Are you enjoying your stay in the moon-house?'"
             moonangelmood = moonangelmood + 1
@@ -1067,7 +784,7 @@ do while moonhouse = 1
         if talk = talk & moonangelmood = 26 then
         do
             talk = ""
-            moonangelcadence = day2
+            moonangelcadence = day_number
             response = 0
             say "Moon-Angel: 'Here.'"
             say ""
@@ -1082,11 +799,11 @@ do while moonhouse = 1
             say "Moon-Angel: 'Good day "name".'"
             talk = ""
             response = 0
-            moonangelcadence = day2
+            moonangelcadence = day_number
             call pull_any_key
         end
     end
-    if response = 3 & moonangelcadence = day2 then
+    if response = 3 & moonangelcadence = day_number then
     do
         say ""
         say "It's probably best to leave the Moon-Angel alone."
@@ -1107,7 +824,7 @@ do while moonhouse = 1
             call pull_any_key
         end
     end
-    if response = 5 & workcadence <> day2 then
+    if response = 5 & workcadence <> day_number then
     do
         say "You stand on the top floor of the moon-house. There is nothing above you aside from a hollow, empty sky."
         say ""
@@ -1142,24 +859,24 @@ do while moonhouse = 1
         stars = ""
         call pull_any_key
     end
-    if response = 5 & workcadence = day2 then
+    if response = 5 & workcadence = day_number then
     do
         say "You've already done your share of today's work. Take the rest of the day off!"
         say ""
         call pull_any_key
     end
-    if response = 6 & day1 = "Saturday" & gardencadence <> day2 & gardenswitch <> 10 then
+    if response = 6 & day_of_the_week = "Saturday" & gardencadence <> day_number & gardenswitch <> 10 then
     do
         say gardentext
         gardenswitch = gardenswitch + 1
-        gardencadence = day2
+        gardencadence = day_number
         call pull_any_key
     end
-    if response = 6 & day1 = "Saturday" & gardencadence <> day2 & gardenswitch = 10 then
+    if response = 6 & day_of_the_week = "Saturday" & gardencadence <> day_number & gardenswitch = 10 then
     do
         say gardentext
         gardenswitch = gardenswitch + 1
-        gardencadence = day2
+        gardencadence = day_number
         response = ""
         say ""
         say "Beautiful Lady: '"name", you have been so much of a good helper! Here is your [BEAUTIFUL LADY] playing card for all of your hard work. You take care of it now.'"
@@ -1168,13 +885,13 @@ do while moonhouse = 1
         card11b = 1
         call pull_any_key
     end
-    if response = 6 & day1 = "Saturday" & gardencadence = day2 then
+    if response = 6 & day_of_the_week = "Saturday" & gardencadence = day_number then
     do
         say "The door to the garden is closed for the evening. Come back next week!"
-        gardencadence = day2
+        gardencadence = day_number
         call pull_any_key
     end
-    if response = 6 & day1 <> "Saturday" then
+    if response = 6 & day_of_the_week <> "Saturday" then
     do
         say "The door to the garden behind the moon is locked. A sign reads: 'Moon calfs are welcome on Saturdays.'"
         call pull_any_key
@@ -1284,7 +1001,7 @@ do while house = 1
     say "*********************************************************************************"
     say "| Moon-house Technician"
     say "| "
-    say "| Name:" name "; Month:" month "; Day:" day1 "; Credits: $" credits ";"
+    say "| Name:" name "; Month:" month "; Day:" day_of_the_week "; Credits: $" credits ";"
     say "| Cards:" card1 ";" card2 ";" card3 ";" card4 ";"
     say "|       " card5 ";" card6 ";" card7 ";" card8 ";"
     say "|       " card9 ";" card10 ";" card11 ";" card12 ";"
@@ -1308,58 +1025,7 @@ do while house = 1
     pull response
     say "You entered: " response
     say ""
-    if response = "man in the moon" & card1b = 1 then
-    do
-        call card_man_in_the_moon
-    end
-    if response = "moon calf" & card2b = 1 then
-    do
-        call card_david
-    end
-    if response = "master cobbler" & card3b = 1 then
-    do
-        call card_master_cobler
-    end
-    if response = "baby" & card4b = 1 then
-    do
-        call card_baby
-    end
-    if response = "phyllis" & card5b = 1 then
-    do
-        call card_phyllis
-    end
-    if response = "old woman" & card6b = 1 then
-    do
-        call card_old_woman
-    end
-    if response = "black horse" & card7b = 1 then
-    do
-        call card_black_horse
-    end
-    if response = "iron man" & card8b = 1 then
-    do
-        call card_iron_man
-    end
-    if response = "king" & card9b = 1 then
-    do
-        call card_king
-    end
-    if response = "moon angel" & card10b = 1 then
-    do
-        call card_moon_angel
-    end
-    if response = "beautiful lady" & card11b = 1 then
-    do
-        call card_beautiful_lady
-    end
-    if response = "princess aurelia" & card12b = 1 then
-    do
-        call card_princess_aurelia
-    end
-    if response = "you" & card13b = 1 then
-    do
-        call card_you
-    end
+    call process_show_card(response)
     if response = 1 then
     do
         say "You are in your kitchen. A familiar sight is spread before you, and yet it feels quite unfamiliar... A kitchen is supposed to be a place where music is played, stories are told, and almanacs are read by candle light, right?"
@@ -1430,6 +1096,326 @@ pull_any_key:
     do
         say ""
         response = ""
+    end
+    return
+
+process_show_card:
+    parse arg response
+    if response = "MAN IN THE MOON" & card1b = 1 then
+    do
+        call card_man_in_the_moon
+    end
+    if response = "MOON CALF" & card2b = 1 then
+    do
+        call card_david
+    end
+    if response = "MASTER COBBLER" & card3b = 1 then
+    do
+        call card_master_cobler
+    end
+    if response = "BABY" & card4b = 1 then
+    do
+        call card_baby
+    end
+    if response = "PHYLLIS" & card5b = 1 then
+    do
+        call card_phyllis
+    end
+    if response = "OLD WOMAN" & card6b = 1 then
+    do
+        call card_old_woman
+    end
+    if response = "BLACK HORSE" & card7b = 1 then
+    do
+        call card_black_horse
+    end
+    if response = "IRON MAN" & card8b = 1 then
+    do
+        call card_iron_man
+    end
+    if response = "KING" & card9b = 1 then
+    do
+        call card_king
+    end
+    if response = "MOON ANGEL" & card10b = 1 then
+    do
+        call card_moon_angel
+    end
+    if response = "BEAUTIFUL LADY" & card11b = 1 then
+    do
+        call card_beautiful_lady
+    end
+    if response = "PRINCESS AURELIA" & card12b = 1 then
+    do
+        call card_princess_aurelia
+    end
+    if response = "YOU" & card13b = 1 then
+    do
+        call card_you
+    end
+    return
+
+process_day_of_the_week:
+    if (day_number - 1) // 7 = 0 then
+    do
+        day_of_the_week = "Sunday"
+        say sunday
+    end
+    else if (day_number - 1) // 7 = 1 then
+    do
+        day_of_the_week = "Monday"
+        say monday
+    end
+    else if (day_number - 1) // 7 = 2 then
+    do
+        day_of_the_week = "Tuesday"
+        say tues
+    end
+    else if (day_number - 1) // 7 = 3 then
+    do 
+        day_of_the_week = "Wednesday"
+        say wed
+    end
+    else if (day_number - 1) // 7 = 4 then
+    do
+        day_of_the_week = "Thursday"
+    end
+    else if (day_number - 1) // 7 = 5 then
+    do
+        day_of_the_week = "Friday"
+    end
+    else if (day_number - 1) // 7 = 6 then
+    do
+        day_of_the_week = "Saturday"
+    end
+    else
+    do
+        say hwegses
+    end
+    return
+
+process_month:
+    if day_number = 9 then
+    do
+        month = "October"
+    end 
+    if day_number = 16 then
+    do
+        month = "November"
+    end 
+    if day_number = 23 then
+    do
+        month = "December"
+    end 
+    if day_number = 30 then
+    do
+        month = "January"
+    end 
+    if day_number = 37 then
+    do
+        month = "Feburary"
+    end 
+    if day_number = 44 then
+    do
+        month = "March"
+    end 
+    if day_number = 51 then
+    do
+        month = "April"
+    end 
+    if day_number = 58 then
+    do
+        month = "May"
+    end 
+    if day_number = 65 then
+    do
+        month = "June"
+    end 
+    if day_number = 72 then
+    do
+        month = "July"
+    end 
+    if day_number = 79 then
+    do
+        month = "August"
+    end 
+    if day_number > 84 then
+    do
+        month = "Happy Birthday!"
+        moonhouse = 2
+    end
+    return
+
+process_moon_text:
+    if maninmoonswitch = 1 then
+    do
+        maninmoontext = "You spy the Man-in-the-moon lounging in a hammock reading a book, 'The Merry Adventures of Robin Hood,' by Howard Pyle. Every few seconds he is heard rolling in laughter. He knows you're there but refuses to look up to meet your gaze."
+    end
+    if maninmoonswitch = 2 then
+    do
+        maninmoontext = "The Man-in-the-moon's grin is somehow larger than usual. He must be pleased to see you."
+    end
+    if maninmoonswitch = 3 then
+    do
+        maninmoontext = "You stand before the Man-in-the-moon. He reminds you somewhat of the storekeeper a block down from your house, only hairier and crinklier. He is the most ancient specimen of human that your eyes have taken in and accepted."
+    end
+    if maninmoonswitch = 4 then
+    do
+        maninmoontext = "The Man-in-the-moon inhales the sweet smoke from his pipe and exhales a curling serpent that dissolves into the moon-house vents overhead. He appears quite Alice in Wonderland Caterpillary standing there!"
+    end
+    if maninmoonswitch = 5 then
+    do
+        maninmoontext = "Man-in-the-moon: 'How do you do, "name"?'"
+    end
+    if maninmoonswitch = 6 then
+    do
+        maninmoontext = "Man-in-the-moon: 'The truth is that nobody remains in the moon-house for long; few of us have the constitution for lengthy stays. In fact, the only permanent residents here are me, the Moon-Angel, and the beautiful keeper of the garden. I 'spose I am a bit of a housecat muhself! Har!'"
+    end
+    if maninmoonswitch = 7 then
+    do
+        maninmoontext = "The Man-in-the-moon is seen pacing throughout the kitchen brewing and patching and mending the forgotten things. I would attempt to describe these activities to you, except I fear that I would be unable to adequately convey the cacophony of activity that unfolds in this queer place. I'm just the narrator and I don't get paid enough to do that."
+    end
+    if maninmoonswitch = 8 then
+    do
+        maninmoontext = "Man-in-the-moon: 'I hear that my colleague the Moon-Angel carries a very rare playing card. He's a prickly fella at times, but underneath all that moon mist is a heart of silver. I'm certain you can get through to him one of these days.'"
+    end
+    if maninmoonswitch = 9 then
+    do
+        maninmoontext = "Man-in-the-moon: 'You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an assistant to lend a heart. Who knows; she might even part with a rare playing card of her own!'"
+    end
+    if maninmoonswitch = 10 then
+    do
+        maninmoontext = "Man-in-the-moon: 'Normally I might have something erudite to say; perhaps something to aid you in your happenings around here. This is not one of those moments, my dear child.' The Man-in-the-moon goes back to smoking his long tobacco pipe."
+    end
+    if maninmoonswitch = 11 then
+    do
+        maninmoontext = "Man-in-the-moon: 'The Moon-Angel and I each have our individual areas of expertise. He makes sense of the cosmic happenings outside of the moon-windows. I am a much simpler denizen of the moon-house. But the Moon-Angel doesn't share as much as he had in times past, so good luck getting anything out of him. Immortality hits each of us differently, or so it seems.'"
+    end
+    if maninmoonswitch = 12 then
+    do
+        maninmoontext = "The Man-in-the-moon is feeling a bit under the weather, sneezing through his whiskers and sniffling through puffy eyes. He is busy now with his knitting, but he never neglects the opportunity to welcome a guest."
+    end
+    if maninmoonswitch = 13 then
+    do
+        maninmoontext = "The Man-in-the-moon is deep in his scholarship of the almanac by candlelight. He looks up and greets you, signaling with his eyes a brief and welcome reprieve from his late-night studies."
+    end
+    if maninmoonswitch = 14 then
+    do
+        maninmoontext = "The Man-in-the-moon truly is a Renaissance man of sorts as he seems to always be doing something different whenever you visit him. This time he is really moving about in his ambidextrous way and muttering all the while under his breath."
+    end
+    if maninmoonswitch = 15 then
+    do
+        maninmoontext = "Man-in-the-moon: 'Tell me "name", had the earthlings won the War of 1812? One of the last children who visited me spoke of it through hushed whispers but had not returned to satiate my curiosity. Why, he must have his own face of gray whiskers now! Hrm.'"
+    end
+    if maninmoonswitch = 16 then
+    do
+        maninmoontext = "Man-in-the-moon: 'Would you like to hear me play the fiddle, "name"?'"
+    end
+    if maninmoonswitch = 17 then
+    do
+        maninmoontext = "Be careful, the Man-in-the-moon is in a strong storytelling mood this evening!"
+    end
+    if maninmoonswitch = 18 then
+    do
+        maninmoontext = "Man-in-the-moon: 'I don't personally understand the appeal of these playing cards, but apparently the kids love 'em. As the years marched on, less children visited us. Eventually we had to place moon-house technician advertisements in local newspapers, but eventually those ads lost their charm and we had to get creative. Well, one day the Moon-Angel peered through the windows on the second floor and discovered the juvenile sport of cards. More of a collector of sea periwinkles muhself, but who am I to judge?'"
+    end
+    if maninmoonswitch = 19 then
+    do
+        maninmoontext = "You startled the Man-in-the-moon as his back was turned to you. But it doesn't end there; he was in the middle of flipping a flapjack (which did not reach its intended landing-point). Pancake batter is everywhere, and yet the Man-in-the-moon still ejects a bout of laughter before inquiring as to the status of your health."
+    end
+    if maninmoonswitch = 20 then
+    do
+        maninmoontext = "The Man-in-the-moon is searching frantically for something. 'Where's muh pipe," name"? This cannot be happening to me right now.' You spy the very article poking through his mane of gray hair and point. He feels relief in his embarrassment, regains his composure, and resumes his puffing."
+    end
+    if maninmoonswitch = 21 then
+    do
+        maninmoontext = "Man-in-the-moon: 'There was one lad, David, who came around these parts. He grew into a very capable hero; having bested the Iron Man and saved the dear Princess Aurelia on his black steed. Truly a legend! Despite his glowing paladin achievements, I am still of the mind that his proficiency in star-polishing is the real unspoken story here. An expert moon-house technician is a thankless job, but one with seismic implications that knows no bounds... Yes sir, he was the best darn moon-calf we ever had.'"
+    end
+    if maninmoonswitch = 22 then
+    do
+        maninmoontext = "Man-in-the-moon: 'The Moon-Angel doesn't often pay me a visit here in the moon-kitchen. I believe the last time was some thirty-seven years back when I locked myself in that-there cupboard up there. I wish I had a better story for you, but that's all I've got. Ha!'"
+    end
+    if maninmoonswitch = 23 then
+    do
+        maninmoontext = "The Man-in-the-moon repeats a story from before, but you listen to every word, paying careful attention to the minute alterations that this version provides. You do not dare confront him on these embellishments as he has turned into something of a grandfather figure to you."
+    end
+    return
+
+process_garden_text:
+    if gardenswitch = 2 then
+    do
+        gardentext = "The children were particularly playful today! You were able to help one little boy named Ronnie with his timidness, and by the end of the day he was darting this way and that throughout the garden. The children were saddened to see you go."
+    end
+    if gardenswitch = 3 then
+    do
+        gardentext = "You can tell that the children really adore the lady of the garden in the way that they follow alongside her and play with her hair. While you are one of the eldest of the bunch and are expected to assume some degree of maturity in your assistant role, you often feel as though you are the one being doted on by the Beautiful Lady. It cannot be helped!"
+    end
+    if gardenswitch = 4 then
+    do
+        gardentext = "The Beautiful Lady had you cut up some melon and pass it out to the children, but as soon as you caught one child, two others would run off! This back-and-forth rigmarole kept you busy today, and you're just about ready to call it a day. Still, it is a rare treat to be able to see other children. It gets rather lonely when the Man-in-the-moon and the Moon-Angel are the only persons keeping you company. One is an eccentric hobbyist and the other an aloof cosmic entity--both too preoccupied to care for a child."
+    end
+    if gardenswitch = 5 then
+    do
+        gardentext = "The Beautiful Lady had a great idea for a game today! Four teams of children would compete in a map-making contest. The first team with a complete map of the garden behind the moon wins! You sent each member of your team to chart a particular area and then return to the meetup point where a full map could be constructed from its parts. Your team did not win, but everybody learned something about cartography and entomology."
+    end
+    if gardenswitch = 6 then
+    do
+        gardentext = "You put in a good day's work in the garden as the teacher's assistant, but much of your time was deep in contemplation, with an inordinate amount of time devoted to the Beautiful Lady. Why is she here? Where does she come from? You've also never seen her cross with the children, which is quite unlike the teachers of your world. In fact, you've never seen her without a smile, so delightful is she."
+    end
+    if gardenswitch = 7 then
+    do
+        gardentext = "You play logic puzzles under some variety of flora extinct in your world--a large cycad? Who would have thought that the garden behind the Moon would be so lush and, dare I say, forbidden? Logic puzzles under the stars and with good company--a truly delectable state of affairs!"
+    end
+    if gardenswitch = 8 then
+    do
+        gardentext = "When asked why you have to leave the moon-house on your twelfth birthday, the Beautiful Lady responds simply that 'you must grow up.' This statement leaves you wondering what that coveted state of adulthood is like. Will you depart from your present being in remarkable ways, like a cicada after a good molt? Will your priorities shift, like which side of the egg ought to be excavated first--and other matters of life besides?"
+    end
+    if gardenswitch = 9 then
+    do
+        gardentext = "This day in the garden was the moment when you realized that you are beginning to feel like a permanent frequenter of the moon-house or even a member of its royal court. The Beautiful Lady must have sensed this emotion roll over you for she was sure to remind you that the lunar year is nearly over. You were informed before that your stay in the moon-house is a fleeting one, but one year still seems like a long time to you."
+    end
+    if gardenswitch = 10 then
+    do
+        gardentext = "Beautiful Lady: 'The Moon-Angel does occasionally visit us in the garden; however he is typically lost in his thinking and world-building and merely drifts past us. The Man-in-the-moon is a bit of a shut-in hermit type. We do not receive too many outside visitors--but now you're here. Why, you remind me a bit of David in the way that you give much of yourself to the welfare of the garden's children. You are a born servant leader!'"
+    end
+    if gardenswitch = 11 then
+    do
+        gardentext = "Today was nickelodeon day in the garden behind the moon. You helped usher the children to their seats and tried to keep them there while the motion pictures flickered. The children now look up to you like an older sibling, entrusting you to make the right decisions for them. While they were enamored in whatever scenes were presented to them on this eve, you were busy watching them and committing them to memory. They became almost like siblings... brother and sister moon-calfs in the garden behind the moon."
+    end
+    if gardenswitch = 12 then
+    do
+        gardentext = "Despite having already received a playing card for your volunteer efforts to date, you find that you still take the time to visit the Beautiful Lady and the children. You know that your days here are coming to a close. But do not worry about that for now! You are here and that's all that matters right now. You spend every last moment with the children, valuing each interaction and touched heart."
+    end
+    if gardenswitch = 13 then
+    do
+        gardentext = "Today will be your last experience in the garden behind the moon, so make it count. You spend the day exploring with friends in tow every field, statue, row of cabbage, and game parlour. Everybody laughs and shares jokes, including the Beautiful Lady who has as good a riddle as any. You argue over which tree is the elder of the bunch, how many bands an armadillo has, and other epiphanies set at random like the smattering of the stars above. You give each child a hug before a final embrace with the Beautiful Lady, and so it ends."
+    end
+    return
+
+process_moon_angel_mood:
+    if moonangelmood > 0 & moonangelmood < 6 then
+    do
+        moonangelmood2 = "Grumpy"
+    end
+    if moonangelmood > 5 & moonangelmood < 11 then
+    do
+        moonangelmood2 = "Standoffish"
+    end
+    if moonangelmood > 10 & moonangelmood < 16 then
+    do
+        moonangelmood2 = "Mum"
+    end
+    if moonangelmood > 15 & moonangelmood < 21 then
+    do
+        moonangelmood2 = "Curious"
+    end
+    if moonangelmood > 20 & moonangelmood < 26 then
+    do
+        moonangelmood2 = "Pleasant"
+    end
+    if moonangelmood = 26 then
+    do
+        moonangelmood2 = "Friendly"
     end
     return
 
