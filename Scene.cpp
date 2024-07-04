@@ -242,7 +242,7 @@ void Scene::dayOne()
     }
     else if (context_.global_.response_ == "2")
     {
-      if (context_.global_.cards_[0].owned == true && context_.global_.gardenVisitationNumber_ == 1)
+      if (context_.global_.cards_[0].owned == true && context_.global_.gardenCadence_ == -1)
       {
         printf("You are in your sleeping quarters, a small compartment tucked away in the moon-house. Will you SLEEP?\n");
         printf("\n");
@@ -278,7 +278,7 @@ void Scene::dayOne()
         printf("You don't have time to waste in some moon-garden. The Man-in-the-moon expects you in the moon-kitchen.\n");
       else
       {
-        if (context_.global_.gardenVisitationNumber_ == 0)
+        if (context_.global_.gardenCadence_ != -1)
         {
           printf("A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and listen intently to her words.\n");
           printf("\n");
@@ -287,7 +287,7 @@ void Scene::dayOne()
           printf("The children poke and prod at you and speak in strangely amusing ways. You spend some time running and playing with the children in the garden, hiding behind the sundial and discovering exotic terrain. The Beautiful Lady motions for you to come over, and you cannot help but listen to her every word.\n");
           printf("\n");
           printf("Beautiful Lady: 'You were such an expert teacher's assistant today, young one! You may come and help me any time you'd like. The door to the garden will open for you on Saturdays.'\n");
-          context_.global_.gardenVisitationNumber_++;
+          context_.global_.gardenCadence_ = -1;
         }
         else
           printf("The door to the garden behind the moon is locked. A sign reads: 'Moon calfs are welcome on Saturdays.'\n");
@@ -426,7 +426,7 @@ void Scene::working()
         {
           context_.global_.moonAngelCadence_ = context_.global_.dayNumber_;
           context_.global_.moonAngelMood_ = context_.global_.moonAngelMood_ + 1;
-          if (context_.global_.moonAngelMood_ == 26)
+          if (context_.global_.moonAngelMood_ / 6 == 5)
           {
             printf("Moon-Angel: 'Here.'\n");
             printf("\n");

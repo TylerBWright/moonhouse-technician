@@ -49,7 +49,7 @@ public:
 
 	std::string getGarden(int idx)
 	{
-		std::array<std::string, 12> textStrings = {
+		std::array<std::string, 11> textStrings = {
 			"The children were particularly playful today! You were able to help one little boy named Ronnie with his timidness, and by the end of the day he was darting this way and that throughout the garden. The children were saddened to see you go.",
 			"You can tell that the children really adore the lady of the garden in the way that they follow alongside her and play with her hair. While you are one of the eldest of the bunch and are expected to assume some degree of maturity in your assistant role, you often feel as though you are the one being doted on by the Beautiful Lady. It cannot be helped.",
 			"The Beautiful Lady had you cut up some melon and pass it out to the children, but when one child was caught two others would flee! This back-and-forth rigmarole kept you busy today, and you're just about ready to call it a day. Still, it is a rare treat to be able to see other children. It gets rather lonely when the Man-in-the-moon and the Moon-Angel are the only persons keeping you company. One is an eccentric hobbyist and the other an aloof cosmic entity--both too preoccupied to care for a child.",
@@ -61,7 +61,6 @@ public:
 			"Beautiful Lady: 'The Moon-Angel does occasionally visit us in the garden; however he is typically lost in his thinking and world-building and merely drifts past us. The Man-in-the-moon is a bit of a shut-in hermit type. We do not receive too many outside visitors--but now you're here. Why, you remind me a bit of David in the way that you give much of yourself to the welfare of the garden's children. You are a born leader!'",
 			"Today was nickelodeon day in the garden behind the moon. You helped usher the children to their seats and tried to keep them there while the motion pictures flickered. The children now look up to you like an older sibling, entrusting you to make the right decisions for them. While they were enamored in whatever scenes were presented to them on this eve, you were busy watching them and committing them to memory. They became almost like siblings... brother and sister moon-calfs in the garden behind the moon.",
 			"Despite having already received a playing card for your volunteer efforts to date, you find that you still take the time to visit the Beautiful Lady and the children. You know that your days here are coming to a close. But do not worry about that for now! You are here and that's all that matters right now. You spend every last moment with the children, valuing each interaction and touched heart.",
-			"Today will be your last experience in the garden behind the moon, so make it count. You spend the day exploring with friends in tow every field, statue, row of cabbage, and game parlour. Everybody laughs and shares jokes, including the Beautiful Lady who has as good a riddle as any. You argue over which tree is the elder of the bunch, how many bands an armadillo has, and other epiphanies set at random like the smattering of the stars above. You give each child a hug before a final embrace with the Beautiful Lady, and so it ends.",
 		};
 		return textStrings[idx];
 	}

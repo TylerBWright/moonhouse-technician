@@ -53,10 +53,7 @@ std::string Helpers::getManInTheMoonText()
 
 std::string Helpers::getGardenText()
 {
-	std::srand(global_.dayNumber_);
-	int idx = std::rand() % 12;
-
-	return textStrings_.getGarden(idx);
+	return textStrings_.getGarden(global_.gardenVisitationNumber_);
 }
 
 const char* Helpers::getMonth()
