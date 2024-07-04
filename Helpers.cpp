@@ -113,7 +113,7 @@ const char* Helpers::getDayOfTheWeek()
 	case 6:
 		return "Saturday";
 	default:
-		return "Sunday";
+		return "Saturday";
 	}
 }
 
