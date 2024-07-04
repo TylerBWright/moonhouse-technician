@@ -7,6 +7,7 @@
 #include "TextStrings.h"
 #include "Context.h"
 #include "Scene.h"
+#include "SaveManager.h"
 
 int main()
 {
@@ -18,10 +19,28 @@ int main()
   Context context{ constant, global, helpers, textStrings };
 
   Scene scene{ context };
+  SaveManager saveManager{ context };
 
-  scene.introduction();
-  scene.dayOne();
-  scene.working();
-  //Scene::ending();
+  int sceneNum = 0;
+  if (saveManager.promptLoad())
+  {
+    sceneNum = saveManager.load();
+  }
+
+  switch (sceneNum)
+  {
+  case 0:
+    scene.introduction();
+    _FALLTHROUGH;
+  case 1:
+    scene.dayOne();
+    _FALLTHROUGH;
+  case 2:
+    scene.working();
+    _FALLTHROUGH;
+  case 3:
+    scene.ending();
+    _FALLTHROUGH;
+  }
 }
 

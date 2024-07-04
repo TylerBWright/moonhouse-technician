@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 namespace CardImages
 {
     void manInTheMoon();
@@ -26,5 +28,5 @@ namespace CardImages
 
     void princessAurelia();
 
-    void you(char* name, char* engraving);
+    void you(std::string name, std::string engraving);
 }

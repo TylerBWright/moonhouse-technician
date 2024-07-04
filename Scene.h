@@ -1,18 +1,17 @@
 #pragma once
 
 #include "Context.h"
+#include "SaveManager.h"
 
 class Scene
 {
 public:
 
-  Scene(Context& context)
-    : context_{ context }
-  {
-    // Empty
-  }
+  Scene(Context& context);
 
-  Context context_;
+  Context& context_;
+
+  SaveManager saveManager_;
 
   void introduction();
 

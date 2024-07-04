@@ -5,6 +5,13 @@
 
 #include <algorithm>
 
+Scene::Scene(Context& context)
+  : context_{ context }
+  , saveManager_{SaveManager{context}}
+{
+  // Empty
+}
+
 void Scene::introduction()
 {
   printf("Before we begin, what is your name? Please type your NAME and press ENTER.\n");
@@ -286,6 +293,11 @@ void Scene::dayOne()
     }
     else if (context_.global_.response_ == "README" || context_.global_.response_ == "READ")
       context_.helpers_.showReadme();
+    else if (context_.global_.response_ == "SAVE")
+    {
+      saveManager_.save(1);
+      printf("Game saved.\n\n");
+    }
     else
       continue;
 
@@ -500,6 +512,11 @@ void Scene::working()
     }
     else if (context_.global_.response_ == "README" || context_.global_.response_ == "READ")
       context_.helpers_.showReadme();
+    else if (context_.global_.response_ == "SAVE")
+    {
+      saveManager_.save(2);
+      printf("Game saved.\n\n");
+    }
     else
       continue;
 
@@ -510,72 +527,73 @@ void Scene::working()
 
 void Scene::ending()
 {
+  printf("Can you believe that today is your last day in the moon-house? You spend it with friends exploring every field, statue, row of cabbage, and game parlour. Everybody laughs and shares jokes, including the Beautiful Lady who has as good a riddle as any. You argue over which tree is the elder of the bunch, how many bands an armadillo has, and other epiphanies set at random like the smattering of the stars above. You give each child a hug before a final embrace with the Beautiful Lady, and so it ends.\n");
+  printf("\n");
+  printf("You head back to your bunk and fall fast asleep.\n");
+  printf("\n");
+  context_.helpers_.pullAnyKey();
+  printf("ZZZZzzzz\n");
+  context_.helpers_.playNote(context_.constant_.B, context_.constant_.WHOLE);
+  printf("\n");
+  context_.helpers_.sleep(500);
+  printf("ZZZZzzzzZZZZzzzz\n");
+  context_.helpers_.playNote(context_.constant_.B, context_.constant_.WHOLE);
+  printf("\n");
+  context_.helpers_.sleep(500);
+  context_.helpers_.playNote(context_.constant_.B, context_.constant_.WHOLE);
+  printf("ZZZZZZzzzzzZZZZzzzzz\n");
+  printf("\n");
+  context_.helpers_.sleep(500);
+  printf("You awaken from your bunk to silver moonlight pouring through your portal into the cosmos. Today is a special day, for it is your one-year moon-house anniversary! More importantly, however, it is your twelfth birthday, meaning you get a complementary card from the Man-in-the-moon.\n");
+  printf("\n");
+  printf("You fling open the door and make your way through the corridor--there isn't a moment to lose! You arrive before the moon-kitchen and knock in the same manner that you always had, a rap and a tap and a tap. The Man-in-the-moon opens the door, revealing a face more glum than any you had witnessed before or after. He speaks.\n");
+  printf("\n");
+  printf("Man-in-the-moon: 'Happy Birthday my dear %s! You have made it one year in the moon-house.'\n", context_.global_.name_.c_str());
+  printf("\n");
+  printf("The old little man of whimsy hands you a card. You feel a course of energy connect with your palm and reverberate down your arm. This [PRINCESS AURELIA] card has a special energy about it! The Man-in-the-moon allows you a moment of celebration before introducing a more delicate topic.\n");
+  printf("\n");
+  printf("Man-in-the-moon: 'Do you remember what I told you when you first arrived at the moon-house?'\n");
+  printf("\n");
+  printf("You were hoping that he wouldn't bring up that detail.\n");
+  printf("\n");
+  printf("Man-in-the-moon: 'You must go back now, and grow up.'\n");
+  context_.global_.cards_[11].owned = true;
+  context_.helpers_.pullAnyKey();
+
+  printf("\n");
+  printf("The unmistakable figure of the Moon-Angel slips into the moon-kitchen, his silver robe fluttering behind him and the minute stars within the fabric glistening brilliantly. His eyes search your soul, and you realize, instinctively, that you are about to awaken from the moon-house dream. While the Moon-Angel did not vocalize this with you, he was able to transfer innumerable ideas and concepts from his mind to yours... and suddenly now you understand.\n");
+  printf("\n");
+  context_.helpers_.pullAnyKey();
+
+  printf("Now\n");
+  context_.helpers_.sleep(500);
+  printf("    you\n");
+  context_.helpers_.sleep(500);
+  printf("        understand...\n");
+  context_.helpers_.pullAnyKey();
+
+  printf("\n");
+  printf("Moon-Angel: '%s, come to me.'\n", context_.global_.name_.c_str());
+  printf("\n");
+  printf("You glance at the Man-in-the-moon and he returns a little wink. You are going to greatly miss these two strange caretakers of the moon-house. You refocus back on the Moon-Angel.\n");
+  printf("\n");
+  printf("His massive arms wrap around you and an electric current grabs hold of your entire body. You feel the sensation of being thrusted into the air and ejected into a new reality--a sensation both foreign and incomprehensible. You are detethered from the moon-house realm. You are being transported through the interstitial regions between worlds.\n");
+  printf("\n");
+  context_.helpers_.pullAnyKey();
+
+  printf("        *\n");
+  context_.helpers_.sleep(500);
+  printf("       ***\n");
+  context_.helpers_.sleep(500);
+  printf("     *******\n");
+  context_.helpers_.sleep(500);
+  printf("       ***\n");
+  context_.helpers_.sleep(500);
+  printf("        *\n");
+  context_.helpers_.pullAnyKey();
+
   do
   {
-    printf("Can you believe that today is your last day in the moon-house? You spend it with friends exploring every field, statue, row of cabbage, and game parlour. Everybody laughs and shares jokes, including the Beautiful Lady who has as good a riddle as any. You argue over which tree is the elder of the bunch, how many bands an armadillo has, and other epiphanies set at random like the smattering of the stars above. You give each child a hug before a final embrace with the Beautiful Lady, and so it ends.\n");
-    printf("\n");
-    printf("You head back to your bunk and fall fast asleep.\n");
-    printf("\n");
-    context_.helpers_.pullAnyKey();
-    printf("ZZZZzzzz\n");
-    context_.helpers_.playNote(context_.constant_.B, context_.constant_.WHOLE);
-    printf("\n");
-    context_.helpers_.sleep(500);
-    printf("ZZZZzzzzZZZZzzzz\n");
-    context_.helpers_.playNote(context_.constant_.B, context_.constant_.WHOLE);
-    printf("\n");
-    context_.helpers_.sleep(500);
-    context_.helpers_.playNote(context_.constant_.B, context_.constant_.WHOLE);
-    printf("ZZZZZZzzzzzZZZZzzzzz\n");
-    printf("\n");
-    context_.helpers_.sleep(500);
-    printf("You awaken from your bunk to silver moonlight pouring through your portal into the cosmos. Today is a special day, for it is your one-year moon-house anniversary! More importantly, however, it is your twelfth birthday, meaning you get a complementary card from the Man-in-the-moon.\n");
-    printf("\n");
-    printf("You fling open the door and make your way through the corridor--there isn't a moment to lose! You arrive before the moon-kitchen and knock in the same manner that you always had, a rap and a tap and a tap. The Man-in-the-moon opens the door, revealing a face more glum than any you had witnessed before or after. He speaks.\n");
-    printf("\n");
-    printf("Man-in-the-moon: 'Happy Birthday my dear %s! You have made it one year in the moon-house.'\n", context_.global_.name_.c_str());
-    printf("\n");
-    printf("The old little man of whimsy hands you a card. You feel a course of energy connect with your palm and reverberate down your arm. This [PRINCESS AURELIA] card has a special energy about it! The Man-in-the-moon allows you a moment of celebration before introducing a more delicate topic.\n");
-    printf("\n");
-    printf("Man-in-the-moon: 'Do you remember what I told you when you first arrived at the moon-house?'\n");
-    printf("\n");
-    printf("You were hoping that he wouldn't bring up that detail.\n");
-    printf("\n");
-    printf("Man-in-the-moon: 'You must go back now, and grow up.'\n");
-    context_.global_.cards_[11].owned = true;
-    context_.helpers_.pullAnyKey();
-
-    printf("\n");
-    printf("The unmistakable figure of the Moon-Angel slips into the moon-kitchen, his silver robe fluttering behind him and the minute stars within the fabric glistening brilliantly. His eyes search your soul, and you realize, instinctively, that you are about to awaken from the moon-house dream. While the Moon-Angel did not vocalize this with you, he was able to transfer innumerable ideas and concepts from his mind to yours... and suddenly now you understand.\n");
-    printf("\n");
-    context_.helpers_.pullAnyKey();
-
-    printf("Now\n");
-    context_.helpers_.sleep(500);
-    printf("    you\n");
-    context_.helpers_.sleep(500);
-    printf("        understand...\n");
-    context_.helpers_.pullAnyKey();
-
-    printf("\n");
-    printf("Moon-Angel: '%s, come to me.'\n", context_.global_.name_.c_str());
-    printf("\n");
-    printf("You glance at the Man-in-the-moon and he returns a little wink. You are going to greatly miss these two strange caretakers of the moon-house. You refocus back on the Moon-Angel.\n");
-    printf("\n");
-    printf("His massive arms wrap around you and an electric current grabs hold of your entire body. You feel the sensation of being thrusted into the air and ejected into a new reality--a sensation both foreign and incomprehensible. You are detethered from the moon-house realm. You are being transported through the interstitial regions between worlds.\n");
-    printf("\n");
-    context_.helpers_.pullAnyKey();
-
-    printf("        *\n");
-    context_.helpers_.sleep(500);
-    printf("       ***\n");
-    context_.helpers_.sleep(500);
-    printf("     *******\n");
-    context_.helpers_.sleep(500);
-    printf("       ***\n");
-    context_.helpers_.sleep(500);
-    printf("        *\n");
-
     printf("\n");
     printf("*********************************************************************************\n");
     printf("| Moon-house Technician\n");
@@ -662,6 +680,11 @@ void Scene::ending()
     }
     else if (context_.global_.response_ == "README" || context_.global_.response_ == "READ")
       context_.helpers_.showReadme();
+    else if (context_.global_.response_ == "SAVE")
+    {
+      saveManager_.save(3);
+      printf("Game saved.\n\n");
+    }
     else
       continue;
 

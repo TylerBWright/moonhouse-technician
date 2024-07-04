@@ -191,6 +191,7 @@
     <ClCompile Include="Helpers.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CardImages.cpp" />
+    <ClCompile Include="SaveManager.cpp" />
     <ClCompile Include="Scene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +202,7 @@
     <ClInclude Include="Global.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SaveManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="TextStrings.h" />
   </ItemGroup>

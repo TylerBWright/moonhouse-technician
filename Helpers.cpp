@@ -242,6 +242,11 @@ bool Helpers::processShowCards()
 		match = true;
 		CardImages::princessAurelia();
 	}
+	else if (global_.response_ == std::string(global_.cards_[12].name) && global_.cards_[12].owned == true)
+	{
+		match = true;
+		CardImages::you(global_.name_, global_.engraving_);
+	}
 
 	return match;
 }

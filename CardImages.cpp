@@ -435,9 +435,9 @@ namespace CardImages
   }
 
 
-  void you(char* name, char* engraving)
+  void you(std::string name, std::string engraving)
   {
-    printf("YOU, a.k.a. %s", name);
+    printf("YOU, a.k.a. %s", name.c_str());
     printf("------------------------------------------------------------\n");
     printf(" :XXX;XX;XXX;XX;          :XXX;XX;XXX;XX;                   \n");
     printf(" :&&&+&&+&&&+&&+          :&&&;&&+&&&+&&+                     \n");
@@ -469,8 +469,7 @@ namespace CardImages
     printf("                xXX;XX+;XX:              xXX;XX+;XX:                 :XXx;XX;XXX                \n");
     printf("------------------------------------------------------------\n");
     printf("\n");
-    printf("YOU wrote the following message under your moon-house bunk one day: %s", engraving);
-    // TODO Pull
+    printf("YOU wrote the following message under your moon-house bunk one day: %s\n\n", engraving.c_str());
     printf("You've long moved on from the moon-house, and yet a part of you remains. Future tenants of the moon-house pick up on little hints of your past occupancy whilst scrambling to polish those brilliant, fire-hot stars. YOU are as much a part of the moon-house as the Beautiful Lady of the Garden, the eccentric Man-in-the-moon, and the ever stoic Moon-Angel. And you will forever be remembered by the children in that garden behind the moon, that submlime little place where moon-calfs congregate...\n");
   }
 }
