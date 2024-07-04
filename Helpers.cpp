@@ -53,7 +53,7 @@ std::string Helpers::getManInTheMoonText()
 
 std::string Helpers::getGardenText()
 {
-	return textStrings_.getGarden(global_.gardenVisitationNumber_);
+	return textStrings_.getGarden(min(10, global_.gardenVisitationNumber_));
 }
 
 const char* Helpers::getMonth()
