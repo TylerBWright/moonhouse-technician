@@ -82,7 +82,7 @@ void Scene::introduction()
   printf("\n");
   printf("\"Moon-house Technician\" is a spiritual successor to the 1895 Howard Pyle fairytale \"The Garden Behind the Moon: A Real Story of the Moon-Angel\"\n");
   printf("\n");
-  printf("Developed by Tyler Wright (Outgrabe) for ParserComp 2024 (https://itch.io/jam/parsercomp-2024)\n");
+  printf("Developed by Tyler Wright (Outgrabe) for ParserComp 2024 (https://itch.io/jam/parsercomp-2024) and ported from REXX to C++ by Dylan Wright\n");
   context_.helpers_.pullAnyKey();
 
   printf("INSTRUCTIONS\n");
@@ -166,7 +166,7 @@ void Scene::dayOne()
   printf("\n");
   printf("Moon-Angel: \"It has been some time since the moon-house has seen visitors. I suppose you are here for the playing cards?\"\n");
   printf("\n");
-  printf("How will you respond? (YES/NO)\n");
+  printf("How will you respond? (YES / NO)\n");
   context_.helpers_.pull(context_.global_.response_);
   printf("\n");
   if (context_.global_.response_ == "YES")
@@ -339,8 +339,9 @@ void Scene::working()
     printf("| 4. Second Floor: Upstairs Windows\n");
     printf("| 5. Third Floor: Moon-house Technician Job Site\n");
     printf("| 6. Moon-garden\n");
-    printf("| README: Read the game manual.");
-    printf("| [CARD NAME]: Examine a card.");
+    printf("| README: Read the game manual.\n");
+    printf("| [CARD NAME]: Examine a card.\n");
+    printf("| SAVE: Save your game.\n");
     printf("|\n");
     printf("**********************************************************************************\n");
     printf("\n");
@@ -615,7 +616,8 @@ void Scene::ending()
     printf("| 4. Second Floor: Upstairs Windows\n");
     printf("| 5. Third Floor: Your Job Site\n");
     printf("| 6. Your Garden\n");
-    printf("| [CARD NAME]: Examine a card.");
+    printf("| [CARD NAME]: Examine a card.\n");
+    printf("| SAVE: Save your game.\n");
     printf("|\n");
     printf("**********************************************************************************\n");
     printf("\n");
