@@ -578,7 +578,7 @@ void Scene::ending()
   printf("\n");
   printf("Moon-Angel: '%s, come to me.'\n", context_.global_.name_.c_str());
   printf("\n");
-  printf("You glance at the Man-in-the-moon and he returns a little wink. You are going to greatly miss these two strange caretakers of the moon-house. You refocus back on the Moon-Angel.\n");
+  printf("You glance at the Man-in-the-moon and he returns a little wink. You are going to miss these two strange caretakers of the moon-house. You refocus back on the Moon-Angel.\n");
   printf("\n");
   printf("His massive arms wrap around you and an electric current grabs hold of your entire body. You feel the sensation of being thrusted into the air and ejected into a new reality--a sensation both foreign and incomprehensible. You are detethered from the moon-house realm. You are being transported through the interstitial regions between worlds.\n");
   printf("\n");
@@ -672,7 +672,7 @@ void Scene::ending()
     }
     else if (context_.global_.response_ == "6")
     {
-      printf("You are in your backyard garden. The tomatoes, green peppers, and eggplant are coming along nicely! You catch a sweet whiff of kitchen herbs and it activates a memory of another time--perhaps a past life? Ah, now that's it... The sundial looks similar to the one along the garden behind the moon! But alas, I am alone now.\n");
+      printf("You are in your backyard garden. The tomatoes, green peppers, and eggplant are coming along nicely! You catch a sweet whiff of kitchen herbs and it activates a memory of another time--perhaps a past life? Ah, now that's it... The sundial looks similar to the one along the garden behind the moon! But alas, you are alone now.\n");
       printf("\n");
       printf(" _____|\\____\n");
       printf(" \\___   ___/\n");

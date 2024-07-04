@@ -437,7 +437,7 @@ namespace CardImages
 
   void you(std::string name, std::string engraving)
   {
-    printf("YOU, a.k.a. %s", name.c_str());
+    printf("YOU, a.k.a. %s\n", name.c_str());
     printf("------------------------------------------------------------\n");
     printf(" :XXX;XX;XXX;XX;          :XXX;XX;XXX;XX;                   \n");
     printf(" :&&&+&&+&&&+&&+          :&&&;&&+&&&+&&+                     \n");
