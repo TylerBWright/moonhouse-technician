@@ -426,7 +426,7 @@ void Scene::working()
         {
           context_.global_.moonAngelCadence_ = context_.global_.dayNumber_;
           context_.global_.moonAngelMood_ = context_.global_.moonAngelMood_ + 1;
-          if (context_.global_.moonAngelMood_ / 6 == 5)
+          if (context_.global_.moonAngelMood_ / 6 == 5 && context_.global_.cards_[9].owned == false)
           {
             printf("Moon-Angel: 'Here.'\n");
             printf("\n");
