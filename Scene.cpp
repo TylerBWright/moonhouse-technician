@@ -87,7 +87,7 @@ void Scene::introduction()
 
   printf("INSTRUCTIONS\n");
   printf("\n");
-  printf("This is a classic parser-based text adventure game. The player types in their command and presses ENTER. It's not too hard... after all, you just did it to get to these instructions.\n");
+  printf("This is a classic parser-based text adventure game. The player types in their command and presses ENTER. It's not too hard... after all, you just did it when you told me your name!\n");
   printf("\n");
   printf("You find yourself in the strange realm of the moon-house, the setting of Howard Pyle's imaginative fairytale. The moon-house offers a host of unique opportunities, including--\n");
   printf("\n");
