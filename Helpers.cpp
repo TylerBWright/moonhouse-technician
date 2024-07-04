@@ -250,7 +250,7 @@ bool Helpers::processShowCards()
 
 void Helpers::processLookRoom()
 {
-	printf("Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engraving along the underside of the bed and they each tell you something about its prior inhabitants.\n");
+	printf("Your living quarters is a dull powdery-white and lacking in the sort of miscellany that young kids' rooms enjoy. Your bed emerges from the wall like bracket fungus along a log and it's quiet here. You notice engravings along the underside of the bed and they each tell you something about its prior inhabitants.\n");
 	printf("\n");
 	printf("Will you LOOK at the engravings?\n");
 	printf("\n");
@@ -262,7 +262,7 @@ void Helpers::processLookRoom()
 		if (global_.engraving_ == "")
 		{
 			printf("\n");
-			printf("There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?\n");
+			printf("There is just enough room to CARVE your own message to future moon-calfs technicians. Will you CARVE the bottom of the bunk?\n");
 			pull(global_.response_);
 			printf("\n");
 			if (global_.response_ == "CARVE" || global_.response_ == "YES")
@@ -314,7 +314,7 @@ void Helpers::showReadme()
 	printf("\n");
 	printf("Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world.\n");
 	printf("\n");
-	printf("Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards.\n");
+	printf("Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit daily stipend which you may exchange for the coveted playing cards.\n");
 	printf("\n");
 	printf("Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own.\n");
 	printf("\n");

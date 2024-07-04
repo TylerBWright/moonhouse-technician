@@ -232,7 +232,7 @@ void Scene::dayOne()
         context_.helpers_.pullAnyKey();
 
         printf("\n");
-        printf("Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye. As for me, it is about my nap time.'\n");
+        printf("Man-in-the-moon: 'Well, my dear boy, I'm certain that you've had enough of the game tutorial and want to get to 'sploring this cozy lunar enclave. Here, take this README file and consult it when you have a free moment--trust me, you'll have a lot of that! As for right now, head over to your bunk at the end of the adjoining hallway and get you some shut-eye.'\n");
         printf("\n");
         printf("You accept the [README] from the curious Man-in-the-moon and tuck it into your inventory. Type READ at the menu to learn more about the moon-house.\n");
         printf("\n");
