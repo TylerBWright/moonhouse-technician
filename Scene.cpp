@@ -126,6 +126,7 @@ void Scene::introduction()
   printf("| 5. Third Floor: Moon-house Technician Job Site\n");
   printf("| 6. Moon-garden\n");
   printf("| [CARD NAME]\n");
+  printf("| SAVE: Save your game.\n");
   printf("|\n");
   printf("**********************************************************************************\n");
   context_.helpers_.pullAnyKey();
@@ -134,7 +135,7 @@ void Scene::introduction()
   printf("\n");
   context_.helpers_.pullAnyKey();
 
-  printf("The Man-in-the-moon will tell you more, and boy does he have a lot to say! Lean on him for information. There are a total of twelve trading cards--some may be purchased from the Man-in-the-moon with your technician salary, and a few are awarded or gifted. You have twelve months to collect them all. Once you turn twelve, you have to go back--it\"s one of the house rules.\n");
+  printf("The Man-in-the-moon will tell you more, and boy does he have a lot to say! Lean on him for information. There are a total of twelve trading cards--some may be purchased from the Man-in-the-moon with your technician salary, and a few are gifted. You have twelve months to collect them all. Once you turn twelve, you have to go back--it's one of the house rules.\n");
   printf("\n");
   printf("One last thing about cards... Once you get one, type in its [CARD NAME] on the menu and get a good look at it in all its ASCII art glory!\n");
   printf("\n");
@@ -199,7 +200,8 @@ void Scene::dayOne()
     printf("| 4. Second Floor: Upstairs Windows\n");
     printf("| 5. Third Floor: Moon-house Technician Job Site\n");
     printf("| 6. Moon-garden\n");
-    printf("| [CARD NAME]: Examine a card.");
+    printf("| [CARD NAME]: Examine a card.\n");
+    printf("| SAVE: Save your game.\n");
     printf("|\n");
     printf("**********************************************************************************\n");
     printf("\n");
@@ -278,11 +280,11 @@ void Scene::dayOne()
       {
         if (context_.global_.gardenVisitationNumber_ == 0)
         {
-          printf("A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and listening intently to her words.\n");
+          printf("A group of small children run in the glistening grass of the garden behind the moon. A beautiful lady--their teacher presumably--calls them over and they huddle around her. They are totally captivated by her presence and listen intently to her words.\n");
           printf("\n");
           printf("Beautiful Lady: 'Welcome to our garden, %s. Do not be afraid! Children, please welcome our newest visitor!'\n", context_.global_.name_.c_str());
           printf("\n");
-          printf("The children poke and prod at you and speak in amusing ways foreign to you. You spend some time running and playing with the children in the garden, hiding behind the sundial and discovering exotic terrain. The Beautiful Lady motions for you to come over, and you cannot help but listen to her every word, so taken are you by her grace.\n");
+          printf("The children poke and prod at you and speak in strangely amusing ways. You spend some time running and playing with the children in the garden, hiding behind the sundial and discovering exotic terrain. The Beautiful Lady motions for you to come over, and you cannot help but listen to her every word.\n");
           printf("\n");
           printf("Beautiful Lady: 'You were such an expert teacher's assistant today, young one! You may come and help me any time you'd like. The door to the garden will open for you on Saturdays.'\n");
           context_.global_.gardenVisitationNumber_++;
@@ -312,8 +314,8 @@ void Scene::working()
     if (context_.global_.windowVisitationNumber_ == 5)
     {
       printf("");
-      printf("You're about to resume your daily moon-house routine, but out of nowhere you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow he manages to extricate you from the moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome. Too busy looking out of windows when you should have been working!");
-      printf("");
+      printf("You're about to resume your daily moon-house routine, but out of nowhere you feel the silvery touch of the Moon-Angel right below your upper arm. Somehow he manages to extricate you from the moon-house and you are suspended in mid-air; presumably being escorted through the heavens! He gently sets you down in the middle of your town square without a parting word. You get the feeling that you've overstayed your welcome. Too busy looking out of windows when you should have been working!\n");
+      printf("\n");
       printf("GAME OVER");
       exit(0);
     }
@@ -420,7 +422,7 @@ void Scene::working()
         printf("\n");
         context_.helpers_.pull(context_.global_.response_);
         printf("\n");
-        if (context_.global_.response_ == "TALK")
+        if (context_.global_.response_ == "TALK" || context_.global_.response_ == "YES")
         {
           context_.global_.moonAngelCadence_ = context_.global_.dayNumber_;
           context_.global_.moonAngelMood_ = context_.global_.moonAngelMood_ + 1;
@@ -428,7 +430,7 @@ void Scene::working()
           {
             printf("Moon-Angel: 'Here.'\n");
             printf("\n");
-            printf("The Moon-Angel reveals a holographic [MOON ANGEL] playing card from under his robe and places it in your hand. While this gesture left you star-struck, you are more surprised by a short burst of smile radiating out of his face. For a brief moment in time, the Moon-Angel willingly decided that he might lower himself down to the human level in order to empathize with you. He then dissapears down the hallway and leaves you to your chores.\n");
+            printf("The Moon-Angel reveals a holographic [MOON ANGEL] playing card from under his robe and places it in your hand. While this gesture left you star-struck, you are more surprised by a short smile radiating out of his face. For a brief moment in time, the Moon-Angel willingly decided that he might lower himself down to the human level in order to empathize with you. He then dissapears down the hallway and leaves you to your chores.\n");
             context_.global_.cards_[9].owned = true;
           }
           else
@@ -650,7 +652,7 @@ void Scene::ending()
           printf("\n");
           printf("%s\n", context_.global_.engraving_.c_str());
           printf("\n");
-          printf("You obtained the [YOU] card! YOU are the most important character in this game! It wouldn't be interactive fiction without YOU. :)\n");
+          printf("You obtained the [YOU] card! YOU are the most important character in this game! It wouldn't be interactive fiction without YOU.\n");
           printf("\n");
           context_.global_.cards_[12].owned = true;
         }
@@ -675,7 +677,7 @@ void Scene::ending()
       printf(" _____|\\____\n");
       printf(" \\___   ___/\n");
       printf("   ou| |grabe\n");
-      printf("     | |  LLC\n");
+      printf("     | |\n");
       printf("     | |\n");
       printf("    /   \\\n");
       printf("   /-----\\\n");

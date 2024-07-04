@@ -259,7 +259,7 @@ void Helpers::processLookRoom()
 	printf("\n");
 	pull(global_.response_);
 	printf("\n");
-	if (global_.response_ == "LOOK")
+	if (global_.response_ == "LOOK" || global_.response_ == "YES")
 	{
 		showEngraving();
 		if (global_.engraving_ == "")
@@ -268,7 +268,7 @@ void Helpers::processLookRoom()
 			printf("There is just enough room to CARVE your own message to future moon-calfs and technicians. Will you CARVE the bottom of the bunk?\n");
 			pull(global_.response_);
 			printf("\n");
-			if (global_.response_ == "CARVE")
+			if (global_.response_ == "CARVE" || global_.response_ == "YES")
 			{
 				printf("\n");
 				printf("You remove your red pocket knife, ready to add your unique contribution to the bottom of your bunk. What sort of message will you carve? Carve it here...\n");
@@ -304,27 +304,29 @@ void Helpers::showEngraving()
 
 void Helpers::showReadme()
 {
-	printf(" -----------------------------------------------------------\n");
-	printf("|MOON-HOUSE CHEESECRUMBS AND NUGGETS by MAN-IN-THE-MOON\n");
-	printf("|\n");
-	printf("|Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.'\n");
-	printf("|\n");
-	printf("|Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship Program places on them. I do hope that you stay the full year, but I'm a reasonable fellow.\n");
-	printf("|\n");
-	printf("|Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella.\n");
-	printf("|\n");
-	printf("|Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world.\n");
-	printf("|\n");
-	printf("|Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards.\n");
-	printf("|\n");
-	printf("|Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own.\n");
-	printf("|\n");
-	printf("|Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that %s. I am also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it.\n", global_.name_.c_str());
-	printf("|\n");
-	printf("|Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, WORK, READ. You may also input numbers (1-9) for lists.\n");
-	printf("|\n");
-	printf("|Re-read this document at any time by using the READ command.\n");
-	printf("|\n");
-	printf("|Anyways, I think that's it for now! Toodles!\n");
-	printf(" -----------------------------------------------------------\n");
+	printf("-----------------------------------------------------------\n");
+	printf("MOON-HOUSE CHEESECRUMBS AND NUGGETS by MAN-IN-THE-MOON\n");
+	printf("\n");
+	printf("First thing's first--SAVE your game by entering SAVE at any time in the menu. There will be an option to LOAD your game on your next reboot. But you won't need a break, now will ya?\n");
+	printf("\n");
+	printf("Moon-kitchen: My humble abode! Please excuse the mess--a guy's got to have hobbies, you know.\n");
+	printf("\n");
+	printf("Moon-house Technician Quarters: Your room has enjoyed a good many children who found their way up here; just check the engravings under the bed if you don't believe me! They never stay beyond the age of twelve and most, I am sorry to say, eventually tire of the demands that the Moon-house Technician Apprenticeship Program places on them. I do hope that you stay the full year, but I'm a reasonable fellow.\n");
+	printf("\n");
+	printf("Moon-Angel: He does moon-angely things--is that a word? If not, it should be. He and I get along as much as cats and dogs, which is a reasonable amount. He's more of the spiritual type and prefers to be left alone. An aloof fella.\n");
+	printf("\n");
+	printf("Upstairs Windows: I like to tell the kids that the twelve moon-windows are brilliant in their design and very unlike a common house window; for these windows allow one to see things close at hand. Enjoy them while you are able for they know no equivalent in your world.\n");
+	printf("\n");
+	printf("Moon-house Technician Job Site: It will be your duty to polish the stars on the third floor in exchange for room and board. You will also be allotted a 5-credit-per-star stipend which you may exchange for the coveted playing cards.\n");
+	printf("\n");
+	printf("Moon-garden: You are permitted to visit the garden behind the moon on Saturdays. We have a class of children being taught by our diligent teacher. Despite being a master pedagogue, there is always room for an extra assistant! Who knows--she might even part with a rare playing card of her own.\n");
+	printf("\n");
+	printf("Playing cards: I'm a bit more generous than my counterpart the Moon-Angel as I offer a complementary playing card on birthdays. You're going to have to find another way to get at the Moon-Angel's card--good luck with that %s. I am also told that the beautiful lady in the garden will reward you for your service as a weekend assistant. I'm willing to sell you the other eight. Type the full CARD NAME at any time to examine it.\n", global_.name_.c_str());
+	printf("\n");
+	printf("Speaking of which, any time you encounter a word in ALL CAPS, treat it as a parser command. Some examples: YES, NO, LOOK, TALK, WORK, READ. You may also input numbers (1-9) for lists.\n");
+	printf("\n");
+	printf("Re-read this document at any time by using the READ command.\n");
+	printf("\n");
+	printf("Anyways, I think that's it for now! Toodles!\n");
+	printf("-----------------------------------------------------------\n");
 }
